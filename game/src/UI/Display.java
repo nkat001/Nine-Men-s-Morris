@@ -2,7 +2,6 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Display extends JFrame {
 
@@ -17,7 +16,7 @@ public class Display extends JFrame {
         setSize(screenSize);
         setBackground(new Color(202, 213, 75));
         add(lines);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
