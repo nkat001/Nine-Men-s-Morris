@@ -8,7 +8,6 @@ public class Line extends JPanel {
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        //int[] xPoints = {80, 650, 1250, 65, 65};int[] yPoints = {20, 20, 20, 35, 290};
         int[] xPoints = {80, 650, 680, 1250};
         int[] yPoints = {20, 20, 20, 20};
 
