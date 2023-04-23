@@ -14,7 +14,7 @@ public class Display extends JFrame {
         setTitle("Nine Men's Morris");
         setSize(screenWidth, screenHeight);
         add(line);
-        setBackground(new Color(202, 213, 75));
+        setBackground(new Color(132, 195, 210));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
