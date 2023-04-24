@@ -9,6 +9,5 @@ public class TestBoardGame {
         Token token = new Token('o');
         token.setTokenPosition(0,0);
         b.display();
-
     }
 }

@@ -12,8 +12,8 @@ public class Token {
         this.dispChar = dispChar;
     }
 
-    public void setTokenPosition(int x, int y ){
-        this.position= board.getBoardAt(x, y);
+    public void setTokenPosition(Position p ){
+        this.position= p;
         position.setDispChar(this.dispChar);
     }
 }
