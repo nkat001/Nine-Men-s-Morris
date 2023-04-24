@@ -1,8 +1,8 @@
 package game;
 
-import game.Action.Action;
 import game.Board.Board;
 import game.Board.Position;
+import game.Action.Action;
 
 public class Token {
     private char dispChar ;

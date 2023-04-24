@@ -1,14 +1,9 @@
 package game.Actor;
 
-import game.Action.Action;
-import game.Action.Jump;
-import game.Action.Place;
-import game.Action.Slide;
-import game.Board.Position;
+import game.Action.*;
 import game.Token;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Player {
     private String name ;
