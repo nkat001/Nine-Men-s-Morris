@@ -49,5 +49,13 @@ public class Player {
     public String getName() {
         return name;
     }
+
+    public ArrayList<Token> getTokens() {
+        return tokens;
+    }
+
+    public void addToken(Token token) {
+        tokens.add(token);
+    }
 }
 

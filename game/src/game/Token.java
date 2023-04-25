@@ -30,4 +30,19 @@ public class Token {
         action.execute(this, position);
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public char getDispChar() {
+        return dispChar;
+    }
+
+    public void setDispChar(char dispChar) {
+        this.dispChar = dispChar;
+    }
+
+    public void setHasPosition(Boolean hasPosition) {
+        this.hasPosition = hasPosition;
+    }
 }
