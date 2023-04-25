@@ -1,0 +1,281 @@
+Index: game/src/game/Token.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game;\r\n\r\nimport game.Board.Board;\r\nimport game.Board.Position;\r\n\r\npublic class Token {\r\n    private char dispChar ;\r\n    private Position position;\r\n    private Board board = Board.getInstance();\r\n\r\n    public Token (char dispChar){\r\n        this.dispChar = dispChar;\r\n    }\r\n\r\n    public void setTokenPosition(Position p ){\r\n        this.position= p;\r\n        position.setDispChar(this.dispChar);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/game/src/game/Token.java b/game/src/game/Token.java
+--- a/game/src/game/Token.java	
++++ b/game/src/game/Token.java	
+@@ -1,19 +1,33 @@
+ package game;
+ 
++import game.Action.Action;
+ import game.Board.Board;
+ import game.Board.Position;
+ 
+ public class Token {
+     private char dispChar ;
+     private Position position;
++    private Boolean hasPosition;
+     private Board board = Board.getInstance();
+ 
+     public Token (char dispChar){
+         this.dispChar = dispChar;
++        this.hasPosition = false ;
+     }
+ 
+     public void setTokenPosition(Position p ){
++        this.hasPosition = true ;
+         this.position= p;
+         position.setDispChar(this.dispChar);
+     }
++
++    public Boolean getHasPosition(){
++        return hasPosition;
++    }
++
++    // ALLOWABLE ACTION
++    public void executeAction(Action action , Position position ){
++        action.execute(this, position);
++    }
++
+ }
+Index: game/src/game/TestBoardGame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game;\r\n\r\nimport game.Board.Board;\r\n\r\npublic class TestBoardGame {\r\n    public static void main(String[] args) {\r\n        Board b =  Board.getInstance();\r\n        b.display();\r\n        Token token = new Token('o');\r\n        token.setTokenPosition(0,0);\r\n        b.display();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/game/src/game/TestBoardGame.java b/game/src/game/TestBoardGame.java
+--- a/game/src/game/TestBoardGame.java	
++++ b/game/src/game/TestBoardGame.java	
+@@ -1,13 +1,15 @@
+ package game;
+ 
++import game.Action.Action;
++import game.Action.Place;
+ import game.Board.Board;
+ 
++import java.util.Scanner;
++
+ public class TestBoardGame {
+     public static void main(String[] args) {
+         Board b =  Board.getInstance();
+         b.display();
+-        Token token = new Token('o');
+-        token.setTokenPosition(0,0);
+-        b.display();
++
+     }
+ }
+Index: game/src/game/Board/Board.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game.Board;\r\n\r\nimport java.util.*;\r\n\r\n\r\npublic class Board {\r\n    private Position [][] gameBoard ;\r\n    private int width;\r\n    private int height;\r\n    private static Board board ;\r\n\r\n    private Board(){\r\n        generateBoard();\r\n    }\r\n    public static Board getInstance(){\r\n        if (board == null){\r\n            board = new Board();\r\n        }\r\n        return board;\r\n    }\r\n\r\n    private void createBoardFromStrings(List<String> list){\r\n        width = list.get(0).length();\r\n        height= list.size();\r\n        gameBoard = new Position [width][height];\r\n        for (int x=0; x< width ;x++){\r\n            for (int y= 0; y< height ;y++){\r\n                char c = list.get(y).charAt(x);\r\n                gameBoard[x][y] = new Position(x,y,c);\r\n            }\r\n        }\r\n    }\r\n\r\n    public void generateBoard(){\r\n        List<String> gameBoard = Arrays.asList(\r\n                \"*--------*--------*\",\r\n                \"|\\\\       |       /|\",\r\n                \"| *------*------* |\",\r\n                \"| |      |      | |\",\r\n                \"| | *----*----* | |\",\r\n                \"| | |         | | |\",\r\n                \"*-* *---------* *-*\",\r\n                \"| | |         | | |\",\r\n                \"| | *----*----* | |\",\r\n                \"| |      |      | |\",\r\n                \"| *------*------* |\",\r\n                \"|/       |       \\\\|\",\r\n                \"*--------*--------*\");\r\n        createBoardFromStrings(gameBoard);\r\n    }\r\n\r\n    public Position getBoardAt(int x , int y ) {\r\n        return this.gameBoard[x][y];\r\n    }\r\n\r\n    public void display(){\r\n        for (int y= 0; y< height ;y++){\r\n            for (int x =0; x< width;x++){\r\n                Position l = this.getBoardAt(x,y);\r\n                System.out.print(l.getDispChar());\r\n            }\r\n            System.out.println(\"\");\r\n        }\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/game/src/game/Board/Board.java b/game/src/game/Board/Board.java
+--- a/game/src/game/Board/Board.java	
++++ b/game/src/game/Board/Board.java	
+@@ -2,16 +2,18 @@
+ 
+ import java.util.*;
+ 
+-
+ public class Board {
+     private Position [][] gameBoard ;
+     private int width;
+     private int height;
++    private IntersectionPoint ip;
+     private static Board board ;
+ 
+     private Board(){
+         generateBoard();
++//        ip= IntersectionPoint.getInstance();
+     }
++
+     public static Board getInstance(){
+         if (board == null){
+             board = new Board();
+@@ -27,6 +29,7 @@
+             for (int y= 0; y< height ;y++){
+                 char c = list.get(y).charAt(x);
+                 gameBoard[x][y] = new Position(x,y,c);
++//                ip.addListIP(gameBoard[x][y]);
+             }
+         }
+     }
+@@ -34,17 +37,17 @@
+     public void generateBoard(){
+         List<String> gameBoard = Arrays.asList(
+                 "*--------*--------*",
+-                "|\\       |       /|",
+-                "| *------*------* |",
+-                "| |      |      | |",
+-                "| | *----*----* | |",
+-                "| | |         | | |",
+-                "*-* *---------* *-*",
+-                "| | |         | | |",
+-                "| | *----*----* | |",
+-                "| |      |      | |",
+-                "| *------*------* |",
+-                "|/       |       \\|",
++                "|         |       |",
++                "|  *-----*-----*  |",
++                "|  |     |     |  |",
++                "|  | *---*---* |  |",
++                "|  | |       | |  |",
++                "*--* *-------* *--*",
++                "|  | |       | |  |",
++                "|  | *---*---* |  |",
++                "|  |     |     |  |",
++                "|  *-----*-----*  |",
++                "|        |        |",
+                 "*--------*--------*");
+         createBoardFromStrings(gameBoard);
+     }
+@@ -53,6 +56,7 @@
+         return this.gameBoard[x][y];
+     }
+ 
++
+     public void display(){
+         for (int y= 0; y< height ;y++){
+             for (int x =0; x< width;x++){
+Index: game/src/game/Actor/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game.Actor;\r\n\r\nimport game.Token;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Player {\r\n    private String name ;\r\n    private char dispChar;\r\n    private ArrayList<Token> tokens;\r\n\r\n    public Player(String name, char dispChar){\r\n        this.name= name ;\r\n        this.dispChar = dispChar ;\r\n        this.tokens = new ArrayList<Token>();\r\n        setUpTokens();\r\n    }\r\n    public void setUpTokens(){\r\n        for (int i = 0; i <9; i++) {\r\n            Token t = new Token(this.dispChar);\r\n            this.tokens.add(t);\r\n        }\r\n    }\r\n\r\n}\r\n\r\n
+===================================================================
+diff --git a/game/src/game/Actor/Player.java b/game/src/game/Actor/Player.java
+--- a/game/src/game/Actor/Player.java	
++++ b/game/src/game/Actor/Player.java	
+@@ -1,20 +1,27 @@
+ package game.Actor;
+ 
++import game.Action.Action;
++import game.Action.Jump;
++import game.Action.Place;
++import game.Action.Slide;
++import game.Board.Position;
+ import game.Token;
+ 
+ import java.util.ArrayList;
++import java.util.List;
+ 
+ public class Player {
+     private String name ;
+     private char dispChar;
+     private ArrayList<Token> tokens;
++    private Action allowableAction ;
+ 
+     public Player(String name, char dispChar){
+         this.name= name ;
+         this.dispChar = dispChar ;
+         this.tokens = new ArrayList<Token>();
+-        setUpTokens();
+     }
++
+     public void setUpTokens(){
+         for (int i = 0; i <9; i++) {
+             Token t = new Token(this.dispChar);
+@@ -22,5 +29,24 @@
+         }
+     }
+ 
++    public void setUpAllowableAction() {
++        // when player haven't fully placed only can have placed action
++        for ( int i = 0 ; i<9 ;i++){
++            if(!tokens.get(i).getHasPosition()){
++                allowableAction = new Place();
++                break ;
++            }
++        }
++        if (allowableAction ==null) {
++            if (tokens.size()== 3 ){
++                allowableAction= new Jump();
++            }
++            else{
++                allowableAction= new Slide();
++            }
++        }
++    }
++
++
+ }
+ 
+Index: game/src/game/Board/IntersectionPoint.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game.Board;\r\n\r\nimport game.Status;\r\n\r\npublic class IntersectionPoint extends PositionCharacter{\r\n    public IntersectionPoint(){\r\n        super('*', Status.TOKEN_STAND);\r\n    }\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/game/src/game/Board/IntersectionPoint.java b/game/src/game/Board/IntersectionPoint.java
+--- a/game/src/game/Board/IntersectionPoint.java	
++++ b/game/src/game/Board/IntersectionPoint.java	
+@@ -2,10 +2,29 @@
+ 
+ import game.Status;
+ 
+-public class IntersectionPoint extends PositionCharacter{
+-    public IntersectionPoint(){
+-        super('*', Status.TOKEN_STAND);
++import java.util.ArrayList;
++
++public class IntersectionPoint {
++
++    private static IntersectionPoint ip;
++    private ArrayList<Position> listIP = new ArrayList<>();
++
++    private IntersectionPoint(){}
++
++    public void addListIP(Position p){
++        listIP.add(p);
+     }
++    public static IntersectionPoint getInstance(){
++        if (ip ==null){
++            ip= new IntersectionPoint();
++        }
++        return ip ;
++    }
++
++    public ArrayList<Position> getListIP(){
++        return (this.listIP);
++    }
++
+ 
+ 
+ }
+Index: game/src/game/Board/Position.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package game.Board;\r\n\r\npublic class Position {\r\n    private int x;\r\n    private int y;\r\n    private Boolean isTokenHere;\r\n    private char dispChar;\r\n\r\n    public Position(int x , int y, char c){\r\n        this.x= x;\r\n        this.y=y;\r\n        this.dispChar= c;\r\n    }\r\n\r\n    public  char getDispChar(){\r\n        return dispChar;\r\n    }\r\n    public int getX(){\r\n        return x ;\r\n    }\r\n\r\n    public int getY(){\r\n        return y ;\r\n    }\r\n\r\n    public void setDispChar(char c){\r\n        this.dispChar = c;\r\n    }\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/game/src/game/Board/Position.java b/game/src/game/Board/Position.java
+--- a/game/src/game/Board/Position.java	
++++ b/game/src/game/Board/Position.java	
+@@ -4,12 +4,19 @@
+     private int x;
+     private int y;
+     private Boolean isTokenHere;
++    private Boolean isIntersectionPoint ;
+     private char dispChar;
+ 
+     public Position(int x , int y, char c){
+         this.x= x;
+         this.y=y;
+         this.dispChar= c;
++        if (c=='*'){
++            this.isIntersectionPoint = true ;
++        }
++        else{
++            this.isIntersectionPoint = false;
++        }
+     }
+ 
+     public  char getDispChar(){
+@@ -27,5 +34,7 @@
+         this.dispChar = c;
+     }
+ 
++    public void createPosChar(){
++    }
+ 
+ }

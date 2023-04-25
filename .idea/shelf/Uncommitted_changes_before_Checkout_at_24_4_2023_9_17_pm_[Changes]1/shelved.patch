@@ -1,0 +1,116 @@
+Index: game/src/game/Board/PositionCharacter.java
+===================================================================
+diff --git a/game/src/game/Board/PositionCharacter.java b/game/src/game/Board/PositionCharacter.java
+deleted file mode 100644
+--- a/game/src/game/Board/PositionCharacter.java	
++++ /dev/null	
+@@ -1,15 +0,0 @@
+-package game.Board;
+-import game.Status;
+-public abstract class PositionCharacter {
+-    private char dispChar;
+-    private Status capability ;
+-
+-    public PositionCharacter(char dispChar, Status status ){
+-        this.dispChar= dispChar;
+-        this.capability= status;
+-    }
+-
+-    public char getDispChar() {
+-        return dispChar;
+-    }
+-}
+Index: game/src/game/Board/SlideDiagonalLeft.java
+===================================================================
+diff --git a/game/src/game/Board/SlideDiagonalLeft.java b/game/src/game/Board/SlideDiagonalLeft.java
+deleted file mode 100644
+--- a/game/src/game/Board/SlideDiagonalLeft.java	
++++ /dev/null	
+@@ -1,10 +0,0 @@
+-package game.Board;
+-
+-import game.Status;
+-
+-public class SlideDiagonalLeft extends PositionCharacter{
+-    public SlideDiagonalLeft(){
+-        super('/', Status.TOKEN_SLIDE);
+-
+-    }
+-}
+Index: game/src/game/Board/SlideHorizontal.java
+===================================================================
+diff --git a/game/src/game/Board/SlideHorizontal.java b/game/src/game/Board/SlideHorizontal.java
+deleted file mode 100644
+--- a/game/src/game/Board/SlideHorizontal.java	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-package game.Board;
+-
+-import game.Status;
+-
+-public class SlideHorizontal extends PositionCharacter{
+-    public SlideHorizontal(){
+-        super('-', Status.TOKEN_SLIDE);
+-    }
+-}
+Index: game/src/game/Board/SlideDiagonalRight.java
+===================================================================
+diff --git a/game/src/game/Board/SlideDiagonalRight.java b/game/src/game/Board/SlideDiagonalRight.java
+deleted file mode 100644
+--- a/game/src/game/Board/SlideDiagonalRight.java	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-package game.Board;
+-import game.Status;
+-public class SlideDiagonalRight extends PositionCharacter{
+-    public SlideDiagonalRight(){
+-        super('\\', Status.TOKEN_SLIDE);
+-    }
+-
+-}
+Index: game/src/game/Board/SlideVertical.java
+===================================================================
+diff --git a/game/src/game/Board/SlideVertical.java b/game/src/game/Board/SlideVertical.java
+deleted file mode 100644
+--- a/game/src/game/Board/SlideVertical.java	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-package game.Board;
+-
+-import game.Status;
+-
+-public class SlideVertical  extends PositionCharacter {
+-    public SlideVertical(){
+-        super('|', Status.TOKEN_SLIDE);
+-    }
+-}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_16\" project-jdk-name=\"openjdk-15\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="openjdk-15" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: game/src/game/Menu.java
+===================================================================
+diff --git a/game/src/game/Menu.java b/game/src/game/Menu.java
+new file mode 100644
+--- /dev/null	
++++ b/game/src/game/Menu.java	
+@@ -0,0 +1,4 @@
++package game;
++
++public class Menu {
++}
