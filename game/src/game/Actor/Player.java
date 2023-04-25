@@ -41,7 +41,13 @@ public class Player {
             }
         }
     }
-    
 
+    public char getDispChar() {
+        return dispChar;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
 
