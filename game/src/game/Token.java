@@ -18,7 +18,7 @@ public class Token {
     public void setTokenPosition(Position p ){
         this.hasPosition = true ;
         this.position= p;
-        position.setDispChar(this.dispChar);
+        position.addToken(this);
     }
 
     public Boolean getHasPosition(){
@@ -27,8 +27,7 @@ public class Token {
 
     // ALLOWABLE ACTION
     public void executeAction(Action action , Position position ){
-        action.execute(this, position);
-    }
+        action.execute(this, position);}
 
     public Position getPosition() {
         return position;

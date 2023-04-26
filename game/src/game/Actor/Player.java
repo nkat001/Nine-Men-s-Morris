@@ -15,6 +15,7 @@ public class Player {
         this.name= name ;
         this.dispChar = dispChar ;
         this.tokens = new ArrayList<Token>();
+        setUpTokens();
     }
 
     public void setUpTokens(){
@@ -52,6 +53,9 @@ public class Player {
 
     public ArrayList<Token> getTokens() {
         return tokens;
+    }
+    public Token getTokenAt(int i){
+        return tokens.get(i);
     }
 
     public void addToken(Token token) {

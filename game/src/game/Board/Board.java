@@ -2,6 +2,7 @@ package game.Board;
 
 import game.Action.Action;
 import game.Action.Place;
+import game.Actor.Player;
 import game.Token;
 
 import java.util.*;
@@ -66,6 +67,29 @@ public class Board {
             for (int x =0; x< width;x++){
                 Position l = this.getBoardAt(x,y);
                 System.out.print(l.getDispChar());
+            }
+            System.out.println("");
+        }
+    }
+
+    public void displayPlayerTokens(Player player){
+        char playerChar = player.getDispChar();
+        ArrayList<Token> tokens = player.getTokens();
+        ArrayList<Position> pos = new ArrayList<Position>();
+
+        for (int i = 0; i < tokens.size(); i++){
+            pos.add(tokens.get(i).getPosition());
+        }
+        for (int y= 0; y< height ;y++){
+            for (int x =0; x< width;x++){
+                Position l = this.getBoardAt(x,y);
+                if (l.getDispChar()== playerChar){
+                    int ind= pos.indexOf(l);
+                    System.out.print(ind);
+                }
+                else {
+                    System.out.print(l.getDispChar());
+                }
             }
             System.out.println("");
         }
