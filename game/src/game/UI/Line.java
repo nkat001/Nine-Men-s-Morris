@@ -8,9 +8,8 @@ public class Line extends JPanel{
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        //int[] xPoints = {80, 650, 1250, 65, 65};int[] yPoints = {20, 20, 20, 35, 290};
-        int[] xPoints = {80, 650, 680, 1250};
-        int[] yPoints = {20, 20, 20, 20};
+        int[] x1 = {80, 650, 680, 1250};
+        int[] y1 = {20, 20, 20, 20};
 
         int[] x2 = {65, 65, 65, 65};
         int[] y2 = {35, 305, 335, 605};
@@ -59,7 +58,7 @@ public class Line extends JPanel{
 
         g2d.setColor(Color.BLACK);
         g2d.setStroke(new BasicStroke(5));
-        g2d.drawPolyline(xPoints, yPoints, xPoints.length);
+        g2d.drawPolyline(x1, y1, x1.length);
         g2d.drawPolyline(x2, y2, x2.length);
         g2d.drawPolyline(x3, y3, x3.length);
         g2d.drawPolyline(x4, y4, x4.length);
