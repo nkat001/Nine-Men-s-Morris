@@ -1,5 +1,9 @@
 package game.Board;
 
+import game.Action.Action;
+import game.Action.Place;
+import game.Token;
+
 import java.util.*;
 
 public class Board {
@@ -36,19 +40,19 @@ public class Board {
 
     public void generateBoard(){
         List<String> gameBoard = Arrays.asList(
-                "*-------*-------*",
-                "|       |       |",
-                "| *-----*-----* |",
-                "| |     |     | |",
-                "| | *---*---* | |",
-                "| | |       | | |",
-                "*-* *-------* *-*",
-                "| | |       | | |",
-                "| | *---*---* | |",
-                "| |     |     | |",
-                "| *-----*-----* |",
-                "|       |       |",
-                "*-------*-------*");
+                "a------------------b------------------c",
+                "|                  |                  |",
+                "|      d-----------e-----------f      |",
+                "|      |           |           |      |",
+                "|      |     g-----h-----i     |      |",
+                "|      |     |           |     |      |",
+                "j----- k-----l           m-----n------o",
+                "|      |     |           |     |      |",
+                "|      |     p-----q-----r     |      |",
+                "|      |           |           |      |",
+                "|      s-----------t-----------u      |",
+                "|                  |                  |",
+                "v------------------w------------------x");
         createBoardFromStrings(gameBoard);
     }
 
@@ -66,5 +70,20 @@ public class Board {
             System.out.println("");
         }
     }
+
+
+
+    public Position findPosition(char positionChar) {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                Position l = this.getBoardAt(x, y);
+                if (l.getDispChar() == positionChar) {
+                    return l;
+                }
+            }
+        }
+        return null;
+    }
+
 
 }

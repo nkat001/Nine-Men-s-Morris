@@ -15,7 +15,6 @@ public class Player {
         this.name= name ;
         this.dispChar = dispChar ;
         this.tokens = new ArrayList<Token>();
-        setUpTokens();
     }
 
     public void setUpTokens(){
@@ -33,20 +32,30 @@ public class Player {
                 break ;
             }
         }
-        // if  player  fully placed pieces
         if (allowableAction ==null) {
-            // if player left w three tokens can have jump action
             if (tokens.size()== 3 ){
                 allowableAction= new Jump();
             }
-            // player can have slide action
             else{
                 allowableAction= new Slide();
             }
         }
     }
 
+    public char getDispChar() {
+        return dispChar;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public ArrayList<Token> getTokens() {
+        return tokens;
+    }
+
+    public void addToken(Token token) {
+        tokens.add(token);
+    }
 }
 
