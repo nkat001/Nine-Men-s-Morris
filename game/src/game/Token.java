@@ -1,7 +1,5 @@
 package game;
 
-import game.Board.Board;
-import game.Board.Position;
 import game.Action.Action;
 
 public class Token {

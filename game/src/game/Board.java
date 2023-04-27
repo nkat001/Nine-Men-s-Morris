@@ -1,24 +1,35 @@
-package game.Board;
+package game;
 
-import game.Action.Action;
-import game.Action.Place;
 import game.Actor.Player;
-import game.Token;
 
 import java.util.*;
 
+/**
+ * A Singleton Board class that create the game board
+ *
+ * Created by:
+ *
+ * @author Ethel Lim
+ * Modified by : Mahesh
+ */
 public class Board {
-    private Position [][] gameBoard ;
+
+    // creating attributes
+    private Position[][] gameBoard ;
     private int width;
     private int height;
-    private IntersectionPoint ip;
     private static Board board ;
 
+    /**
+     * private constructor
+     */
     private Board(){
         generateBoard();
-//        ip= IntersectionPoint.getInstance();
     }
 
+    /**
+     * create only one board instance and return the board instance
+     */
     public static Board getInstance(){
         if (board == null){
             board = new Board();
@@ -29,12 +40,11 @@ public class Board {
     private void createBoardFromStrings(List<String> list){
         width = list.get(0).length();
         height= list.size();
-        gameBoard = new Position [width][height];
+        gameBoard = new Position[width][height];
         for (int x=0; x< width ;x++){
             for (int y= 0; y< height ;y++){
                 char c = list.get(y).charAt(x);
                 gameBoard[x][y] = new Position(x,y,c);
-//                ip.addListIP(gameBoard[x][y]);
             }
         }
     }
@@ -94,8 +104,6 @@ public class Board {
             System.out.println("");
         }
     }
-
-
 
     public Position findPosition(char positionChar) {
         for (int y = 0; y < height; y++) {

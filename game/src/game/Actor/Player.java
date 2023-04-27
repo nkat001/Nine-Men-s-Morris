@@ -9,7 +9,6 @@ public class Player {
     private String name ;
     private char dispChar;
     private ArrayList<Token> tokens;
-    private Action allowableAction ;
 
     public Player(String name, char dispChar){
         this.name= name ;
@@ -25,24 +24,6 @@ public class Player {
         }
     }
 
-    public void setUpAllowableAction() {
-        // when player haven't fully placed only can have placed action
-        for ( int i = 0 ; i<9 ;i++){
-            if(!tokens.get(i).getHasPosition()){
-                allowableAction = new Place();
-                break ;
-            }
-        }
-        if (allowableAction ==null) {
-            if (tokens.size()== 3 ){
-                allowableAction= new Jump();
-            }
-            else{
-                allowableAction= new Slide();
-            }
-        }
-    }
-
     public char getDispChar() {
         return dispChar;
     }
@@ -54,6 +35,7 @@ public class Player {
     public ArrayList<Token> getTokens() {
         return tokens;
     }
+
     public Token getTokenAt(int i){
         return tokens.get(i);
     }
