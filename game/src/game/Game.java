@@ -5,6 +5,7 @@ import game.Action.Slide;
 import game.Actor.Player;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Game class represent the main game logic
@@ -45,11 +46,14 @@ public class Game {
             menu.printTitle();
             board.display();
         }
+        System.out.println();
+        System.out.println("All Token are placed, now is time to perform slide action");
+
 
         // Slide action after player placed all the tokens
-        while (counter<= 9){
+        while (counter<= 10){
             counter +=1 ;
-            System.out.println("!!!!!!!!!!!!Round " +counter +"!!!!!!!!!!!!");
+            System.out.println("!!!!!!!!!!!!!!!! <Round " +counter +"> !!!!!!!!!!!!!!!!");
             menu.printTitle();
 
             // display the board for player 1 choice
