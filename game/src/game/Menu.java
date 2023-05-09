@@ -42,12 +42,12 @@ public class Menu {
      * get player move token position
      * @return Position
      */
-    public Position getPlayerChoice(String name , Board b ){
-        System.out.println( "Player "+ name +" where do you want to place your token? ");
-        System.out.println("Please select from the alphabets available:");
-        char position = sc.next().charAt(0);
-        return b.findPosition(position);
-    }
+//    public Position getPlayerChoice(String name , Board b ){
+//        System.out.println( "Player "+ name +" where do you want to place your token? ");
+//        System.out.println("Please select from the alphabets available:");
+//        char position = sc.next().charAt(0);
+//        return b.findPosition(position);
+//    }
 
     /**
      * ask player which token to move
