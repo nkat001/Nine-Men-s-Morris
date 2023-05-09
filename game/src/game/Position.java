@@ -13,43 +13,31 @@ public class Position {
     /**
      * initialise the attributes
      */
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private Boolean isTokenHere;
-    private char dispChar;
     private Token token ;
 
     /**
      * Constructor
      */
-    public Position(int x , int y, char c){
+    public Position(double x , double y){
         this.x= x;
         this.y=y;
-        this.dispChar= c;
         this.isTokenHere= false ;
-    }
-
-    /**
-     * get the position diplay character
-     */
-    public  char getDispChar(){
-        if (isTokenHere){
-            return token.getDispChar();
-        }
-        return dispChar;
     }
 
     /**
      * get x
      */
-    public int getX(){
+    public double getX(){
         return x ;
     }
 
     /**
      * get y
      */
-    public int getY(){
+    public double getY(){
         return y ;
     }
 

@@ -28,10 +28,10 @@ public class Display extends Application {
             ip.add(circle);
         }
         // create outer group first
-        Group g1= createOuterSquare();
+        Group board= generateBoard();
 
         // Add the circle and line groups to the main pane
-        mainPane.getChildren().addAll(g1);
+        mainPane.getChildren().addAll(board);
 
         // Create a scene and add the main pane to it
         Scene scene = new Scene(mainPane, 600, 600);
@@ -103,8 +103,6 @@ public class Display extends Application {
         ip.get(23).setCenterX(a);
         ip.get(23).setCenterY(b);
     }
-
-
     public void createLine(int from , int end, ArrayList<Shape> shapes ){
         for (int i = from ; i <=end ; i++){
             Line line;
@@ -123,9 +121,7 @@ public class Display extends Application {
         shapes.add(line);
     }
 
-
-
-    private Group createOuterSquare(){
+    private Group generateBoard(){
         ArrayList<Shape> shapes = new ArrayList<>();
         setIPLocation();
 
@@ -138,7 +134,6 @@ public class Display extends Application {
         createMiddleLine(3, 19, shapes );
         createMiddleLine(5, 21, shapes );
         createMiddleLine(7, 23, shapes );
-
 
 
         for (int i = 0; i < 24; i++){

@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_4_2023_9_17_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_4_2023_9_17_pm__Changes_.xml" afterDir="false" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Created the GUI in the Display class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/UI/Display.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/UI/Home.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/UI/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Display.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Home$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Home.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/ethel/OneDrive - Monash University/yr 2/FIT 2099/Assignment1",
+    "last_opened_file_path": "C:/Users/ethel/OneDrive - Monash University/Try Java FX",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3816092"
@@ -208,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682582787582</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Created the GUI in the Display class">
+      <created>1683209958533</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683209958533</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +232,7 @@
     <MESSAGE value="newest commit" />
     <MESSAGE value="minor changes on player class" />
     <MESSAGE value="Remove test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove test class" />
+    <MESSAGE value="Created the GUI in the Display class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the GUI in the Display class" />
   </component>
 </project>
