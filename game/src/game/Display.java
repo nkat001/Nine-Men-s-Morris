@@ -6,6 +6,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -22,7 +23,7 @@ public class Display extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
-        Pane mainPane = new Pane();
+        StackPane mainPane = new StackPane();
 
         // create 24 circles represent the ip
         for (int i =0; i<24; i++){
@@ -45,7 +46,7 @@ public class Display extends Application {
         Scene scene = new Scene(mainPane, screenWidth, screenHeight);
 
         // Set the stage properties and show it
-        primaryStage.setTitle("Circle Line Group");
+        primaryStage.setTitle("Nine Men's Morris");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
