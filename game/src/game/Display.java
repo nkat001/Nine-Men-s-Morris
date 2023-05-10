@@ -58,7 +58,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 200)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 210)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
         }
 
@@ -67,7 +67,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 260)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
         }
 
@@ -77,7 +77,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 250, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 270, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
@@ -86,7 +86,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 220, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
