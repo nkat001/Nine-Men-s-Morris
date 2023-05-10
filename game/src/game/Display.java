@@ -1,6 +1,8 @@
 package game;
 
+import com.sun.javafx.tk.Toolkit;
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -8,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
@@ -32,9 +35,14 @@ public class Display extends Application {
 
         // Add the circle and line groups to the main pane
         mainPane.getChildren().addAll(board);
+        Screen screen = Screen.getPrimary();
+        javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
+
+        double screenWidth = bounds.getWidth();
+        double screenHeight = bounds.getHeight();
 
         // Create a scene and add the main pane to it
-        Scene scene = new Scene(mainPane, 600, 600);
+        Scene scene = new Scene(mainPane, screenWidth, screenHeight);
 
         // Set the stage properties and show it
         primaryStage.setTitle("Circle Line Group");
