@@ -25,6 +25,7 @@ import javafx.geometry.Pos;
 
 public class Display extends Application {
     private final int CIRCLE_RADIUS = 5;
+    private final int TOKEN_RADIUS = 18;
 
     private ArrayList<Circle> ip = new ArrayList<>();
 
@@ -46,6 +47,27 @@ public class Display extends Application {
         StackPane.setMargin(player1Label, new Insets(200));
         StackPane.setAlignment(player1Label, Pos.TOP_LEFT);
         mainPane.getChildren().add(player1Label);
+
+        double spacing = 100.0;
+
+        // tokens for player 1
+        for (int i = 0; i < 5; i++) {
+            Circle circle = new Circle(TOKEN_RADIUS, Color.PINK);
+            circle.setStroke(Color.BLACK);
+            circle.setStrokeWidth(2);
+            mainPane.getChildren().add(circle);
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 200)); // Adjust the vertical margin for each circle
+            StackPane.setAlignment(circle, Pos.CENTER_LEFT);
+        }
+
+        for (int i = 0; i < 4; i++) {
+            Circle circle = new Circle(TOKEN_RADIUS, Color.PINK);
+            circle.setStroke(Color.BLACK);
+            circle.setStrokeWidth(2);
+            mainPane.getChildren().add(circle);
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setAlignment(circle, Pos.CENTER_LEFT);
+        }
 
         //Player 2
         Label player2Label = new Label("Player 2");
