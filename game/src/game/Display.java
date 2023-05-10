@@ -2,18 +2,26 @@ package game;
 
 import com.sun.javafx.tk.Toolkit;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.text.Font;
+
+import java.awt.*;
 import java.util.ArrayList;
+import javafx.geometry.Pos;
 
 public class Display extends Application {
     private final int CIRCLE_RADIUS = 5;
@@ -24,6 +32,27 @@ public class Display extends Application {
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
+        Label headingLabel = new Label("Nine Men's Morris");
+        Font font = Font.font("Arial", FontWeight.BOLD, FontPosture.ITALIC, 40);
+        headingLabel.setFont(font);
+        headingLabel.setStyle("-fx-text-fill: #FF0000;");
+        StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
+        mainPane.getChildren().add(headingLabel);
+
+        //Player 1
+        Label player1Label = new Label("Player 1");
+        Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
+        player1Label.setFont(playerFont);
+        StackPane.setMargin(player1Label, new Insets(200));
+        StackPane.setAlignment(player1Label, Pos.TOP_LEFT);
+        mainPane.getChildren().add(player1Label);
+
+        //Player 2
+        Label player2Label = new Label("Player 2");
+        player2Label.setFont(playerFont);
+        StackPane.setMargin(player2Label, new Insets(200));
+        StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
+        mainPane.getChildren().add(player2Label);
 
         // create 24 circles represent the ip
         for (int i =0; i<24; i++){
