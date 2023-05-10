@@ -34,11 +34,13 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
-        Font font = Font.font("Arial", FontWeight.BOLD, FontPosture.ITALIC, 40);
+        Font font = Font.font("Comic Sans MS", FontWeight.BOLD, 45);
         headingLabel.setFont(font);
-        headingLabel.setStyle("-fx-text-fill: #FF0000;");
+        headingLabel.setStyle("-fx-text-fill: #CD0404;");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
+        headingLabel.setTranslateY(20);
         mainPane.getChildren().add(headingLabel);
+        mainPane.setStyle("-fx-background-color: #FFF6C3;"); // Use any valid CSS color value
 
         //Player 1
         Label player1Label = new Label("Player 1");
@@ -67,6 +69,25 @@ public class Display extends Application {
             mainPane.getChildren().add(circle);
             StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
+        }
+
+        // tokens for player 2
+        for (int i = 0; i < 4; i++) {
+            Circle circle = new Circle(TOKEN_RADIUS, Color.MEDIUMPURPLE);
+            circle.setStroke(Color.BLACK);
+            circle.setStrokeWidth(2);
+            mainPane.getChildren().add(circle);
+            StackPane.setMargin(circle, new Insets(spacing * i, 250, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            Circle circle = new Circle(TOKEN_RADIUS, Color.MEDIUMPURPLE);
+            circle.setStroke(Color.BLACK);
+            circle.setStrokeWidth(2);
+            mainPane.getChildren().add(circle);
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
         //Player 2
