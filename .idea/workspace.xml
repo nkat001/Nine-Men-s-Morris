@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Home page of ui created">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Custom buttons added to home ui">
       <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683812826929</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Custom buttons added to home ui">
+      <created>1683813723481</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683813723481</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +314,8 @@
     <MESSAGE value="some changes to position" />
     <MESSAGE value="updates" />
     <MESSAGE value="Home page of ui created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home page of ui created" />
+    <MESSAGE value="Custom buttons added to home ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom buttons added to home ui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

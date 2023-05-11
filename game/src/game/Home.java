@@ -78,6 +78,11 @@ public class Home extends Application {
         pane.getChildren().add(button);
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
+        button.setOnAction(event -> {
+            Display display = new Display();
+            display.start(stage);
+        });
+
         // Player Vs Computer button
         Button computerButton = new Button("Player Vs Computer");
         computerButton.setScaleX(2.4);
