@@ -1,6 +1,7 @@
 package game;
 
-import game.Token;
+import javafx.scene.shape.Circle;
+import java.util.ArrayList;
 
 /**
  * Position class that represent each position in the game board
@@ -18,6 +19,10 @@ public class Position {
     private Boolean isTokenHere;
     private Token token ;
 
+    private ArrayList<Position> adjList;
+    private Circle ip;
+
+
     /**
      * Constructor
      */
@@ -25,6 +30,16 @@ public class Position {
         this.x= x;
         this.y=y;
         this.isTokenHere= false ;
+    }
+
+    public Position(Circle ip){
+        adjList= new ArrayList<>();
+        this.ip = ip;
+        this.isTokenHere= false ;
+    }
+
+    public void addAdjList(Position p){
+        this.adjList.add(p);
     }
 
     /**
@@ -41,6 +56,10 @@ public class Position {
         return y ;
     }
 
+    public Boolean getIsTokenHere(){
+        return this.isTokenHere;
+    }
+
     /**
      * add token instance to the position
      */
@@ -54,6 +73,10 @@ public class Position {
     public void removeToken(){
         token = null ;
         isTokenHere= false;
+    }
+
+    public Circle getIP(){
+        return ip ;
     }
 
 }

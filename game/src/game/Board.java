@@ -19,10 +19,9 @@ import java.util.*;
  */
 public class Board {
     private final int CIRCLE_RADIUS = 5;
-    private Group gameBoard ;
-    private static Board board ;
+    private Group gameBoard;
+    private static Board board;
     private ArrayList<Circle> ip;
-
     private ArrayList<Position> positions;
 
     /**
@@ -31,11 +30,15 @@ public class Board {
     private Board(){
         gameBoard=generateBoard();
         ip = new ArrayList<>();
+        positions = new ArrayList<>();
         for (int i =0; i<24; i++){
             Circle circle = new Circle( CIRCLE_RADIUS, Color.WHITE);
             circle.setStroke(Color.BLACK);
             ip.add(circle);
+            // create a position for each ip
+            positions.add(new Position(circle));
         }
+        setPositionAdjList();
     }
 
     /**
@@ -46,6 +49,10 @@ public class Board {
             board = new Board();
         }
         return board;
+    }
+
+    public Group getGameBoard(){
+        return this.gameBoard;
     }
 
     public void setIPLocation(){
@@ -109,6 +116,7 @@ public class Board {
         ip.get(23).setCenterX(a);
         ip.get(23).setCenterY(b);
     }
+
     public void createLine(int from , int end, ArrayList<Shape> shapes ){
         for (int i = from ; i <=end ; i++){
             Line line;
@@ -121,6 +129,7 @@ public class Board {
             shapes.add(line);
         }
     }
+
     public void createMiddleLine(int from , int end, ArrayList<Shape> shapes ){
         Line line= new Line(ip.get(from).getCenterX(), ip.get(from).getCenterY(), ip.get(end).getCenterX(), ip.get(end).getCenterY());
         shapes.add(line);
@@ -147,14 +156,47 @@ public class Board {
         return group ;
     }
 
-    private void setPosition(){
-        for (int i = 0 ; i<24;i++){
-            Circle c = ip.get(i);
-            double x =c.getCenterX();
-            double y =c.getCenterY();
-            positions.add(new Position(x, y));
+    private void setPositionAdjList(){
+        for (int i =0; i<24 ; i++){
+            Position p = positions.get(i);
+            if (i ==0) {
+                p.addAdjList(positions.get(i+1));
+                p.addAdjList(positions.get(7));
+            }
+            else if(i==7){
+                p.addAdjList(positions.get(0));
+                p.addAdjList(positions.get(i-1));
+            }
+            else if(i==8){
+                p.addAdjList(positions.get(i+1));
+                p.addAdjList(positions.get(15));
+            }
+            else if(i==15){
+                p.addAdjList(positions.get(8));
+                p.addAdjList(positions.get(i-1));
+            }
+            else if(i==16){
+                p.addAdjList(positions.get(i+1));
+                p.addAdjList(positions.get(23));
+            }
+            else if(i==23){
+                p.addAdjList(positions.get(16));
+                p.addAdjList(positions.get(i-1));
+            }
+            else{
+                p.addAdjList(positions.get(i-1));
+                p.addAdjList(positions.get(i+1));
+            }
+        }
+        // manually adding the straight line intersection point
+        for (int i = 1; i <=7;i+=2 ){
+            Position p = positions.get(i);
+            p.addAdjList(positions.get(i+8));
+            p.addAdjList(positions.get(i+8+8));
         }
     }
 
-
+    public ArrayList<Position> getPositions(){
+        return this.positions;
+    }
 }

@@ -2,46 +2,35 @@ package game.Actor;
 
 import game.Action.*;
 import game.Token;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
 public class Player {
     private String name ;
-    private char dispChar;
     private ArrayList<Token> tokens;
 
-    public Player(String name, char dispChar){
+    public Player(String name, Color color){
         this.name= name ;
-        this.dispChar = dispChar ;
-        this.tokens = new ArrayList<Token>();
-        setUpTokens();
+        this.tokens = new ArrayList<>();
+        setUpTokens(color);
     }
 
-    public void setUpTokens(){
+    public void setUpTokens(Color c){
         for (int i = 0; i <9; i++) {
-            Token t = new Token(this.dispChar);
+            Token t = new Token(c);
             this.tokens.add(t);
         }
     }
 
-    public char getDispChar() {
-        return dispChar;
-    }
 
     public String getName() {
         return name;
-    }
-
-    public ArrayList<Token> getTokens() {
-        return tokens;
     }
 
     public Token getTokenAt(int i){
         return tokens.get(i);
     }
 
-    public void addToken(Token token) {
-        tokens.add(token);
-    }
 }
 
