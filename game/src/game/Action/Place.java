@@ -17,8 +17,15 @@ public class Place implements Action {
      * @return String
      */
     public String execute(Token token, Position position){
-        token.setTokenPosition(position);
-        return "The token was placed to a new position";
+        // check if the position is valid -> no token on the position
+        if (!position.getIsTokenHere()){
+//            token.setTokenPosition(position);
+            token.allowTokenReleased(token.getToken(), position.getIP());
+            return "The token was placed to a new position";
+        }
+        else {
+            return "Cannot be move to the new position";
+        }
     }
 
 }
