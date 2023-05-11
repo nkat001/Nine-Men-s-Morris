@@ -50,7 +50,14 @@ public class Display extends Application {
         StackPane.setAlignment(player1Label, Pos.TOP_LEFT);
         mainPane.getChildren().add(player1Label);
 
-        double spacing = 100.0;
+        //Player 2
+        Label player2Label = new Label("Player 2");
+        player2Label.setFont(playerFont);
+        StackPane.setMargin(player2Label, new Insets(200));
+        StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
+        mainPane.getChildren().add(player2Label);
+
+        double spacing = 100;
 
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
@@ -89,13 +96,6 @@ public class Display extends Application {
             StackPane.setMargin(circle, new Insets(spacing * i, 220, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
-
-        //Player 2
-        Label player2Label = new Label("Player 2");
-        player2Label.setFont(playerFont);
-        StackPane.setMargin(player2Label, new Insets(200));
-        StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
-        mainPane.getChildren().add(player2Label);
 
         // create 24 circles represent the ip
         for (int i =0; i<24; i++){
