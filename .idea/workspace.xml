@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="small modification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/UI/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Line.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +59,13 @@
       <recent name="game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Display">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="game.Display" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -89,6 +79,20 @@
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game" />
       <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Home" />
+      <module name="project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -120,19 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UI.Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.Home" />
-      <module name="project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="game.Display" />
       <module name="project" />
@@ -141,19 +132,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Home" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.TestBoardGame2" />
-      <item itemvalue="Application.UI.Home" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Display" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
-        <item itemvalue="Application.UI.Home" />
       </list>
     </recent_temporary>
   </component>

@@ -32,13 +32,13 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
-        Font font = Font.font("Comic Sans MS", FontWeight.BOLD, 45);
+        Font font = Font.font("Verdica", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
-        headingLabel.setStyle("-fx-text-fill: #CD0404;");
+        headingLabel.setStyle("-fx-text-fill: #0A4D68;");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
-        headingLabel.setTranslateY(20);
+        headingLabel.setTranslateY(25);
         mainPane.getChildren().add(headingLabel);
-        mainPane.setStyle("-fx-background-color: #FFF6C3;"); // Use any valid CSS color value
+        mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
         // create the game board first
         // create 24 circles represent the ip
