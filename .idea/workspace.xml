@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Separate the code from display class to general classes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Custom buttons added to home ui">
+      <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Nethara" />
+        <entry key="$PROJECT_DIR$" value="Ethel_Lim" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,24 +46,27 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Nethara&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/FIT3077/project&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.3816092&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="game" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Display">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="game.Display" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -89,10 +90,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Home" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,15 +130,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="game.Display" />
-      <module name="project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Home" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.TestBoardGame2" />
@@ -139,8 +139,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Display" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
         <item itemvalue="Application.UI.Home" />
@@ -254,21 +254,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683728779336</updated>
     </task>
-    <task id="LOCAL-00015" summary="Allow token to be draggable">
-      <created>1683813703468</created>
+    <task id="LOCAL-00015" summary="some changes to position">
+      <created>1683728951963</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1683813703468</updated>
+      <updated>1683728951963</updated>
     </task>
-    <task id="LOCAL-00016" summary="Separate the code from display class to general classes">
-      <created>1683813739716</created>
+    <task id="LOCAL-00016" summary="updates">
+      <created>1683787364005</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1683813739716</updated>
+      <updated>1683787364005</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Home page of ui created">
+      <created>1683812826929</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683812826929</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Custom buttons added to home ui">
+      <created>1683813723481</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683813723481</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,9 +311,11 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Tokens created" />
     <MESSAGE value="Updated tokens and ui" />
-    <MESSAGE value="Allow token to be draggable" />
-    <MESSAGE value="Separate the code from display class to general classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separate the code from display class to general classes" />
+    <MESSAGE value="some changes to position" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="Home page of ui created" />
+    <MESSAGE value="Custom buttons added to home ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom buttons added to home ui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

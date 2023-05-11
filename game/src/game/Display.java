@@ -1,30 +1,32 @@
 package game;
 
+import com.sun.javafx.tk.Toolkit;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+
+import java.awt.*;
 import java.util.ArrayList;
 import javafx.geometry.Pos;
-import javafx.event.EventHandler;
-
 
 public class Display extends Application {
-    private final int CIRCLE_RADIUS = 10;
+    private final int CIRCLE_RADIUS = 5;
     private final int TOKEN_RADIUS = 18;
 
-    private Group board ;
     private ArrayList<Circle> ip = new ArrayList<>();
 
     @Override
@@ -40,27 +42,6 @@ public class Display extends Application {
         mainPane.getChildren().add(headingLabel);
         mainPane.setStyle("-fx-background-color: #FFF6C3;"); // Use any valid CSS color value
 
-        // create the game board first
-        // create 24 circles represent the ip
-        for (int i =0; i<24; i++){
-            Circle circle = new Circle( CIRCLE_RADIUS, Color.WHITE);
-            circle.setStroke(Color.BLACK);
-            ip.add(circle);
-        }
-        // create outer group first
-        Group board= generateBoard();
-
-        // Add the circle and line groups to the main pane
-        mainPane.getChildren().add(board);
-
-        System.out.println("hghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
-        double circleSceneX = ip.get(0).localToScene(ip.get(0).getBoundsInLocal()).getMaxX();
-        double circleSceneY = ip.get(0).localToScene(ip.get(0).getBoundsInLocal()).getMaxY();
-        System.out.println(circleSceneY);
-        System.out.println(circleSceneX);
-
-
-
         //Player 1
         Label player1Label = new Label("Player 1");
         Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
@@ -69,7 +50,14 @@ public class Display extends Application {
         StackPane.setAlignment(player1Label, Pos.TOP_LEFT);
         mainPane.getChildren().add(player1Label);
 
-        double spacing = 100.0;
+        //Player 2
+        Label player2Label = new Label("Player 2");
+        player2Label.setFont(playerFont);
+        StackPane.setMargin(player2Label, new Insets(200));
+        StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
+        mainPane.getChildren().add(player2Label);
+
+        double spacing = 100;
 
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
@@ -79,7 +67,6 @@ public class Display extends Application {
             mainPane.getChildren().add(circle);
             StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 210)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
-            makeTokenDraggable(circle);
         }
 
         for (int i = 0; i < 4; i++) {
@@ -89,7 +76,6 @@ public class Display extends Application {
             mainPane.getChildren().add(circle);
             StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 260)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
-
         }
 
         // tokens for player 2
@@ -111,14 +97,17 @@ public class Display extends Application {
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
-        //Player 2
-        Label player2Label = new Label("Player 2");
-        player2Label.setFont(playerFont);
-        StackPane.setMargin(player2Label, new Insets(200));
-        StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
-        mainPane.getChildren().add(player2Label);
+        // create 24 circles represent the ip
+        for (int i =0; i<24; i++){
+            Circle circle = new Circle( CIRCLE_RADIUS, Color.WHITE);
+            circle.setStroke(Color.BLACK);
+            ip.add(circle);
+        }
+        // create outer group first
+        Group board= generateBoard();
 
-
+        // Add the circle and line groups to the main pane
+        mainPane.getChildren().addAll(board);
         Screen screen = Screen.getPrimary();
         javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
 
@@ -131,7 +120,6 @@ public class Display extends Application {
         // Set the stage properties and show it
         primaryStage.setTitle("Nine Men's Morris");
         primaryStage.setScene(scene);
-
         primaryStage.show();
     }
 
@@ -233,57 +221,12 @@ public class Display extends Application {
             shapes.add(ip.get(i));
         }
 
-        this.board  = new Group();
-        board.getChildren().addAll(shapes);
+        Group group = new Group();
+        group.getChildren().addAll(shapes);
 
-        return board ;
+        return group ;
     }
 
-    private double startx ;
-    private double starty;
-    public void makeTokenDraggable(Node token){
-        double x = token.getTranslateX();
-        double y = token.getTranslateY();
-
-        token.setOnMousePressed(e ->{
-            startx = e.getSceneX() - token.getTranslateX();
-            starty = e.getSceneY() - token.getTranslateY();
-        });
-        token.setOnMouseDragged(e->{;
-            System.out.println(startx);
-            System.out.println(starty);
-            token.setTranslateX(e.getSceneX()- startx );
-            token.setTranslateY(e.getSceneY()- starty);
-        });
-        token.setOnMouseReleased(e -> {
-            double releaseX = e.getSceneX()-board.getLayoutX() ;
-            double releaseY = e.getSceneY()-board.getLayoutY();
-            Circle c = ip.get(1) ;
-            double expandedRadius = c.getRadius() + 50; // Adjust the expansion value as needed
-
-            if(c.contains(releaseX, releaseY)){
-                token.setTranslateX(e.getSceneX()- startx );
-                token.setTranslateY(e.getSceneY()- starty);
-                System.out.println("shhsdusbcuhdsbfciesudniuwejndiwendoiwa");
-            }
-            else{
-                token.setTranslateX(x);
-                token.setTranslateY(y);
-                System.out.println("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-            }
-            System.out.println("Token released at: (" + releaseX + ", " + releaseY + ")");
-            // Perform any desired actions with the release location
-        });
-
-    }
-
-
-    private boolean isPointWithinCircle(double x, double y, double cx, double cy, double r) {
-        double dx = x - cx;
-        double dy = y - cy;
-        double distanceSquared = dx * dx + dy * dy;
-        return distanceSquared <= r * r;
-    }
     public static void main(String[] args) {
         launch(args);
     }
