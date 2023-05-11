@@ -11,14 +11,12 @@ import java.util.ArrayList;
  * @author Ethel Lim
  */
 public class Position {
+
     /**
      * initialise the attributes
      */
-    private double x;
-    private double y;
     private Boolean isTokenHere;
     private Token token ;
-
     private ArrayList<Position> adjList;
     private Circle ip;
 
@@ -26,12 +24,6 @@ public class Position {
     /**
      * Constructor
      */
-    public Position(double x , double y){
-        this.x= x;
-        this.y=y;
-        this.isTokenHere= false ;
-    }
-
     public Position(Circle ip){
         adjList= new ArrayList<>();
         this.ip = ip;
@@ -42,19 +34,6 @@ public class Position {
         this.adjList.add(p);
     }
 
-    /**
-     * get x
-     */
-    public double getX(){
-        return x ;
-    }
-
-    /**
-     * get y
-     */
-    public double getY(){
-        return y ;
-    }
 
     public Boolean getIsTokenHere(){
         return this.isTokenHere;

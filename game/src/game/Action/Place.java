@@ -20,7 +20,7 @@ public class Place implements Action {
         // check if the position is valid -> no token on the position
         if (!position.getIsTokenHere()){
 //            token.setTokenPosition(position);
-            token.allowTokenReleased(token.getToken(), position.getIP());
+            token.allowTokenReleased();
             return "The token was placed to a new position";
         }
         else {

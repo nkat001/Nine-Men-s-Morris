@@ -7,9 +7,9 @@ import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
 public class Token {
-    private Position position;
+    private Position tokenPosition;
     private final int TOKEN_RADIUS = 18;
-    private Circle circle ;
+    private Circle token ;
     private double startx ;
     private double starty;
     private double initx;
@@ -18,20 +18,21 @@ public class Token {
 
     // when create a Token,  generate the token colour
     public Token (Color color){
-        this.circle = new Circle(TOKEN_RADIUS, color);
-        this.circle.setStroke(Color.BLACK);
-        this.circle.setStrokeWidth(2);
-        makeTokenDraggable(circle);
+        this.token = new Circle(TOKEN_RADIUS, color);
+        this.token.setStroke(Color.BLACK);
+        this.token.setStrokeWidth(2);
+        makeTokenDraggable(token);
+        allowTokenReleased();
     }
 
     // set token to a new position using the draggable
     public void setTokenPosition(Position p ){
-        this.position= p;
-        position.addToken(this);
+        this.tokenPosition= p;
+        tokenPosition.addToken(this);
     }
 
     public Position getPosition() {
-        return position;
+        return tokenPosition;
     }
 
     public void makeTokenDraggable(Node token){
@@ -48,38 +49,37 @@ public class Token {
         });
     }
 
-    public void allowTokenReleased(Node token , Circle c){
+    public void allowTokenReleased(){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
-
         // for loop each position , and check if the token is within the circle
-        // if is , then set translate
-        // if
-
         token.setOnMouseReleased(e -> {
             double releaseX = e.getSceneX()-Board.getInstance().getGameBoard().getLayoutX() ;
             double releaseY = e.getSceneY()-Board.getInstance().getGameBoard().getLayoutY();
+            Boolean isTrue = false;
+
             for (Position p : pos ){
                 Circle ip = p.getIP();
-                if(ip.contains(releaseX, releaseY)){
+                // check if the release token within the range and is token at the position
+                if((ip.contains(releaseX, releaseY)) && (!p.getIsTokenHere())){
+                    this.tokenPosition= p ;
+                    p.addToken(this);
                     token.setTranslateX(e.getSceneX()- startx );
                     token.setTranslateY(e.getSceneY()- starty);
+                    isTrue = true ;
+                    break ;
                 }
             }
-            if(c.contains(releaseX, releaseY)){
-                token.setTranslateX(e.getSceneX()- startx );
-                token.setTranslateY(e.getSceneY()- starty);
-            }
-            else{
+            // if is not set , then set the token back its ori position.
+            if(!isTrue){
                 token.setTranslateX(initx);
                 token.setTranslateY(inity);
             }
             System.out.println("Token released at: (" + releaseX + ", " + releaseY + ")");
-            // Perform any desired actions with the release location
         });
     }
 
     public Circle getToken(){
-        return this.circle;
+        return this.token;
     }
 
 }
