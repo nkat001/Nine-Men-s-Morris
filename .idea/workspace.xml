@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="some changes to position">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="updates">
+      <change afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/game/board.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +59,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="game" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Display">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -88,9 +93,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBoardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.TestBoardGame" />
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Home" />
       <module name="project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,19 +134,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Home" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
-      <item itemvalue="Application.TestBoardGame" />
       <item itemvalue="Application.TestBoardGame2" />
       <item itemvalue="Application.UI.Home" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Display" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
         <item itemvalue="Application.UI.Home" />
-        <item itemvalue="Application.TestBoardGame" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683728951963</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updates">
+      <created>1683787364005</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683787364005</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +301,8 @@
     <MESSAGE value="Tokens created" />
     <MESSAGE value="Updated tokens and ui" />
     <MESSAGE value="some changes to position" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes to position" />
+    <MESSAGE value="updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
