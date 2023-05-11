@@ -57,8 +57,9 @@ public class Home extends Application {
         pane.getChildren().add(imageView);
 
         Label label = new Label("Nine Men's Morris");
-        Font font = Font.font("Impact", FontWeight.BOLD, 60);
+        Font font = Font.font("Impact", FontWeight.BOLD, 80);
         label.setFont(font);
+        label.setStyle("-fx-text-fill: black; -fx-effect: dropshadow(gaussian, white, 1, 1, 1, 1);");
         StackPane.setAlignment(label, Pos.TOP_CENTER);
         label.setTranslateY(20);
 
@@ -70,17 +71,19 @@ public class Home extends Application {
 
         // Player Vs Player button
         Button button = new Button("Player Vs Player");
-        button.setScaleX(2);
-        button.setScaleY(2);
+        button.setScaleX(2.5);
+        button.setScaleY(2.5);
         button.setTranslateX(150);
+        button.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(button);
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
         // Player Vs Computer button
         Button computerButton = new Button("Player Vs Computer");
-        computerButton.setScaleX(2);
-        computerButton.setScaleY(2);
+        computerButton.setScaleX(2.4);
+        computerButton.setScaleY(2.4);
         computerButton.setTranslateX(-150);
+        computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(computerButton);
         StackPane.setAlignment(computerButton, Pos.CENTER_RIGHT);
 

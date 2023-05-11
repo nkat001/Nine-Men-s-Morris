@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="updates">
-      <change afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/game/board.png" afterDir="false" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Home page of ui created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683787364005</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Home page of ui created">
+      <created>1683812826929</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683812826929</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,7 +307,8 @@
     <MESSAGE value="Updated tokens and ui" />
     <MESSAGE value="some changes to position" />
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="Home page of ui created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home page of ui created" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
