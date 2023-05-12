@@ -245,25 +245,52 @@ public class Display extends Application {
         double x = token.getTranslateX();
         double y = token.getTranslateY();
 
+
         token.setOnMousePressed(e ->{
             startx = e.getSceneX() - token.getTranslateX();
             starty = e.getSceneY() - token.getTranslateY();
         });
+
+
         token.setOnMouseDragged(e->{;
             System.out.println(startx);
             System.out.println(starty);
             token.setTranslateX(e.getSceneX()- startx );
             token.setTranslateY(e.getSceneY()- starty);
         });
+
+
         token.setOnMouseReleased(e -> {
             double releaseX = e.getSceneX()-board.getLayoutX() ;
             double releaseY = e.getSceneY()-board.getLayoutY();
-            Circle c = ip.get(1) ;
+            Circle c = ip.get(2);
+            Shape cBarrier = new Circle(400, 100, 50);
+
+            System.out.println("circle c is at:" + c);
             double expandedRadius = c.getRadius() + 50; // Adjust the expansion value as needed
 
-            if(c.contains(releaseX, releaseY)){
-                token.setTranslateX(e.getSceneX()- startx );
-                token.setTranslateY(e.getSceneY()- starty);
+            System.out.println("Release valueX is:" + c.getCenterX());
+            System.out.println("Release valueY is:" + c.getCenterY());
+            System.out.println("Does C contain inital values:" + cBarrier.contains(releaseX, releaseY));
+            System.out.println("Does C contain the released values:" + cBarrier.contains(releaseX + 30, releaseY + 30));
+            //c_entrance_value.setRadius(100);
+
+            if(cBarrier.contains(releaseX + 30, releaseY + 30))
+            {
+                // TODO: NEED TO DO SETTING FOR WHEN TOKEN IS WITHIN BARRIER SET TOKEN TO C LOCATION RELATIVE TO BOARD.
+                //                token.setTranslateX(e.getSceneX()- startx );
+                System.out.println("Translated X:" + (e.getSceneX()- startx));
+                System.out.println("Translated X no startX:" + (e.getSceneX()));
+                //                token.setTranslateY(e.getSceneY()- starty);
+                System.out.println("Translated Y:" + (e.getSceneY()- starty));
+                System.out.println("Translated Y no startY:" + (e.getSceneY()));
+//                                token.setTranslateX(c.getCenterX() + board.getLayoutX());
+//                                System.out.println("actual board x:" + c.getCenterX() + board.getLayoutX());
+//
+//                                token.setTranslateY(c.getCenterY() + board.getLayoutY());
+//                                System.out.println("actual board x:" + c.getCenterY() + board.getLayoutY());
+
+
                 System.out.println("shhsdusbcuhdsbfciesudniuwejndiwendoiwa");
             }
             else{
