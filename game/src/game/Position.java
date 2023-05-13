@@ -17,6 +17,11 @@ public class Position {
      */
     private Boolean isTokenHere;
     private Token token ;
+
+    public ArrayList<Position> getAdjList() {
+        return adjList;
+    }
+
     private ArrayList<Position> adjList;
     private Circle ip;
 
