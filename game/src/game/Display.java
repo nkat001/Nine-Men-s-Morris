@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -64,6 +65,8 @@ public class Display extends Application {
             Circle circle = new Circle(TOKEN_RADIUS, Color.PINK);
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
+            makeTokenDraggable(circle);
+            circle.setId("Token : "+i);
             mainPane.getChildren().add(circle);
             StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 210)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
@@ -225,6 +228,27 @@ public class Display extends Application {
         group.getChildren().addAll(shapes);
 
         return group ;
+    }
+
+    private double startx ;
+    private double starty;
+
+    public void makeTokenDraggable(Node token){
+        double initx= token.getTranslateX();
+        double inity= token.getTranslateY();
+
+        token.setOnMousePressed(e ->{
+            startx = e.getSceneX() - token.getTranslateX();
+            starty = e.getSceneY() - token.getTranslateY();
+        });
+        token.setOnMouseDragged(e->{;
+            token.setTranslateX(e.getSceneX()- startx );
+            token.setTranslateY(e.getSceneY()- starty);
+
+        });
+        token.setOnMouseReleased(e->{
+            System.out.println(token.getId());
+        });
     }
 
     public static void main(String[] args) {

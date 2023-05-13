@@ -18,8 +18,9 @@ public class Jump implements Action{
      * @param token
      * @return String
      */
-    public String execute(Token token, Position position){
-        token.setTokenPosition(position);
-        return "The Token Jumped to a new position";
+    public Boolean execute(Token token, Position initP, Position newP){
+        Boolean b = false ;
+//        token.setTokenPosition(position);
+        return b;
     }
 }
