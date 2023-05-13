@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class Player {
     private String name ;
     private ArrayList<Token> tokens;
-    private Token selectedToken ;
     private Action allowableAction;
     private Boolean allTokensPlaced;
 
@@ -32,10 +31,6 @@ public class Player {
 
     public void setAllowableAction(Action allowableAction) {
         this.allowableAction = allowableAction;
-    }
-
-    public Token getSelectedToken(){
-        return this.selectedToken;
     }
 
     public Boolean checkAction (Token selectedT, Position initP, Position finalPos){

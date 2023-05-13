@@ -57,8 +57,11 @@ public class MakeTokenMovable {
                         finalPos= p;
                         // check if the action executed is right
                         if(player.checkAction(this.token, initPos,finalPos)){
+                            if(initPos!=null){
+                                initPos.removeToken();
+                            }
+                            // if action is executed right
                             System.out.println("MOVE TO A NEW POSITION ");
-                            // if action is executed rightly
                             // allow move the token to the new position
                             node.setTranslateX(e.getSceneX()- startx );
                             node.setTranslateY(e.getSceneY()- starty);
