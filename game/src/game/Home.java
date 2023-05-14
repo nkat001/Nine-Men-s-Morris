@@ -3,10 +3,12 @@ package game;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -21,6 +23,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Home extends Application {
+    private String player1Name;
+    private String player2Name;
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
@@ -79,8 +83,7 @@ public class Home extends Application {
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
         button.setOnAction(event -> {
-            Display display = new Display();
-            display.start(stage);
+            playerForm(stage);
         });
 
         // Player Vs Computer button
@@ -96,5 +99,64 @@ public class Home extends Application {
         stage.setTitle("Nine Men's Morris");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void playerForm(Stage primaryStage) {
+        Label player1Label = new Label("Player 1 name: ");
+        TextField player1TextField = new TextField();
+
+        Label player2Label = new Label("Player 2 name: ");
+        TextField player2TextField = new TextField();
+        Home home = new Home();
+        Button submitButton = new Button("Start Game");
+        submitButton.setOnAction(event -> {
+            player1Name = player1TextField.getText();
+            Display display = new Display();
+            int count = 0;
+            if (count == 0) {
+                display.putName(player1Name);
+            }
+            System.out.println("hello!");
+            player2Name = player2TextField.getText();
+            home.setPlayer2Name(player2Name);
+            display.start(primaryStage);
+        });
+
+        // Create a grid pane to arrange the form elements
+        GridPane gridPane = new GridPane();
+        gridPane.setPadding(new Insets(10));
+        gridPane.setVgap(5);
+        gridPane.setHgap(10);
+        gridPane.add(player1Label, 0, 0);
+        gridPane.add(player1TextField, 1, 0);
+        gridPane.add(player2Label, 0, 1);
+        gridPane.add(player2TextField, 1, 1);
+        gridPane.add(submitButton, 0, 2, 2, 1);
+
+        // Create a StackPane and add the grid pane
+        StackPane stackPane = new StackPane();
+        stackPane.getChildren().add(gridPane);
+
+        // Create a new scene with the StackPane as the root pane
+        Scene formScene = new Scene(stackPane, 400, 300);
+
+        // Set the new scene to the primaryStage
+        primaryStage.setScene(formScene);
+        primaryStage.show();
+        System.out.println(player1Name);
+    }
+
+    public void setPlayer1Name(String Player1Name) {
+        this.player1Name = Player1Name;
+    }
+    public String getPlayer1Name() {
+        return this.player1Name;
+    }
+
+    public void setPlayer2Name(String Player2Name) {
+        this.player2Name = Player2Name;
+    }
+    public String getPlayer2Name() {
+        return this.player2Name;
     }
 }

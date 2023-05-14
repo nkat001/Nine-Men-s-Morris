@@ -16,6 +16,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import javafx.geometry.Pos;
 import javafx.event.EventHandler;
 
@@ -25,6 +27,7 @@ public class Display extends Application {
     private final int TOKEN_RADIUS = 18;
 
     private Group board ;
+    private String name;
     private ArrayList<Circle> ip = new ArrayList<>();
 
     @Override
@@ -52,17 +55,18 @@ public class Display extends Application {
 
         // Add the circle and line groups to the main pane
         mainPane.getChildren().add(board);
-
-        System.out.println("hghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         double circleSceneX = ip.get(0).localToScene(ip.get(0).getBoundsInLocal()).getMaxX();
         double circleSceneY = ip.get(0).localToScene(ip.get(0).getBoundsInLocal()).getMaxY();
-        System.out.println(circleSceneY);
-        System.out.println(circleSceneX);
+        // System.out.println(circleSceneY);
+        // System.out.println(circleSceneX);
 
 
 
         //Player 1
-        Label player1Label = new Label("Player 1");
+        Home home = new Home();
+        String name1 = home.getPlayer1Name();
+        Label player1Label;
+        player1Label = new Label(Objects.requireNonNullElse(name1, "Player 1"));
         Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
         player1Label.setFont(playerFont);
         StackPane.setMargin(player1Label, new Insets(200));
@@ -112,7 +116,8 @@ public class Display extends Application {
         }
 
         //Player 2
-        Label player2Label = new Label("Player 2");
+        String name2 = home.getPlayer2Name();
+        Label player2Label = new Label(name2);
         player2Label.setFont(playerFont);
         StackPane.setMargin(player2Label, new Insets(200));
         StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
@@ -133,6 +138,14 @@ public class Display extends Application {
         primaryStage.setScene(scene);
 
         primaryStage.show();
+    }
+
+    public void putName(String name) {
+        this.name = name;
+    }
+
+    public String getPutName() {
+        return this.name;
     }
 
     public void setIPLocation(){
