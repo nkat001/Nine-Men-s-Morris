@@ -1,26 +1,21 @@
 package game;
 
-import com.sun.javafx.tk.Toolkit;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
-import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 
-import java.awt.*;
 import java.util.ArrayList;
 import javafx.geometry.Pos;
 
@@ -50,7 +45,13 @@ public class Display extends Application {
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
         //Player 1
-        Label player1Label = new Label(player1Name);
+        Label player1Label;
+        if (!player1Name.equals("")) {
+            player1Label = new Label(player1Name);
+        }
+        else {
+            player1Label = new Label("Player 1");
+        }
         Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
         player1Label.setFont(playerFont);
         StackPane.setMargin(player1Label, new Insets(200));
@@ -58,9 +59,14 @@ public class Display extends Application {
         mainPane.getChildren().add(player1Label);
 
         //Player 2
-        Label player2Label = new Label(player2Name);
-        player2Label.setFont(playerFont);
-        StackPane.setMargin(player2Label, new Insets(210));
+        Label player2Label;
+        if (!player1Name.equals("")) {
+            player2Label = new Label(player2Name);
+        }
+        else {
+            player2Label = new Label("Player 2");
+        }        player2Label.setFont(playerFont);
+        StackPane.setMargin(player2Label, new Insets(200));
         StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
         mainPane.getChildren().add(player2Label);
 
