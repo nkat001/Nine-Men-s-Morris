@@ -3,7 +3,6 @@ package game;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,6 +17,7 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -28,6 +28,7 @@ public class Home extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
+        pane.setAlignment(Pos.CENTER);
 
         Screen screen = Screen.getPrimary();
         javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
@@ -104,69 +105,47 @@ public class Home extends Application {
     }
 
     public void playerForm(Stage primaryStage) {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Player Names");
+        stage.initOwner(primaryStage);
+
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setVgap(25);
+        gridPane.setHgap(10);
+
         Label player1Label = new Label("Player 1 name: ");
         TextField player1TextField = new TextField();
+        player1TextField.setPrefColumnCount(20);
+        Font playerFont = Font.font("Arial", FontWeight.BOLD, 15);
+        player1Label.setFont(playerFont);
 
         Label player2Label = new Label("Player 2 name: ");
         TextField player2TextField = new TextField();
+        player2Label.setFont(playerFont);
+
+        gridPane.addRow(0, player1Label, player1TextField);
+        gridPane.addRow(1, player2Label, player2TextField);
 
         Button submitButton = new Button("Start Game");
+        submitButton.setScaleX(1.4);
+        submitButton.setScaleY(1.4);
+        submitButton.setTranslateX(275);
+        submitButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #609966; -fx-background-radius: 25px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
             player2Name = player2TextField.getText();
             Display display = new Display(player1Name, player2Name);
             display.start(primaryStage);
+            stage.close();
         });
+        gridPane.addRow(2, submitButton);
 
-        // Create a grid pane to arrange the form elements
-        GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(10));
-        gridPane.setVgap(25);
-        gridPane.setHgap(10);
-
-        // Player 1 label
-        gridPane.add(player1Label, 0, 0);
-        gridPane.add(player1TextField, 1, 0);
-        player1TextField.setPrefColumnCount(20);
-        Font playerFont = Font.font("Arial", FontWeight.BOLD, 15);
-        player1Label.setFont(playerFont);
-
-        // Player 2 label
-        gridPane.add(player2Label, 0, 1);
-        gridPane.add(player2TextField, 1, 1);
-        gridPane.add(submitButton, 0, 2, 2, 1);
-        player2Label.setFont(playerFont);
-
-        submitButton.setScaleX(1.4);
-        submitButton.setScaleY(1.4);
-        submitButton.setTranslateX(275);
-        submitButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 25px; "
-                + "-fx-border-radius: 50px; -fx-text-fill: white;");
-
-        // Create a StackPane and add the grid pane
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().add(gridPane);
-        stackPane.setAlignment(Pos.CENTER);
-
-        // Create a new scene with the StackPane as the root pane
-        Scene formScene = new Scene(stackPane, 400, 150);
-
-        // Set the new scene to the primaryStage
-        primaryStage.setScene(formScene);
-        primaryStage.show();
-    }
-
-    public void setPlayer1Name(String Player1Name) {
-        this.player1Name = Player1Name;
-    }
-    public String getPlayer1Name() {
-        return this.player1Name;
-    }
-
-    public void setPlayer2Name(String Player2Name) {
-        this.player2Name = Player2Name;
-    }
-    public String getPlayer2Name() {
-        return this.player2Name;
+        Scene scene = new Scene(gridPane, 400, 200);
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 }
