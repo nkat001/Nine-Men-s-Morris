@@ -27,9 +27,15 @@ import javafx.geometry.Pos;
 public class Display extends Application {
     private final int CIRCLE_RADIUS = 5;
     private final int TOKEN_RADIUS = 18;
+    private String player1Name;
+    private String player2Name;
 
     private ArrayList<Circle> ip = new ArrayList<>();
 
+    public Display(String player1Name, String player2Name){
+        this.player1Name = player1Name;
+        this.player2Name = player2Name;
+    }
     @Override
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
@@ -44,7 +50,7 @@ public class Display extends Application {
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
         //Player 1
-        Label player1Label = new Label("Player 1");
+        Label player1Label = new Label(player1Name);
         Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
         player1Label.setFont(playerFont);
         StackPane.setMargin(player1Label, new Insets(200));
@@ -52,9 +58,9 @@ public class Display extends Application {
         mainPane.getChildren().add(player1Label);
 
         //Player 2
-        Label player2Label = new Label("Player 2");
+        Label player2Label = new Label(player2Name);
         player2Label.setFont(playerFont);
-        StackPane.setMargin(player2Label, new Insets(200));
+        StackPane.setMargin(player2Label, new Insets(210));
         StackPane.setAlignment(player2Label, Pos.TOP_RIGHT);
         mainPane.getChildren().add(player2Label);
 
@@ -87,7 +93,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 270, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 260, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
@@ -96,7 +102,7 @@ public class Display extends Application {
             circle.setStroke(Color.BLACK);
             circle.setStrokeWidth(2);
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 220, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 210, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 

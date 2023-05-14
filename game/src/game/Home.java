@@ -68,7 +68,7 @@ public class Home extends Application {
         label.setTranslateY(20);
 
         label.setOpacity(0);
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), label);
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), label);
         fadeTransition.setToValue(1);
         fadeTransition.play();
         pane.getChildren().add(label);
@@ -78,7 +78,8 @@ public class Home extends Application {
         button.setScaleX(2.5);
         button.setScaleY(2.5);
         button.setTranslateX(150);
-        button.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
+        button.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(button);
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
@@ -91,7 +92,8 @@ public class Home extends Application {
         computerButton.setScaleX(2.4);
         computerButton.setScaleY(2.4);
         computerButton.setTranslateX(-150);
-        computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
+        computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(computerButton);
         StackPane.setAlignment(computerButton, Pos.CENTER_RIGHT);
 
@@ -107,39 +109,51 @@ public class Home extends Application {
 
         Label player2Label = new Label("Player 2 name: ");
         TextField player2TextField = new TextField();
-        Home home = new Home();
+
         Button submitButton = new Button("Start Game");
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
-            Display display = new Display();
-            System.out.println("hello!");
             player2Name = player2TextField.getText();
-            home.setPlayer2Name(player2Name);
+            Display display = new Display(player1Name, player2Name);
             display.start(primaryStage);
         });
 
         // Create a grid pane to arrange the form elements
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(10));
-        gridPane.setVgap(5);
+        gridPane.setVgap(25);
         gridPane.setHgap(10);
+
+        // Player 1 label
         gridPane.add(player1Label, 0, 0);
         gridPane.add(player1TextField, 1, 0);
+        player1TextField.setPrefColumnCount(20);
+        Font playerFont = Font.font("Arial", FontWeight.BOLD, 15);
+        player1Label.setFont(playerFont);
+
+        // Player 2 label
         gridPane.add(player2Label, 0, 1);
         gridPane.add(player2TextField, 1, 1);
         gridPane.add(submitButton, 0, 2, 2, 1);
+        player2Label.setFont(playerFont);
+
+        submitButton.setScaleX(1.4);
+        submitButton.setScaleY(1.4);
+        submitButton.setTranslateX(275);
+        submitButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 25px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
 
         // Create a StackPane and add the grid pane
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(gridPane);
+        stackPane.setAlignment(Pos.CENTER);
 
         // Create a new scene with the StackPane as the root pane
-        Scene formScene = new Scene(stackPane, 400, 300);
+        Scene formScene = new Scene(stackPane, 400, 150);
 
         // Set the new scene to the primaryStage
         primaryStage.setScene(formScene);
         primaryStage.show();
-        System.out.println(player1Name);
     }
 
     public void setPlayer1Name(String Player1Name) {
