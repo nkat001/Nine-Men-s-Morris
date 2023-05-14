@@ -17,9 +17,10 @@ public class Remove implements Action{
      * @param token
      * @return String
      */
-    public String execute(Token token, Position position){
-        token.setTokenPosition(position);
-        return "The token was removed ";
+    public Boolean execute(Token token, Position initP, Position newP){
+        Boolean b = false ;
+//        token.setTokenPosition(position);
+        return b;
     }
 
 }
