@@ -67,13 +67,13 @@
       <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestRun">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="game.Display" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -100,13 +100,21 @@
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Home" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,22 +132,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.TestRun" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.TestRun" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Home" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
@@ -147,11 +141,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestRun" />
         <item itemvalue="Application.Home" />
-        <item itemvalue="Application.Display" />
-        <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.Display" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

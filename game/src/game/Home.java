@@ -112,10 +112,6 @@ public class Home extends Application {
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
             Display display = new Display();
-            int count = 0;
-            if (count == 0) {
-                display.putName(player1Name);
-            }
             System.out.println("hello!");
             player2Name = player2TextField.getText();
             home.setPlayer2Name(player2Name);
