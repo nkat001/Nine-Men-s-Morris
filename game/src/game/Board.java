@@ -30,15 +30,40 @@ public class Board {
     private Board(){
         ip = new ArrayList<>();
         positions = new ArrayList<>();
-        for (int i =0; i<24; i++){
+
+        int NUMBER_POSITIONS = 3;
+
+        for (int i =0; i<24; i++) {
+
             Circle circle = new Circle( CIRCLE_RADIUS, Color.WHITE);
             circle.setStroke(Color.BLACK);
             ip.add(circle);
             // create a position for each ip
             positions.add(new Position(circle));
         }
+
+        int columnRow = 0;
+        // row 1:
+        for (int i = 0; i < NUMBER_POSITIONS; i++) {
+            positions.get(i).setTokenRow(i);
+            positions.get(i).setTokenColumn(columnRow);
+            columnRow += 3;
+        }
+
+        for (int i = 0; i < NUMBER_POSITIONS; i++) {
+            System.out.println("Token Row at: " + positions.get(i).getTokenRow() + "Token Column at :" + positions.get(i).getTokenColumn());
+        }
+
+
+
+
+
+        // row 2:
+
         setPositionAdjList();
         gameBoard=generateBoard();
+
+
 
     }
 
@@ -195,6 +220,9 @@ public class Board {
             p.addAdjList(positions.get(i+8));
             p.addAdjList(positions.get(i+8+8));
         }
+
+
+
     }
 
     public ArrayList<Position> getPositions(){

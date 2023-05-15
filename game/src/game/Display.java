@@ -187,6 +187,7 @@ public class Display extends Application {
         ip.get(23).setCenterX(a);
         ip.get(23).setCenterY(b);
     }
+
     public void createLine(int from , int end, ArrayList<Shape> shapes ){
         for (int i = from ; i <=end ; i++){
             Line line;

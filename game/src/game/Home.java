@@ -36,6 +36,7 @@ public class Home extends Application {
                 new Stop(1, Color.LIGHTGREEN),
                 new Stop(2, Color.DARKCYAN),
         };
+
         LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE, stops);
         BackgroundFill fill = new BackgroundFill(gradient, null, null);
         Background newBackground = new Background(fill);
