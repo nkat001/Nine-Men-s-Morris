@@ -21,18 +21,18 @@ public class DoublePlayer implements Mode {
     private Player p1, p2;
     private Label p1Label, p2Label ;
 
-    public DoublePlayer(){
-        p1 = new Player("player 1: ethel", Color.PINK);
-        p2 = new Player("player 2: nethara", Color.BLUE);
+    public DoublePlayer(String p1Name , String p2Name ){
+        p1 = new Player(p1Name, Color.PINK);
+        p2 = new Player( p2Name, Color.BLUE);
 
         // set p1 label in the screen
-        p1Label= new Label(p1.getName());
+        p1Label= new Label("Player 1 : "+ p1.getName());
         p1Label.setFont(playerFont);
         StackPane.setMargin(p1Label, new Insets(200));
         StackPane.setAlignment(p1Label, Pos.TOP_LEFT);
 
         // set p2 label in the screen
-        p2Label= new Label(p2.getName());
+        p2Label= new Label("Player 2 : "+p2.getName());
         p2Label.setFont(playerFont);
         StackPane.setMargin(p2Label, new Insets(200));
         StackPane.setAlignment(p2Label, Pos.TOP_RIGHT);

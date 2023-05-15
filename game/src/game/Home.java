@@ -87,10 +87,6 @@ public class Home extends Application {
 
         button.setOnAction(event -> {
             playerForm(stage);
-            // mode == double player
-            Game game = new Game(new DoublePlayer());
-            Display display= new Display(game );
-            display.start(stage);
         });
 
         // Player Vs Computer button
@@ -143,7 +139,9 @@ public class Home extends Application {
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
             player2Name = player2TextField.getText();
-            Display display = new Display(player1Name, player2Name);
+            // mode == double player
+            Game game = new Game(new DoublePlayer(player1Name,player2Name));
+            Display display= new Display(game);
             display.start(primaryStage);
             stage.close();
         });
