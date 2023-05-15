@@ -2,6 +2,7 @@ package game.Actor;
 
 import game.Action.Place;
 import game.Board;
+import game.Mode;
 import game.ResetPlayerTurn;
 import game.Token;
 import javafx.geometry.Insets;
@@ -15,7 +16,7 @@ import javafx.scene.text.FontWeight;
 
 
 // singleton , only one double player can be created and kept updated
-public class DoublePlayer {
+public class DoublePlayer implements Mode {
     private static Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
     private Player p1, p2;
     private Label p1Label, p2Label ;
@@ -36,7 +37,6 @@ public class DoublePlayer {
         StackPane.setMargin(p2Label, new Insets(200));
         StackPane.setAlignment(p2Label, Pos.TOP_RIGHT);
     }
-
 
     public void run(){
         //System.out.println("in runnnn");
@@ -61,6 +61,5 @@ public class DoublePlayer {
     public Label getP2Label() {
         return p2Label;
     }
-
 
 }

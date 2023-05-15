@@ -2,7 +2,6 @@ package game.Action;
 
 import game.Position;
 import game.Token;
-
 import java.util.ArrayList;
 
 /**
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 public class Slide implements Action{
     /**
      * To execute the action on the token
-     * @param position
      * @param token
      * @return String
      */

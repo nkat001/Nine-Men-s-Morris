@@ -4,41 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Modify the Token class and added comments">
-      <change afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/game/TestRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_4_2023_9_17_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_4_2023_9_17_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Jump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Remove.java" afterDir="false" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Remove test run class and implemented display class">
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Slide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Remove.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Remove.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Display.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Home$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/UI/Home.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/TestRun.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +61,7 @@
       <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestRun">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -173,8 +141,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestRun" />
         <item itemvalue="Application.Home" />
+        <item itemvalue="Application.TestRun" />
         <item itemvalue="Application.Display" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
@@ -316,7 +284,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683813723481</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- Action.java use to check if the action executed ic right&#10;- Player.java - added checkAction method &#10;- DoublePlayer.java - use to create two player instance&#10;-MakeTokenMovable.java - add action on the token &#10;- Token.java - added some boolean to check if the token can move">
+      <created>1683970299055</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683970299055</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Remove print line">
+      <created>1683991170776</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683991170776</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Remove test run class and implemented display class">
+      <created>1684121370309</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684121370309</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,7 +338,10 @@
     <MESSAGE value="updates" />
     <MESSAGE value="Home page of ui created" />
     <MESSAGE value="Custom buttons added to home ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Custom buttons added to home ui" />
+    <MESSAGE value="- Action.java use to check if the action executed ic right&#10;- Player.java - added checkAction method &#10;- DoublePlayer.java - use to create two player instance&#10;-MakeTokenMovable.java - add action on the token &#10;- Token.java - added some boolean to check if the token can move" />
+    <MESSAGE value="Remove print line" />
+    <MESSAGE value="Remove test run class and implemented display class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove test run class and implemented display class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
