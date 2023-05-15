@@ -53,13 +53,11 @@ public class Player {
             System.out.println("all tokens are placed on the board dy ----------------------");
             // check if player left with how many tokens
             if(tokens.size()==3){
-                System.out.println("wrong one bro");
                 allowableAction= new Jump();
             }
 
             // TODO: implement method to check whether 3 tokens are in a row
             else if (allTokensPlaced) {
-                System.out.println("remove step provided");
                 allowableAction = new Remove();
 
 
@@ -67,11 +65,9 @@ public class Player {
             }
 
             else {
-                System.out.println("definitely the wrong one bro");
                 allowableAction= new Slide();
             }
         }
-        System.out.println("the command is");
         Boolean ret  = allowableAction.execute(selectedT,initP, finalPos );
 
         return ret ;

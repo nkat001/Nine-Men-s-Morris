@@ -24,8 +24,7 @@ public class Position {
 
     private ArrayList<Position> adjList;
     private Circle ip;
-    private int tokenRow;
-    private int tokenColumn;
+    private int tokenNumber;
 
 
     /**
@@ -35,8 +34,7 @@ public class Position {
         adjList= new ArrayList<>();
         this.ip = ip;
         this.isTokenHere= false;
-        this.tokenRow = 0;
-        this.tokenColumn = 0;
+        this.tokenNumber = 0;
     }
 
 
@@ -77,19 +75,11 @@ public class Position {
         return ip ;
     }
 
-    public int getTokenRow() {
-        return tokenRow;
+    public int getTokenNumber() {
+        return tokenNumber;
     }
 
-    public void setTokenRow(int tokenRow) {
-        this.tokenRow = tokenRow;
-    }
-
-    public int getTokenColumn() {
-        return tokenColumn;
-    }
-
-    public void setTokenColumn(int tokenColumn) {
-        this.tokenColumn = tokenColumn;
+    public void setTokenNumber(int tokenNumber) {
+        this.tokenNumber = tokenNumber;
     }
 }
