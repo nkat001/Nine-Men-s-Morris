@@ -39,7 +39,6 @@ public class Board {
         }
         setPositionAdjList();
         gameBoard=generateBoard();
-
     }
 
     /**
@@ -51,7 +50,6 @@ public class Board {
         }
         return board;
     }
-
     public Group getGameBoard(){
         return this.gameBoard;
     }
@@ -194,6 +192,14 @@ public class Board {
             Position p = positions.get(i);
             p.addAdjList(positions.get(i+8));
             p.addAdjList(positions.get(i+8+8));
+
+            Position p1 = positions.get(i+8);
+            p1.addAdjList(positions.get(i));
+            p1.addAdjList(positions.get(i+8+8));
+
+            Position p2 = positions.get(i+8+8);
+            p2.addAdjList(positions.get(i));
+            p2.addAdjList(positions.get(i+8));
         }
     }
 

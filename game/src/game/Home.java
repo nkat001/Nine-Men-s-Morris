@@ -1,5 +1,6 @@
 package game;
 
+import game.Actor.DoublePlayer;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.application.Application;
@@ -79,7 +80,9 @@ public class Home extends Application {
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
         button.setOnAction(event -> {
-            Display display = new Display();
+            // mode == double player
+            Game game = new Game(new DoublePlayer());
+            Display display= new Display(game );
             display.start(stage);
         });
 

@@ -7,7 +7,6 @@ import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
 public class MakeTokenMovable {
-
     private double startx, starty, initx,inity;
     private Token token ;
     private Position initPos, finalPos;
@@ -20,10 +19,8 @@ public class MakeTokenMovable {
         makeTokenDraggable(circle);
         allowTokenReleased(circle);
     }
-
-
+    
     public void makeTokenDraggable(Node node){
-
         node.setOnMousePressed(e ->{
             this.initPos= token.getPosition();
             initx= node.getTranslateX();
@@ -56,10 +53,10 @@ public class MakeTokenMovable {
                         System.out.println("checking at a no token position ---- ");
                         finalPos= p;
                         // check if the action executed is right
-                        if(player.checkAction(this.token, initPos,finalPos)){
+                        if(player.checkAction(this.token, initPos,finalPos))
+                        {
                             if(initPos!=null){
-                                initPos.removeToken();
-                            }
+                                initPos.removeToken();}
                             // if action is executed right
                             System.out.println("MOVE TO A NEW POSITION ");
                             // allow move the token to the new position

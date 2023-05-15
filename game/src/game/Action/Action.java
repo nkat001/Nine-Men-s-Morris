@@ -12,7 +12,6 @@ import game.Token;
 public interface Action {
     /**
      * To execute the action on the token
-     * @param position
      * @param token
      * @return String
      */

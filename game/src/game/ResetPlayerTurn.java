@@ -4,8 +4,6 @@ import game.Actor.Player;
 
 public class ResetPlayerTurn {
     private static Player p1 ,p2;
-    // positions that formed a mill
-
     public static void setPlayer1(Player p){
         p1=p;
     }
@@ -24,7 +22,5 @@ public class ResetPlayerTurn {
         }
 
     }
-
-
 
 }
