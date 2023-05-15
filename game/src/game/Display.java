@@ -9,10 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Shape;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+
+import java.util.ArrayList;
 import javafx.geometry.Pos;
 
 public class Display extends Application {
@@ -26,13 +30,13 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
-        Font font = Font.font("Comic Sans MS", FontWeight.BOLD, 45);
+        Font font = Font.font("Verdica", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
-        headingLabel.setStyle("-fx-text-fill: #CD0404;");
+        headingLabel.setStyle("-fx-text-fill: #0A4D68;");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
-        headingLabel.setTranslateY(20);
+        headingLabel.setTranslateY(25);
         mainPane.getChildren().add(headingLabel);
-        mainPane.setStyle("-fx-background-color: #FFF6C3;"); // Use any valid CSS color value
+        mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
         // adding the board UI to the mainpane
         Group gameBoard=game.getBoard().getGameBoard();
@@ -67,14 +71,14 @@ public class Display extends Application {
         for (int i = 0; i < 4; i++) {
             Circle circle = p2.getTokenAt(i+ 5).getToken();
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 270, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 260, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
         for (int i = 0; i < 5; i++) {
             Circle circle = p2.getTokenAt(i).getToken();
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 220, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 210, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 

@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -17,14 +18,18 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Home extends Application {
+    private String player1Name;
+    private String player2Name;
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
+        pane.setAlignment(Pos.CENTER);
 
         Screen screen = Screen.getPrimary();
         javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
@@ -65,7 +70,7 @@ public class Home extends Application {
         label.setTranslateY(20);
 
         label.setOpacity(0);
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), label);
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), label);
         fadeTransition.setToValue(1);
         fadeTransition.play();
         pane.getChildren().add(label);
@@ -75,11 +80,13 @@ public class Home extends Application {
         button.setScaleX(2.5);
         button.setScaleY(2.5);
         button.setTranslateX(150);
-        button.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
+        button.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(button);
         StackPane.setAlignment(button, Pos.CENTER_LEFT);
 
         button.setOnAction(event -> {
+            playerForm(stage);
             // mode == double player
             Game game = new Game(new DoublePlayer());
             Display display= new Display(game );
@@ -91,7 +98,8 @@ public class Home extends Application {
         computerButton.setScaleX(2.4);
         computerButton.setScaleY(2.4);
         computerButton.setTranslateX(-150);
-        computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-text-fill: white;");
+        computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(computerButton);
         StackPane.setAlignment(computerButton, Pos.CENTER_RIGHT);
 
@@ -99,5 +107,50 @@ public class Home extends Application {
         stage.setTitle("Nine Men's Morris");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void playerForm(Stage primaryStage) {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Player Names");
+        stage.initOwner(primaryStage);
+
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setVgap(25);
+        gridPane.setHgap(10);
+
+        Label player1Label = new Label("Player 1 name: ");
+        TextField player1TextField = new TextField();
+        player1TextField.setPrefColumnCount(20);
+        Font playerFont = Font.font("Arial", FontWeight.BOLD, 15);
+        player1Label.setFont(playerFont);
+
+        Label player2Label = new Label("Player 2 name: ");
+        TextField player2TextField = new TextField();
+        player2Label.setFont(playerFont);
+
+        gridPane.addRow(0, player1Label, player1TextField);
+        gridPane.addRow(1, player2Label, player2TextField);
+
+        Button submitButton = new Button("Start Game");
+        submitButton.setScaleX(1.4);
+        submitButton.setScaleY(1.4);
+        submitButton.setTranslateX(275);
+        submitButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #609966; -fx-background-radius: 25px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+
+        submitButton.setOnAction(event -> {
+            player1Name = player1TextField.getText();
+            player2Name = player2TextField.getText();
+            Display display = new Display(player1Name, player2Name);
+            display.start(primaryStage);
+            stage.close();
+        });
+        gridPane.addRow(2, submitButton);
+
+        Scene scene = new Scene(gridPane, 400, 200);
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 }
