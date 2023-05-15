@@ -102,20 +102,23 @@ public class MakeTokenMovable {
 
             inARowCounter += 1;
             ArrayList<Position> adjListFirstPos = position.getAdjList();
-            // go through the adjList of the initial position (2)
-            //System.out.println("(1) In a row current: " + inARowCounter);
+
+
+            for (int j = 0; j < adjListFirstPos.size(); j++) {
+                System.out.println("list contains adjpoints: " + adjListFirstPos.get(j).getTokenNumber());
+            }
+            System.out.println("-----------------------------------");
+
+
+
             for (int i = 0; i < adjListFirstPos.size(); i++) {
 
-                // if placed in middle check if 3 in a row
-//                System.out.println("adList size:" + adjListFirstPos.size());
-//                if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere() && Math.abs(adjListFirstPos.get(i+1).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i+1).getIsTokenHere()) {
-//                    inARow = true;
-//                    break;
-//                }
 
                 // check if the position next to the initial position is adjacent (make sure it's not vertical)
                  if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere()) {
 
+                     System.out.println("token number moved to: " + adjListFirstPos.get(i).getTokenNumber());
+                     int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
                     inARowCounter += 1;
                     ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
                     //System.out.println("(2) In a row current: " + inARowCounter);
@@ -124,17 +127,9 @@ public class MakeTokenMovable {
                     // go through adjList of the second position (3)
                     for (int j = 0; j < adjListSecondPos.size(); j++) {
 
-                        //
 
-                        System.out.println("subtraction 3: " + Math.abs(adjListSecondPos.get(i).getTokenNumber() - adjListFirstPos.get(i).getTokenNumber()));
-                        System.out.println("number number: " + adjListSecondPos.get(i).getTokenNumber());
-                        System.out.println("is a token there: " + adjListSecondPos.get(i).getIsTokenHere());
-
-                        System.out.println(Math.abs(adjListSecondPos.get(i).getTokenNumber() - adjListFirstPos.get(i).getTokenNumber()) == 1 && adjListSecondPos.get(i).getIsTokenHere());
-
-                        //
-
-                        if (Math.abs(adjListSecondPos.get(i).getTokenNumber() - adjListFirstPos.get(i).getTokenNumber()) == 1 && adjListSecondPos.get(i).getIsTokenHere()) {
+                        if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
+                            System.out.println("token number moved to: " + adjListSecondPos.get(j).getTokenNumber());
                             inARowCounter += 1;
                             inARow = true;
                             System.out.println("(3) In a row current: " + inARowCounter);
