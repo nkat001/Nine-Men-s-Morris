@@ -39,6 +39,9 @@ public class Board {
         }
         setPositionAdjList();
         gameBoard=generateBoard();
+        gameBoard.setScaleX(1.5);
+        gameBoard.setScaleY(1.5);
+        gameBoard.setTranslateY(40);
     }
 
     /**
