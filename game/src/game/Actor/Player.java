@@ -33,15 +33,17 @@ public class Player {
         this.allowableAction = allowableAction;
     }
 
-    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, boolean threeFound) {
+    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean threeFound) {
 
-        if (!allTokensPlaced)
+        if (threeFound) {
+            System.out.println("entered remove action performance ");
+            allowableAction = new Remove();
+
+        } else if (!allTokensPlaced)
         {
             // check place action first , if all token has position dy then set other action
             for (int i = 0 ; i < tokens.size(); i++){
 
-                System.out.println("num of tokens: " + tokens.size());
-                System.out.println("i value: " + i);
                 if(!tokens.get(i).getHasPosition()){
                     allowableAction = new Place();
                     allTokensPlaced = false;
@@ -52,14 +54,11 @@ public class Player {
 
                     break;
                 }
-                System.out.println("all tokens have been placed");
                 allTokensPlaced= true;
-                System.out.println("status of all tokens placed:" + allTokensPlaced);
             }
         }
 
         // all finish placing , slide action
-        System.out.println("status of all tokens placed: " + allTokensPlaced);
         if(allTokensPlaced){
 
             if(tokens.size()==3){
@@ -68,11 +67,11 @@ public class Player {
             }
 
             // TODO: implement method to check whether 3 tokens are in a row
-            else if (threeFound) {
-                System.out.println("entered remove action performance ");
-                allowableAction = new Remove();
-
-            }
+//            else if (threeFound) {
+//                System.out.println("entered remove action performance ");
+//                allowableAction = new Remove();
+//
+//            }
 
             else {
                 System.out.println("entered slide action performance ");

@@ -68,6 +68,7 @@ public class MakeTokenMovable {
                         if (threeInAColumn(p) || threeInARow(p)) {
                             threeFound = true;
                         }
+                        System.out.println("threeFound value: " + threeFound);
 
                         if(player.checkAction(this.token, initPos,finalPos, threeFound))
                         {
