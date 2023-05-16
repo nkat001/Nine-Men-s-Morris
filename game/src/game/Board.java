@@ -40,9 +40,9 @@ public class Board {
         // change board size here
         setPositionAdjList();
         gameBoard=generateBoard();
-        gameBoard.setScaleX(1.5);
-        gameBoard.setScaleY(1.5);
-        gameBoard.setTranslateY(40);
+//        gameBoard.setScaleX(1.5);
+//        gameBoard.setScaleY(1.5);
+//        gameBoard.setTranslateY(40);
     }
 
     /**

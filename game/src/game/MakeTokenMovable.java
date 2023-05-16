@@ -59,6 +59,7 @@ public class MakeTokenMovable {
                                 initPos.removeToken();}
                             // if action is executed right
                             System.out.println("MOVE TO A NEW POSITION ");
+                            ResetPlayerTurn.changeTokenColor(player);
                             // allow move the token to the new position
                             node.setTranslateX(e.getSceneX()- startx );
                             node.setTranslateY(e.getSceneY()- starty);
