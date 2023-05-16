@@ -3,6 +3,7 @@ package game.Action;
 import game.Position;
 import game.Token;
 import javafx.scene.Parent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
@@ -26,8 +27,11 @@ public class Remove implements Action{
         
         Circle circle = token.getToken();
 
+        System.out.println("Click an opponent's token to remove!");
         circle.setOnMouseClicked(event -> {
-            System.out.println("Circle clicked!");
+            System.out.println("Token removed!");
+            ((Pane) circle.getParent()).getChildren().remove(circle);
+
         });
 
 

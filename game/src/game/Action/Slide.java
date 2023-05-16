@@ -29,7 +29,7 @@ public class Slide implements Action{
             }
         }
         if (!b){
-            System.out.println("------------------------FALE------------------FALSE--------------FALSE" );
+            System.out.println("------------------------FALSE------------------FALSE--------------FALSE" );
 
         }
 

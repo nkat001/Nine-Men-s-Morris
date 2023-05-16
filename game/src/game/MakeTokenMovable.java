@@ -45,24 +45,35 @@ public class MakeTokenMovable {
                 double releaseX = e.getSceneX()-Board.getInstance().getGameBoard().getLayoutX() ;
                 double releaseY = e.getSceneY()-Board.getInstance().getGameBoard().getLayoutY();
                 Boolean isTrue = false;
+                boolean threeFound = false;
 
                 for (Position p : pos ) {
                     Circle ip = p.getIP();
                     // check if the release token within the range and is token at the position
                     if((ip.contains(releaseX, releaseY)) && (!p.getIsTokenHere())){
 
-                        if (threeInARow(p)) {
-                            System.out.println("Result as to whether there is 3 in a row: " + threeInARow(p));
-                        }
+//                        if (threeInARow(p)) {
+//                            System.out.println("Result as to whether there is 3 in a row: " + threeInARow(p));
+//                        }
+//
+//                        if (threeInAColumn(p)) {
+//                            System.out.println("Result as to whether there is 3 in a column: " + threeInAColumn(p));
+//                        }
 
-                        //System.out.println("Result as to whether there is 3 in a column: " + threeInAColumn(p));
-                        //System.out.println("checking at a no token position ---- ");
+
+
                         finalPos= p;
                         // check if the action executed is right
-                        if(player.checkAction(this.token, initPos,finalPos))
+
+                        if (threeInAColumn(p) || threeInARow(p)) {
+                            threeFound = true;
+                        }
+
+                        if(player.checkAction(this.token, initPos,finalPos, threeFound))
                         {
-                            if(initPos!=null){
-                                initPos.removeToken();}
+                            if(initPos!=null) {
+                                initPos.removeToken();
+                            }
                             // if action is executed right
                             //System.out.println("MOVE TO A NEW POSITION ");
                             // allow move the token to the new position
@@ -98,41 +109,39 @@ public class MakeTokenMovable {
         boolean inARow = false;
         int inARowCounter = 0; // checker
 
+        // check if placed in middle:
+
+
+        for (int i = 0; i < position.getAdjList().size(); i++) {
+
+            if (Math.abs(position.getAdjList().get(i).getTokenNumber() - position.getTokenNumber()) == 1 && position.getAdjList().get(i).getIsTokenHere()) {
+                inARowCounter += 1;
+            }
+
+            if (inARowCounter == 2) {
+                return true;
+
+            }
+
+        }
+
         if (!position.getIsTokenHere()) {
 
-            inARowCounter += 1;
             ArrayList<Position> adjListFirstPos = position.getAdjList();
 
-
-            for (int j = 0; j < adjListFirstPos.size(); j++) {
-                System.out.println("list contains adjpoints: " + adjListFirstPos.get(j).getTokenNumber());
-            }
-            System.out.println("-----------------------------------");
-
-
-
             for (int i = 0; i < adjListFirstPos.size(); i++) {
-
 
                 // check if the position next to the initial position is adjacent (make sure it's not vertical)
                  if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere()) {
 
-                     System.out.println("token number moved to: " + adjListFirstPos.get(i).getTokenNumber());
                      int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
-                    inARowCounter += 1;
                     ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
-                    //System.out.println("(2) In a row current: " + inARowCounter);
-
 
                     // go through adjList of the second position (3)
                     for (int j = 0; j < adjListSecondPos.size(); j++) {
 
-
                         if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
-                            System.out.println("token number moved to: " + adjListSecondPos.get(j).getTokenNumber());
-                            inARowCounter += 1;
                             inARow = true;
-                            System.out.println("(3) In a row current: " + inARowCounter);
                             break;
                         }
                     }
@@ -148,31 +157,41 @@ public class MakeTokenMovable {
         boolean inAColumn = false;
         int inAColumnCounter = 0; // checker
 
-        // check if the position has a token on it right now (1)
-        //System.out.println("The token number is: " + position.getTokenNumber());
-        //System.out.println("Is there a token at the position: " + position.getIsTokenHere());
+        // check if placed in middle:
+
+
+        for (int i = 0; i < position.getAdjList().size(); i++) {
+
+
+            if (Math.abs(position.getAdjList().get(i).getTokenNumber() - position.getTokenNumber()) > 1 && position.getAdjList().get(i).getIsTokenHere()) {
+                inAColumnCounter += 1;
+            }
+
+            if (inAColumnCounter == 2) {
+                return true;
+
+            }
+
+        }
+
         if (!position.getIsTokenHere()) {
 
-            inAColumnCounter += 1;
             ArrayList<Position> adjListFirstPos = position.getAdjList();
-            // go through the adjList of the initial position (2)
-            System.out.println("In a column current: " + inAColumnCounter);
+
             for (int i = 0; i < adjListFirstPos.size(); i++) {
 
-                // check if the position next to the initial position is vertical (and not adjacent)
+                // check if the position next to the initial position is adjacent (make sure it's not vertical)
                 if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) > 1 && adjListFirstPos.get(i).getIsTokenHere()) {
 
-                    inAColumnCounter += 1;
+                    int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
                     ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
-                    System.out.println("In a column current: " + inAColumnCounter);
 
                     // go through adjList of the second position (3)
                     for (int j = 0; j < adjListSecondPos.size(); j++) {
 
-                        if (Math.abs(adjListSecondPos.get(i).getTokenNumber() - adjListFirstPos.get(i).getTokenNumber()) > 1 && adjListSecondPos.get(i).getIsTokenHere()) {
-                            inAColumnCounter += 1;
+
+                        if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) > 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
                             inAColumn = true;
-                            System.out.println("In a column current: " + inAColumnCounter);
                             break;
                         }
                     }
@@ -181,8 +200,6 @@ public class MakeTokenMovable {
         }
         // there is no token found at the position.
         return inAColumn;
+
     }
-
-
-
 }
