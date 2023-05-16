@@ -1,8 +1,7 @@
 package game;
 
 import game.Actor.DoublePlayer;
-import javafx.animation.FadeTransition;
-import javafx.animation.RotateTransition;
+import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -18,6 +17,7 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -26,6 +26,11 @@ import javafx.util.Duration;
 public class Home extends Application {
     private String player1Name;
     private String player2Name;
+
+    private static final String HEADING = "Nine Men's Morris";
+    private static final Duration LETTER_APPEARANCE = Duration.millis(250);
+    private int currentLetterIndex = 0;
+    private Text headingText;
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
@@ -61,19 +66,15 @@ public class Home extends Application {
         imageView.setFitHeight(imageHeight);
         imageView.setTranslateY(50);
         pane.getChildren().add(imageView);
+        Font font = Font.font("Impact", FontWeight.BOLD, 85);
 
-        Label label = new Label("Nine Men's Morris");
-        Font font = Font.font("Impact", FontWeight.BOLD, 80);
-        label.setFont(font);
-        label.setStyle("-fx-text-fill: black; -fx-effect: dropshadow(gaussian, white, 1, 1, 1, 1);");
-        StackPane.setAlignment(label, Pos.TOP_CENTER);
-        label.setTranslateY(20);
-
-        label.setOpacity(0);
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), label);
-        fadeTransition.setToValue(1);
-        fadeTransition.play();
-        pane.getChildren().add(label);
+        headingText = new Text();
+        headingText.setFont(font);
+        headingText.setStyle("-fx-text-fill: black; -fx-effect: dropshadow(gaussian, white, 2, 2, 2, 2);");
+        StackPane.setAlignment(headingText, Pos.TOP_CENTER);
+        headingText.setTranslateY(20);
+        pane.getChildren().add(headingText);
+        letterTransition();
 
         // Player Vs Player button
         Button button = new Button("Player Vs Player");
@@ -103,6 +104,19 @@ public class Home extends Application {
         stage.setTitle("Nine Men's Morris");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void letterTransition() {
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(LETTER_APPEARANCE, event -> {
+            if (currentLetterIndex <= HEADING.length()) {
+                String partialText = HEADING.substring(0, currentLetterIndex);
+                headingText.setText(partialText);
+                currentLetterIndex++;
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
     public void playerForm(Stage primaryStage) {
@@ -139,7 +153,6 @@ public class Home extends Application {
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
             player2Name = player2TextField.getText();
-            // mode == double player
             Game game = new Game(new DoublePlayer(player1Name,player2Name));
             Display display= new Display(game);
             display.start(primaryStage);

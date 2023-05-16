@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="updates to ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Slide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" afterDir="false" />
     </list>
@@ -136,11 +145,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestRun" />
+      <item itemvalue="Application.Home" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
-      <item itemvalue="Application.Home" />
       <item itemvalue="Application.TestBoardGame2" />
-      <item itemvalue="Application.TestRun" />
     </list>
     <recent_temporary>
       <list>
