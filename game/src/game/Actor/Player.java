@@ -32,49 +32,37 @@ public class Player {
         this.allowableAction = allowableAction;
     }
 
-    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean threeFound) {
-
-        if (threeFound) {
-            System.out.println("entered remove action performance ");
-            allowableAction = new Remove();
-
-        } else if (!allTokensPlaced)
-        {
-            // check place action first , if all token has position dy then set other action
-            for (int i = 0 ; i < tokens.size(); i++){
-
-                if(!tokens.get(i).getHasPosition()){
-                    allowableAction = new Place();
-                    allTokensPlaced = false;
-
-                    if (i == 9) {
-                        allTokensPlaced = true;
-                    }
-
-                    break;
-                }
-                allTokensPlaced= true;
-            }
+    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean removetoken) {
+        if (removetoken){
+            allowableAction= new Remove();
         }
-        // all finish placing , slide action
-        if(allTokensPlaced){
-
-            if(tokens.size()==3){
-                System.out.println("entered jump action performance ");
-                allowableAction= new Jump();
+        else
+        {
+            if (!allTokensPlaced){
+                // check place action first , if all token has position dy then set other action
+                for (int i = 0 ; i < tokens.size(); i++){
+                    if(!tokens.get(i).getHasPosition()){
+                        allowableAction = new Place();
+                        allTokensPlaced = false;
+                        if (i == 9) {
+                            allTokensPlaced = true;
+                        }
+                        break;
+                    }
+                    allTokensPlaced= true;
+                }
             }
-
-            // TODO: implement method to check whether 3 tokens are in a row
-//            else if (threeFound) {
-//                System.out.println("entered remove action performance ");
-//                allowableAction = new Remove();
-//
-//            }
-
             else {
-                System.out.println("entered slide action performance ");
-                allowableAction= new Slide();
+                if(tokens.size()==3){
+                    System.out.println("entered jump action performance ");
+                    allowableAction= new Jump();
+                }
+                else {
+                    System.out.println("entered slide action performance ");
+                    allowableAction= new Slide();
+                }
             }
+
         }
 
         System.out.println("Action to be performed: " + allowableAction);
@@ -101,5 +89,8 @@ public class Player {
         return tokens.get(i);
     }
 
+    public void removeToken(Token token){
+        this.tokens.remove(token);
+    }
 }
 

@@ -13,8 +13,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-
-import java.util.ArrayList;
 import javafx.geometry.Pos;
 
 public class Display extends Application {

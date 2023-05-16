@@ -8,7 +8,14 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class ResetPlayerTurn {
-    private static Player p1 ,p2;
+    private static Mode mode ;
+    private static Player p1,p2;
+
+    private static Boolean hasAMill= false ;
+
+    public static void setMode(Mode m){
+        mode = m ;
+    }
     public static void setPlayer1(Player p){
         p1=p;
     }
@@ -16,10 +23,7 @@ public class ResetPlayerTurn {
         p2=p;
     }
     public static void resetPlayersTurn(Player p){
-        if (p == p1){
-            System.out.println("-------------------RESETING");
         if (p== p1) {
-            System.out.println("-------------------RESETTING----------------");
             p2.isPlayerTurn();
             p1.notPlayerTurn();
         }
@@ -29,12 +33,36 @@ public class ResetPlayerTurn {
         }
     }
 
-    public static void changeTokenColor(Player player){
-        if (player == p1) {
-            DoublePlayer.player1Label().setTextFill(Color.BLACK);
-            DoublePlayer.player2Label().setTextFill(Color.RED);
+    public static void resetPlayerHasAMill(Player p){
+        setPlayerHasAMill(false);
+        if (p== p1) {
+            p1.isPlayerTurn();
+            p2.notPlayerTurn();
+            changeTokenColor( p2);
+        }
+        else{
+            p2.isPlayerTurn();
+            p1.notPlayerTurn();
+            changeTokenColor( p1);
 
-            TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), DoublePlayer.player2Label());
+        }
+    }
+
+    public static void setPlayerHasAMill(Boolean b){
+        hasAMill=b;
+    }
+
+    public static Boolean getHasAMill(){
+        return hasAMill;
+    }
+
+    public static void changeTokenColor(Player player){
+        if (player == p1)
+        {
+            mode.getP1Label().setTextFill(Color.BLACK);
+            mode.getP2Label().setTextFill(Color.RED);
+
+            TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), mode.getP2Label());
             translateTransition.setFromY(0);
             translateTransition.setToY(5);
             translateTransition.setInterpolator(Interpolator.EASE_BOTH);
@@ -42,11 +70,12 @@ public class ResetPlayerTurn {
             translateTransition.setCycleCount(10);
             translateTransition.play();
         }
-        else {
-            DoublePlayer.player1Label().setTextFill(Color.RED);
-            DoublePlayer.player2Label().setTextFill(Color.BLACK);
+        else
+        {
+            mode.getP1Label().setTextFill(Color.RED);
+            mode.getP2Label().setTextFill(Color.BLACK);
 
-            TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), DoublePlayer.player1Label());
+            TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), mode.getP1Label());
             translateTransition.setFromY(0);
             translateTransition.setToY(5);
             translateTransition.setInterpolator(Interpolator.EASE_BOTH);
@@ -55,5 +84,6 @@ public class ResetPlayerTurn {
             translateTransition.play();
         }
     }
+
 }
-}
+

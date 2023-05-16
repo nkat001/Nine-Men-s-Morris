@@ -1,6 +1,7 @@
 package game.Action;
 
 import game.Position;
+import game.ResetPlayerTurn;
 import game.Token;
 import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
@@ -23,21 +24,21 @@ public class Remove implements Action{
      * @return String
      */
     public Boolean execute(Token token, Position initP, Position newP){
-        Boolean b = false ;
-        
-        Circle circle = token.getToken();
 
-        System.out.println("Click an opponent's token to remove!");
+        // check if the remove token is removable
+        Boolean b = true  ;
+        if (initP== null){
+            System.out.println("cannot remove from player repos");
+            b= false;
+        }
 
-        circle.setOnMouseClicked(event -> {
-
-            // if token.get ==
-            System.out.println("Token removed!");
-            ((Pane) circle.getParent()).getChildren().remove(circle);
-
-        });
-
-
+//        circle.setOnMouseClicked(event -> {
+//
+//            // if token.get ==
+//            System.out.println("Token removed!");
+//            ((Pane) circle.getParent()).getChildren().remove(circle);
+//
+//        });
         return b;
     }
 
