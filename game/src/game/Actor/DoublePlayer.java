@@ -21,6 +21,9 @@ public class DoublePlayer implements Mode {
     private Player p1, p2;
     private Label p1Label, p2Label ;
 
+    public DoublePlayer(){
+
+    }
     public DoublePlayer(String p1Name , String p2Name ){
         p1 = new Player(p1Name, Color.PINK);
         p2 = new Player( p2Name, Color.BLUE);
