@@ -17,6 +17,32 @@ import java.util.Arrays;
  */
 public class Game {
 
+    private final Board board = Board.getInstance();
+
+    private Mode mode ;
+
+    public Game(Mode m){
+        // double player mode or single player mode
+        this.mode = m;
+    }
+
+    public void run(){
+        this.mode.run();
+    }
+
+    public Board getBoard(){
+        return board ;
+    }
+
+    public Mode getMode(){
+        return this.mode ;
+    }
+
+
+
+
+
+
 
 
 }
