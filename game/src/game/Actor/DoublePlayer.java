@@ -1,16 +1,13 @@
 package game.Actor;
 
-import game.Action.Place;
-import game.Board;
+
 import game.Mode;
 import game.ResetPlayerTurn;
-import game.Token;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 

@@ -5,7 +5,6 @@ import game.MakeTokenMovable;
 import game.Position;
 import game.Token;
 import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 
 public class Player {
@@ -46,7 +45,6 @@ public class Player {
                 allTokensPlaced= true;
             }
         }
-
         // all finish placing , slide action
         if(allTokensPlaced){
             System.out.println("all tokens are placed on the board dy ----------------------");

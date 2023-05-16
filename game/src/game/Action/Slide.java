@@ -30,7 +30,6 @@ public class Slide implements Action{
         }
         if (!b){
             System.out.println("------------------------FALE------------------FALSE--------------FALSE" );
-
         }
 
         return b;
