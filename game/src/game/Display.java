@@ -36,9 +36,9 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
-        Font font = Font.font("Verdica", FontWeight.BOLD, 50);
+        Font font = Font.font("Impact", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
-        headingLabel.setStyle("-fx-text-fill: #0A4D68;");
+        headingLabel.setStyle("-fx-text-fill: #0A4D68; -fx-effect: dropshadow(gaussian, white, 1, 1, 1, 1);");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
         headingLabel.setTranslateY(25);
         mainPane.getChildren().add(headingLabel);
@@ -120,6 +120,9 @@ public class Display extends Application {
         }
         // create outer group first
         Group board= generateBoard();
+        board.setScaleX(1.5);
+        board.setScaleY(1.5);
+        board.setTranslateY(40);
 
         // Add the circle and line groups to the main pane
         mainPane.getChildren().addAll(board);
