@@ -30,9 +30,9 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
-        Font font = Font.font("Verdica", FontWeight.BOLD, 50);
+        Font font = Font.font("Impact", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
-        headingLabel.setStyle("-fx-text-fill: #0A4D68;");
+        headingLabel.setStyle("-fx-text-fill: #0A4D68; -fx-effect: dropshadow(gaussian, white, 2, 2, 2, 2);");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
         headingLabel.setTranslateY(25);
         mainPane.getChildren().add(headingLabel);

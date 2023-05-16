@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="player names updated">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Home.class" afterDir="false" />
     </list>
@@ -29,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Ethel_Lim" />
+        <entry key="$PROJECT_DIR$" value="Nethara" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,10 +69,39 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Home">
+    <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="game.Display" />
+      <module name="project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Game" />
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Home" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -79,17 +112,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClass (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainClass" />
+    <configuration name="TestBoardGame2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.TestBoardGame2" />
       <module name="project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.MainClass" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -100,18 +125,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerFormExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PlayerFormExample" />
+    <configuration name="TestRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.TestRun" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="game.PlayerFormExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.PlayerFormExample" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -123,19 +140,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MainClass (1)" />
-      <item itemvalue="Application.MainClass" />
-      <item itemvalue="Application.game.PlayerFormExample" />
-      <item itemvalue="Application.PlayerFormExample" />
+      <item itemvalue="Application.TestRun" />
       <item itemvalue="Application.Home" />
+      <item itemvalue="Application.Display" />
+      <item itemvalue="Application.Game" />
+      <item itemvalue="Application.TestBoardGame2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Home" />
-        <item itemvalue="Application.MainClass" />
-        <item itemvalue="Application.MainClass (1)" />
-        <item itemvalue="Application.game.PlayerFormExample" />
-        <item itemvalue="Application.PlayerFormExample" />
+        <item itemvalue="Application.TestBoardGame2" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.Display" />
+        <item itemvalue="Application.TestRun" />
       </list>
     </recent_temporary>
   </component>
@@ -281,35 +298,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683970299055</updated>
     </task>
-    <task id="LOCAL-00020" summary="ui changes to display">
-      <created>1684048288398</created>
+    <task id="LOCAL-00020" summary="Remove print line">
+      <created>1683991170776</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1684048288398</updated>
+      <updated>1683991170776</updated>
     </task>
-    <task id="LOCAL-00021" summary="name of players set in display">
-      <created>1684072333898</created>
+    <task id="LOCAL-00021" summary="Remove test run class and implemented display class">
+      <created>1684121370309</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1684072333898</updated>
+      <updated>1684121370309</updated>
     </task>
-    <task id="LOCAL-00022" summary="form changed to pop up">
-      <created>1684080645001</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1684080645001</updated>
-    </task>
-    <task id="LOCAL-00023" summary="player names updated">
-      <created>1684080671228</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1684080671228</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,11 +346,9 @@
     <MESSAGE value="Home page of ui created" />
     <MESSAGE value="Custom buttons added to home ui" />
     <MESSAGE value="- Action.java use to check if the action executed ic right&#10;- Player.java - added checkAction method &#10;- DoublePlayer.java - use to create two player instance&#10;-MakeTokenMovable.java - add action on the token &#10;- Token.java - added some boolean to check if the token can move" />
-    <MESSAGE value="ui changes to display" />
-    <MESSAGE value="name of players set in display" />
-    <MESSAGE value="form changed to pop up" />
-    <MESSAGE value="player names updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="player names updated" />
+    <MESSAGE value="Remove print line" />
+    <MESSAGE value="Remove test run class and implemented display class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove test run class and implemented display class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

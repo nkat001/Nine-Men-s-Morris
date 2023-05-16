@@ -1,5 +1,6 @@
 package game;
 
+import game.Actor.DoublePlayer;
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -69,7 +70,7 @@ public class Home extends Application {
 
         headingText = new Text();
         headingText.setFont(font);
-        headingText.setStyle("-fx-text-fill: black; -fx-effect: dropshadow(gaussian, white, 1, 1, 1, 1);");
+        headingText.setStyle("-fx-text-fill: black; -fx-effect: dropshadow(gaussian, white, 2, 2, 2, 2);");
         StackPane.setAlignment(headingText, Pos.TOP_CENTER);
         headingText.setTranslateY(20);
         pane.getChildren().add(headingText);
@@ -109,9 +110,9 @@ public class Home extends Application {
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(LETTER_APPEARANCE, event -> {
             if (currentLetterIndex <= HEADING.length()) {
-            String partialText = HEADING.substring(0, currentLetterIndex);
-            headingText.setText(partialText);
-            currentLetterIndex++;
+                String partialText = HEADING.substring(0, currentLetterIndex);
+                headingText.setText(partialText);
+                currentLetterIndex++;
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
@@ -152,7 +153,8 @@ public class Home extends Application {
         submitButton.setOnAction(event -> {
             player1Name = player1TextField.getText();
             player2Name = player2TextField.getText();
-            Display display = new Display(player1Name, player2Name);
+            Game game = new Game(new DoublePlayer(player1Name,player2Name));
+            Display display= new Display(game);
             display.start(primaryStage);
             stage.close();
         });
