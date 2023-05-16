@@ -19,9 +19,10 @@ public class Place implements Action {
         Boolean b = false ;
         // token initial no position can execute
         if(!token.getHasPosition()){
-            System.out.println("token no position initially ");
+
             b= true ;
         }
+
 
         return b ;
     }

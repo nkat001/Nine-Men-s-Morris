@@ -63,7 +63,7 @@ public class DoublePlayer implements Mode {
     }
 
     public void run(){
-        System.out.println("in runnnn");
+        //System.out.println("in runnnn");
         ResetPlayerTurn.setPlayer1(p1);
         ResetPlayerTurn.setPlayer2(p2);
         p1.isPlayerTurn();

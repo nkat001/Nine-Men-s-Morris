@@ -32,43 +32,62 @@ public class Player {
         this.allowableAction = allowableAction;
     }
 
-    public Boolean checkAction (Token selectedT, Position initP, Position finalPos){
-        if (!allTokensPlaced)
+    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean threeFound) {
+
+        if (threeFound) {
+            System.out.println("entered remove action performance ");
+            allowableAction = new Remove();
+
+        } else if (!allTokensPlaced)
         {
             // check place action first , if all token has position dy then set other action
-            for (int i = 0 ; i< tokens.size(); i++){
+            for (int i = 0 ; i < tokens.size(); i++){
+
                 if(!tokens.get(i).getHasPosition()){
-                    allowableAction= new Place();
-                    allTokensPlaced= false;
-                    break ;
+                    allowableAction = new Place();
+                    allTokensPlaced = false;
+
+                    if (i == 9) {
+                        allTokensPlaced = true;
+                    }
+
+                    break;
                 }
                 allTokensPlaced= true;
             }
         }
         // all finish placing , slide action
         if(allTokensPlaced){
-            System.out.println("all tokens are placed on the board dy ----------------------");
-            // check if player left with how many tokens
+
             if(tokens.size()==3){
+                System.out.println("entered jump action performance ");
                 allowableAction= new Jump();
             }
-            else{
+
+            // TODO: implement method to check whether 3 tokens are in a row
+//            else if (threeFound) {
+//                System.out.println("entered remove action performance ");
+//                allowableAction = new Remove();
+//
+//            }
+
+            else {
+                System.out.println("entered slide action performance ");
                 allowableAction= new Slide();
             }
         }
 
+        System.out.println("Action to be performed: " + allowableAction);
         Boolean ret  = allowableAction.execute(selectedT,initP, finalPos );
 
         return ret ;
     }
     public void isPlayerTurn(){
-        // allow all the tokens from player repositiory to move
         for (Token token : tokens){
             token.setIsTokenAllow(true);
         }
     }
     public void notPlayerTurn(){
-        // allow all the tokens from player repositiory to move
         for (Token token : tokens){
             token.setIsTokenAllow(false);
         }

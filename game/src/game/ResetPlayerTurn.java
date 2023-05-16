@@ -18,6 +18,8 @@ public class ResetPlayerTurn {
     public static void resetPlayersTurn(Player p){
         if (p == p1){
             System.out.println("-------------------RESETING");
+        if (p== p1) {
+            System.out.println("-------------------RESETTING----------------");
             p2.isPlayerTurn();
             p1.notPlayerTurn();
         }
@@ -53,4 +55,5 @@ public class ResetPlayerTurn {
             translateTransition.play();
         }
     }
+}
 }
