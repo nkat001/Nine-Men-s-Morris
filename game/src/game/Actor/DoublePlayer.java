@@ -26,13 +26,24 @@ public class DoublePlayer implements Mode {
         p2 = new Player( p2Name, Color.BLUE);
 
         // set p1 label in the screen
-        p1Label= new Label("Player 1 : "+ p1.getName());
+        if (!p1.getName().equals("")) {
+            p1Label= new Label(p1.getName());
+        }
+        else {
+            p1Label= new Label("Player 1");
+        }
+
         p1Label.setFont(playerFont);
         StackPane.setMargin(p1Label, new Insets(200));
         StackPane.setAlignment(p1Label, Pos.TOP_LEFT);
 
         // set p2 label in the screen
-        p2Label= new Label("Player 2 : "+p2.getName());
+        if (!p2.getName().equals("")){
+            p2Label= new Label(p2.getName());
+        }
+        else {
+            p2Label= new Label("Player 2");
+        }
         p2Label.setFont(playerFont);
         StackPane.setMargin(p2Label, new Insets(200));
         StackPane.setAlignment(p2Label, Pos.TOP_RIGHT);
