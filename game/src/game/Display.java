@@ -30,7 +30,6 @@ public class Display extends Application {
         headingLabel.setFont(font);
         headingLabel.setStyle("-fx-text-fill: #0A4D68;");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
-        headingLabel.setTranslateY(25);
         mainPane.getChildren().add(headingLabel);
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
@@ -46,7 +45,7 @@ public class Display extends Application {
         Player p1 = mode.getP1();
         Player p2= mode.getP2();
 
-        double spacing = 100;
+        double spacing = 125;
 
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
@@ -59,7 +58,7 @@ public class Display extends Application {
         for (int i = 0; i < 4; i++) {
             Circle circle = p1.getTokenAt(i+ 5).getToken();
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 260)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 200, 170, 270)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_LEFT);
         }
 
@@ -67,7 +66,7 @@ public class Display extends Application {
         for (int i = 0; i < 4; i++) {
             Circle circle = p2.getTokenAt(i+ 5).getToken();
             mainPane.getChildren().add(circle);
-            StackPane.setMargin(circle, new Insets(spacing * i, 260, 170, 250)); // Adjust the vertical margin for each circle
+            StackPane.setMargin(circle, new Insets(spacing * i, 270, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
         }
 
