@@ -18,7 +18,7 @@ import java.util.*;
  * Modified by : Mahesh
  */
 public class Board {
-    private final int CIRCLE_RADIUS = 5;
+    private final int CIRCLE_RADIUS = 10;
     private Group gameBoard;
     private static Board board;
     private ArrayList<Circle> ip;
@@ -28,7 +28,6 @@ public class Board {
      * private constructor
      */
     private Board(){
-        gameBoard=generateBoard();
         ip = new ArrayList<>();
         positions = new ArrayList<>();
         for (int i =0; i<24; i++){
@@ -38,8 +37,51 @@ public class Board {
             // create a position for each ip
             positions.add(new Position(circle));
         }
+        // change board size here
         setPositionAdjList();
+        gameBoard=generateBoard();
+
+        positions.get(0).setTokenNumber(0);
+        positions.get(1).setTokenNumber(1);
+        positions.get(2).setTokenNumber(2);
+
+        positions.get(8).setTokenNumber(3);
+        positions.get(9).setTokenNumber(4);
+        positions.get(10).setTokenNumber(5);
+
+        positions.get(16).setTokenNumber(6);
+        positions.get(17).setTokenNumber(7);
+        positions.get(18).setTokenNumber(8);
+
+        positions.get(7).setTokenNumber(9);
+        positions.get(15).setTokenNumber(10);
+        positions.get(23).setTokenNumber(11);
+
+        positions.get(19).setTokenNumber(12);
+        positions.get(11).setTokenNumber(13);
+        positions.get(3).setTokenNumber(14);
+
+        positions.get(22).setTokenNumber(15);
+        positions.get(21).setTokenNumber(16);
+        positions.get(20).setTokenNumber(17);
+
+        positions.get(14).setTokenNumber(18);
+        positions.get(13).setTokenNumber(19);
+        positions.get(12).setTokenNumber(20);
+
+        positions.get(6).setTokenNumber(21);
+        positions.get(5).setTokenNumber(22);
+        positions.get(4).setTokenNumber(23);
+
+
+
+//        gameBoard.setScaleX(1.5);
+//        gameBoard.setScaleY(1.5);
+//        gameBoard.setTranslateY(40);
     }
+
+
+
 
     /**
      * create only one board instance and return the board instance
@@ -50,7 +92,6 @@ public class Board {
         }
         return board;
     }
-
     public Group getGameBoard(){
         return this.gameBoard;
     }
@@ -193,6 +234,14 @@ public class Board {
             Position p = positions.get(i);
             p.addAdjList(positions.get(i+8));
             p.addAdjList(positions.get(i+8+8));
+
+            Position p1 = positions.get(i+8);
+            p1.addAdjList(positions.get(i));
+            p1.addAdjList(positions.get(i+8+8));
+
+            Position p2 = positions.get(i+8+8);
+            p2.addAdjList(positions.get(i));
+            p2.addAdjList(positions.get(i+8));
         }
     }
 

@@ -12,20 +12,16 @@ import game.Token;
 public class Place implements Action {
     /**
      * To execute the action on the token
-     * @param position
      * @param token
      * @return String
      */
-    public String execute(Token token, Position position){
-        // check if the position is valid -> no token on the position
-        if (!position.getIsTokenHere()){
-//            token.setTokenPosition(position);
-            token.allowTokenReleased();
-            return "The token was placed to a new position";
+    public Boolean execute(Token token, Position initP, Position newP){
+        Boolean b = false ;
+        // token initial no position can execute
+        if(!token.getHasPosition()){
+            b= true ;
         }
-        else {
-            return "Cannot be move to the new position";
-        }
+        return b ;
     }
 
 }

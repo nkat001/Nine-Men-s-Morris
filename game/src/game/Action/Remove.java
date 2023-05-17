@@ -1,7 +1,13 @@
 package game.Action;
 
 import game.Position;
+import game.ResetPlayerTurn;
 import game.Token;
+import javafx.scene.Parent;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+
+import java.util.ArrayList;
 
 /**
  * Remove class that represent an action
@@ -17,9 +23,15 @@ public class Remove implements Action{
      * @param token
      * @return String
      */
-    public String execute(Token token, Position position){
-        token.setTokenPosition(position);
-        return "The token was removed ";
+    public Boolean execute(Token token, Position initP, Position newP){
+
+        // check if the remove token is removable
+        Boolean b = true  ;
+        if (initP== null){
+            System.out.println("cannot remove from player repos");
+            b= false;
+        }
+        return b;
     }
 
 }

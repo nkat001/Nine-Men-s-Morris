@@ -17,17 +17,19 @@ public class Position {
      */
     private Boolean isTokenHere;
     private Token token ;
+    public ArrayList<Position> getAdjList() {
+        return adjList;
+    }
     private ArrayList<Position> adjList;
     private Circle ip;
+    private int tokenNumber;
 
 
-    /**
-     * Constructor
-     */
     public Position(Circle ip){
         adjList= new ArrayList<>();
         this.ip = ip;
-        this.isTokenHere= false ;
+        this.isTokenHere= false;
+        this.tokenNumber = 0;
     }
 
     public void addAdjList(Position p){
@@ -54,8 +56,19 @@ public class Position {
         isTokenHere= false;
     }
 
+    public Token getToken() {
+        return token;
+    }
+
     public Circle getIP(){
         return ip ;
     }
 
+    public int getTokenNumber() {
+        return tokenNumber;
+    }
+
+    public void setTokenNumber(int tokenNumber) {
+        this.tokenNumber = tokenNumber;
+    }
 }
