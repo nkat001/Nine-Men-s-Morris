@@ -32,7 +32,6 @@ public class ResetPlayerTurn {
             p2.notPlayerTurn();
         }
     }
-
     public static void resetPlayerHasAMill(Player p){
         Rule.setHasAMill(false);
         if (p== p1) {
@@ -47,9 +46,6 @@ public class ResetPlayerTurn {
 
         }
     }
-
-
-
     public static void changeTokenColor(Player player){
         if (player == p1)
         {

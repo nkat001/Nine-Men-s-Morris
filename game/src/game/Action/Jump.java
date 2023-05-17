@@ -20,7 +20,10 @@ public class Jump implements Action{
      */
     public Boolean execute(Token token, Position initP, Position newP){
         Boolean b = false ;
-//        token.setTokenPosition(position);
+        // token initial no position can execute
+        if(!newP.getIsTokenHere()){
+            b= true ;
+        }
         return b;
     }
 }

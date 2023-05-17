@@ -20,13 +20,14 @@ import java.util.ArrayList;
 public class Remove implements Action{
     /**
      * To execute the action on the token
-     * @param position
-     * @param token
+
      * @return String
      */
     public Boolean execute(Token token, Position initP, Position newP){
 
         // check if the remove token is removable
+        System.out.println("In REMOVE action--------------------------");
+
         Boolean b = true  ;
         if (initP== null){
             System.out.println("cannot remove from player repos");

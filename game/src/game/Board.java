@@ -41,6 +41,8 @@ public class Board {
         setPositionAdjList();
         gameBoard=generateBoard();
 
+        setMillPositions();
+
         positions.get(0).setTokenNumber(0);
         positions.get(1).setTokenNumber(1);
         positions.get(2).setTokenNumber(2);
@@ -74,13 +76,137 @@ public class Board {
         positions.get(4).setTokenNumber(23);
 
 
-
-//        gameBoard.setScaleX(1.5);
-//        gameBoard.setScaleY(1.5);
-//        gameBoard.setTranslateY(40);
     }
 
 
+    public void setMillPositions(){
+        for ( int i =0 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+7 ));
+            arr2.add(positions.get(i+7-1));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            System.out.println(i  +"psoition what ");
+            System.out.println(final_arr );
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =2 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+        for ( int i =4 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+        for ( int i =6 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i-6));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+
+        for ( int i =1 ; i< 8; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 7 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+8 ));
+            arr2.add(positions.get(i+8+8));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =9 ; i< 16; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 15 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+8 ));
+            arr2.add(positions.get(i-8));
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =17 ; i< 24; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 23 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-8 ));
+            arr2.add(positions.get(i-8-8));
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+    }
 
 
     /**

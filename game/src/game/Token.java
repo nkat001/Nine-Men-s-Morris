@@ -13,7 +13,6 @@ public class Token {
     private Circle token ;
     private Boolean isTokenAllow, hasPosition ;
 
-
     // when create a Token,  generate the token colour
     public Token (Color color){
         this.token = new Circle(TOKEN_RADIUS, color);
@@ -42,7 +41,6 @@ public class Token {
     public Boolean getIsTokenAllow(){
         return this.isTokenAllow;
     }
-
 
     public Position getPosition() {
         return tokenPosition;

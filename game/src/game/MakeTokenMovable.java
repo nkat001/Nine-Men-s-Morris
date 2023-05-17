@@ -32,7 +32,7 @@ public class MakeTokenMovable {
             starty = e.getSceneY() - node.getTranslateY();
 
             // when pressed , check if player has a mill and the token is removable
-            if((Rule.getHasAMill())&& (player.checkAction(this.token, initPos, null, true ))){
+            if((Rule.getHasAMill())&& (this.token.getIsTokenAllow()) &&(player.checkAction(this.token, initPos, null, true ))){
                 System.out.println("Token removed!");
                 ((Pane) node.getParent()).getChildren().remove(node);
                 player.removeToken(this.token);
@@ -41,7 +41,6 @@ public class MakeTokenMovable {
             }
 
         });
-
         node.setOnMouseDragged(e->{
             if (this.token.getIsTokenAllow() && (!Rule.getHasAMill()) )
             {
@@ -50,7 +49,6 @@ public class MakeTokenMovable {
             }
         });
     }
-
     public void allowTokenReleased(Node node){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
         node.setOnMouseReleased(e -> {
@@ -84,30 +82,21 @@ public class MakeTokenMovable {
                 }
                 else
                 {
-                    // check if the action executed is right
-                    if (Rule.threeInAColumn(finalPos,token))
-                    {
-                        System.out.println("detected three pieces in a column");
+                    if(initPos!=null) {initPos.removeToken();}
+                    // set the token position , add the token to the position
+                    this.token.setTokenPosition(finalPos);
+                    // check the release token is what
+                    if (Rule.checkPlayerHasAMill(finalPos,token)){
+                        System.out.println("detected HAS A MILLLLLLLL");
                         Rule.addPositionHasAMill(Rule.getPosHasAMill());;
-                        // three found then is player turn again to choose one opponent player to remove
-                        Rule.setHasAMill(true);
-                    }
-                    else if (Rule.threeInARow(finalPos,token))
-                    {
-                        System.out.println("detected three pieces in a row");
-                        Rule.addPositionHasAMill(Rule.getPosHasAMill());;
-                        // three found then is player turn again to choose one opponent player to remove
                         Rule.setHasAMill(true);
                     }
                     else
                     {
-                        // reset player turn
                         ResetPlayerTurn.changeTokenColor(player);
                     }
                     ResetPlayerTurn.resetPlayersTurn(player);
-                    if(initPos!=null) {initPos.removeToken();}
-                    // set the token position , add the token to the position
-                    this.token.setTokenPosition(finalPos);
+
                 }
             }
             else
@@ -118,6 +107,5 @@ public class MakeTokenMovable {
             }
         });
     }
-
 
 }
