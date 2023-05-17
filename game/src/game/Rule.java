@@ -1,5 +1,6 @@
 package game;
 
+import game.Actor.Player;
 import javafx.scene.paint.Paint;
 
 import java.util.ArrayList;
@@ -97,4 +98,14 @@ public class Rule {
     public static Boolean getHasAMill(){
         return hasAMill;
     }
+
+    public static Boolean endGame(Player player){
+        if (player.getTokenSize() ==2)
+        {
+            ResetPlayerTurn.endPlayerGame();
+            return true ;
+        }
+        return false ;
+    }
+
 }

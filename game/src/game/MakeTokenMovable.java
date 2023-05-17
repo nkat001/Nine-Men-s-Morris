@@ -37,6 +37,11 @@ public class MakeTokenMovable {
                 ((Pane) node.getParent()).getChildren().remove(node);
                 player.removeToken(this.token);
                 initPos.removeToken();
+                // check if is end game
+                if (Rule.endGame(player)){
+                    // this player lose
+                    //
+                }
                 ResetPlayerTurn.resetPlayerHasAMill(player);
             }
 

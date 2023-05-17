@@ -74,6 +74,10 @@ public class ResetPlayerTurn {
             translateTransition.play();
         }
     }
+    public static void endPlayerGame(){
+        p1.notPlayerTurn();
+        p2.notPlayerTurn();
+    }
 
 
 }

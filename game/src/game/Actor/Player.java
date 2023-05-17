@@ -83,6 +83,9 @@ public class Player {
     public Token getTokenAt(int i){
         return tokens.get(i);
     }
+    public int getTokenSize(){
+        return this.tokens.size();
+    }
 
     public void removeToken(Token token){
         this.tokens.remove(token);

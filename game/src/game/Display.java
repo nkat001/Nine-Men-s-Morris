@@ -95,8 +95,4 @@ public class Display extends Application {
         Platform.runLater(() -> game.run());
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 }
