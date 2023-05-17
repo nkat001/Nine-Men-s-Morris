@@ -74,16 +74,13 @@ public class MakeTokenMovable {
 
                         if(player.checkAction(this.token, initPos,finalPos, false ))
                         {
-                            if(initPos!=null)
-                            {
-                                initPos.removeToken();
-                            }
+                            if(initPos!=null) {initPos.removeToken();}
+
                             // allow move the token to the new position
                             node.setTranslateX(e.getSceneX()- startx );
                             node.setTranslateY(e.getSceneY()- starty);
-                            this.token.setTokenPosition(p);
-                            isTrue = true;
 
+                            // check if is three in a column or row == has a mill
                             System.out.println("in a columnnnnnnnnnnnnnnnnnnnnn"+threeInAColumn(p));
                             System.out.println("in a rowwwwwwwwwwwwwwwwwwwwwwwww"+threeInARow(p));
 
@@ -100,6 +97,9 @@ public class MakeTokenMovable {
                                 ResetPlayerTurn.resetPlayersTurn(player);
                                 ResetPlayerTurn.changeTokenColor(player);
                             }
+                            // set the token position , add the token to the position
+                            this.token.setTokenPosition(p);
+                            isTrue = true;
 
                         }
                         break ;
@@ -128,58 +128,60 @@ public class MakeTokenMovable {
         Paint color = this.token.getToken().getFill();
         System.out.println(color);
 
-
         // check if placed in middle:
         for (int i = 0; i < position.getAdjList().size(); i++)
         {
             if (Math.abs(position.getAdjList().get(i).getTokenNumber() - position.getTokenNumber()) == 1 && position.getAdjList().get(i).getIsTokenHere())
             {
-                System.out.println(position.getAdjList().get(i).getToken().getToken().getFill());
                 // if the token is the same player token
                 if (position.getAdjList().get(i).getToken().getToken().getFill() == color )
-                {
-                    inARowCounter += 1;
-                }
+                {inARowCounter += 1;}
             }
             if (inARowCounter == 2)
             {
-                System.out.println("======================= 2 in a row" );
                 return true;
             }
         }
 
-        ArrayList<Position> adjListFirstPos = position.getAdjList();
-        for (int i = 0; i < adjListFirstPos.size(); i++) {
+        if (!position.getIsTokenHere())
+        {
+            ArrayList<Position> adjListFirstPos = position.getAdjList();
+            for (int i = 0; i < adjListFirstPos.size(); i++) {
 
-            // check if the position next to the initial position is adjacent (make sure it's not vertical)
-            if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere()) {
+                // check if the position next to the initial position is adjacent (make sure it's not vertical)
+                if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere()) {
 
-                if (adjListFirstPos.get(i).getToken().getToken().getFill()!= color ){
-                    inARow = false;
-                    break ;
-                }
-                int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
-                ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
+                    if (adjListFirstPos.get(i).getToken().getToken().getFill()!= color ){
+                        inARow = false;
+                        break ;
+                    }
+                    int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
+                    ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
 
-                // go through adjList of the second position (3)
-                for (int j = 0; j < adjListSecondPos.size(); j++) {
-
-                    if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
-                        inARow = true;
-                        break;
+                    // go through adjList of the second position (3)
+                    for (int j = 0; j < adjListSecondPos.size(); j++) {
+                        if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
+                            if (adjListSecondPos.get(j).getToken().getToken().getFill()!= color ) {
+                                inARow = false;
+                            }
+                            else{
+                                inARow = true;
+                            }
+                            break;
+                        }
                     }
                 }
             }
         }
+
         // there is no token found at the position.
         return inARow;
     }
 
     private boolean threeInAColumn(Position position) {
-        boolean inAColumn = false;
+        Boolean inAColumn = false;
         int inAColumnCounter = 0; // checker
         Paint color = this.token.getToken().getFill();
-        System.out.println(color + " ------------------------------------------");
 
         // check if placed in middle:
         for (int i = 0; i < position.getAdjList().size(); i++) {
@@ -191,34 +193,38 @@ public class MakeTokenMovable {
             }
             if (inAColumnCounter == 2)
             {
+                System.out.println("In a column twiceeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                 return true;
             }
         }
+        if (!position.getIsTokenHere()){
+            ArrayList<Position> adjListFirstPos = position.getAdjList();
+            for (int i = 0; i < adjListFirstPos.size(); i++) {
+                // check if the position next to the initial position is adjacent (make sure it's not vertical)
+                if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) > 1 && adjListFirstPos.get(i).getIsTokenHere()) {
+                    if (adjListFirstPos.get(i).getToken().getToken().getFill()!= color ){
+                        inAColumn = false;
+                        break ;
+                    }
 
-        ArrayList<Position> adjListFirstPos = position.getAdjList();
-        for (int i = 0; i < adjListFirstPos.size(); i++)
-        {
-            // check if the position next to the initial position is adjacent (make sure it's not vertical)
-            if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) ==3 && adjListFirstPos.get(i).getIsTokenHere())
-            {
-                int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
-                ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
-                // go through adjList of the second position (3)
-                for (int j = 0; j < adjListSecondPos.size(); j++)
-                {
-                    if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) ==3 && (adjListSecondPos.get(j).getIsTokenHere()))
-                    {
-                        if ( adjListSecondPos.get(j).getToken().getToken().getFill()== color){
-                            inAColumn = true;
+                    int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
+                    ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
+                    // go through adjList of the second position (3)
+                    for (int j = 0; j < adjListSecondPos.size(); j++) {
+                        if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) > 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
+                            if (adjListSecondPos.get(j).getToken().getToken().getFill()== color ) {
+                                inAColumn = true;
+                            }
+                            else{
+                                inAColumn = false;
+                            }
+                            break;
                         }
-                        else{
-                            inAColumn = false;
-                        }
-                        break;
                     }
                 }
+            }
         }
-        }
+
         // there is no token found at the position.
         return inAColumn;
     }
