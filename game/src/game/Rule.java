@@ -1,6 +1,7 @@
 package game;
 
 import game.Actor.Player;
+import javafx.scene.control.Alert;
 import javafx.scene.paint.Paint;
 
 import java.util.ArrayList;
@@ -100,10 +101,18 @@ public class Rule {
     }
 
     public static Boolean endGame(Player player){
-        if (player.getTokenSize() ==2)
+        if (player.getTokenSize() == 2)
         {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Winner");
+            alert.setHeaderText(null);
+            alert.setContentText(player.getName() + " won the game!");
+            alert.showAndWait();
             ResetPlayerTurn.endPlayerGame();
             return true ;
+        }
+        else {
+
         }
         return false ;
     }
