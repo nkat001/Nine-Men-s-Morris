@@ -16,25 +16,31 @@ import javafx.util.Duration;
 
 
 // singleton , only one double player can be created and kept updated
+
+/**
+ * @author Ethel
+ * <p>
+ * modified by: Nethara
+ */
 public class DoublePlayer implements Mode {
     private static Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
     private Player p1, p2;
-    private static Label p1Label, p2Label ;
+    private static Label p1Label, p2Label;
 
-    public DoublePlayer(){
-        //p1Label = new Label(p1.getName());
-    }
-    public DoublePlayer(String p1Name , String p2Name ){
+    /**
+     * @param p1Name
+     * @param p2Name
+     */
+    public DoublePlayer(String p1Name, String p2Name) {
         p1 = new Player(p1Name, Color.PINK);
-        p2 = new Player( p2Name, Color.BLUE);
+        p2 = new Player(p2Name, Color.BLUE);
 
         // set p1 label in the screen
         if (!p1.getName().equals("")) {
-            p1Label= new Label(p1.getName());
+            p1Label = new Label(p1.getName());
             p1Label.setTextFill(Color.RED);
-        }
-        else {
-            p1Label= new Label("Player 1");
+        } else {
+            p1Label = new Label("Player 1");
             p1Label.setTextFill(Color.RED);
         }
 
@@ -51,19 +57,17 @@ public class DoublePlayer implements Mode {
         translateTransition.play();
 
         // set p2 label in the screen
-        if (!p2.getName().equals("")){
-            p2Label= new Label(p2.getName());
-        }
-        else {
-            p2Label= new Label("Player 2");
+        if (!p2.getName().equals("")) {
+            p2Label = new Label(p2.getName());
+        } else {
+            p2Label = new Label("Player 2");
         }
         p2Label.setFont(playerFont);
         StackPane.setMargin(p2Label, new Insets(200));
         StackPane.setAlignment(p2Label, Pos.TOP_RIGHT);
     }
 
-    public void run(){
-        //System.out.println("in runnnn");
+    public void run() {
         ResetPlayerTurn.setMode(this);
         ResetPlayerTurn.setPlayer1(p1);
         ResetPlayerTurn.setPlayer2(p2);
@@ -84,13 +88,6 @@ public class DoublePlayer implements Mode {
     }
 
     public Label getP2Label() {
-        return p2Label;
-    }
-
-    public static Label player1Label() {
-        return p1Label;
-    }
-    public static Label player2Label() {
         return p2Label;
     }
 }

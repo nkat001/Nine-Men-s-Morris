@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 /**
  * Game class represent the main game logic
- *
+ * <p>
  * Created by:
  *
  * @author Ethel Lim Jia Yee
@@ -19,30 +19,24 @@ public class Game {
 
     private final Board board = Board.getInstance();
 
-    private Mode mode ;
+    private Mode mode;
 
-    public Game(Mode m){
+    public Game(Mode m) {
         // double player mode or single player mode
         this.mode = m;
     }
 
-    public void run(){
+    public void run() {
         this.mode.run();
     }
 
-    public Board getBoard(){
-        return board ;
+    public Board getBoard() {
+        return board;
     }
 
-    public Mode getMode(){
-        return this.mode ;
+    public Mode getMode() {
+        return this.mode;
     }
-
-
-
-
-
-
 
 
 }

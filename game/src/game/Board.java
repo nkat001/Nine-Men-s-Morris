@@ -72,15 +72,7 @@ public class Board {
         positions.get(6).setTokenNumber(21);
         positions.get(5).setTokenNumber(22);
         positions.get(4).setTokenNumber(23);
-
-
-
-//        gameBoard.setScaleX(1.5);
-//        gameBoard.setScaleY(1.5);
-//        gameBoard.setTranslateY(40);
     }
-
-
 
 
     /**

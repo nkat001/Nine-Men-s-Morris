@@ -11,25 +11,27 @@ import java.util.ArrayList;
 
 /**
  * Remove class that represent an action
- *
- * Created by:
+ * <p>
+ * Created by: Ethel
  *
  * @author Nethara
  */
-public class Remove implements Action{
+public class Remove implements Action {
     /**
      * To execute the action on the token
-     * @param position
-     * @param token
-     * @return String
+     *
+     * @param initP initial position of token
+     * @param newP new position of token
+     * @param token is the token in the board
+     * @return Boolean
      */
-    public Boolean execute(Token token, Position initP, Position newP){
+    public Boolean execute(Token token, Position initP, Position newP) {
 
         // check if the remove token is removable
-        Boolean b = true  ;
-        if (initP== null){
+        Boolean b = true;
+        if (initP == null) {
             System.out.println("cannot remove from player repos");
-            b= false;
+            b = false;
         }
         return b;
     }
