@@ -27,15 +27,14 @@ public class MakeTokenMovable {
         // if the previous player has a mill
 
         node.setOnMouseClicked( e->{
-            if(ResetPlayerTurn.getHasAMill()){
+            if((ResetPlayerTurn.getHasAMill())&& (player.checkAction(this.token, initPos, null, true ))){
                 System.out.println("Token removed!");
-                if(player.checkAction(this.token, initPos, null, true )){
-                    ((Pane) node.getParent()).getChildren().remove(node);
-                    player.removeToken(this.token);
-                    initPos.removeToken();
-                    ResetPlayerTurn.resetPlayerHasAMill(player);
-                }
+                ((Pane) node.getParent()).getChildren().remove(node);
+                player.removeToken(this.token);
+                initPos.removeToken();
+                ResetPlayerTurn.resetPlayerHasAMill(player);
             }
+
         });
 
         node.setOnMousePressed(e ->{
@@ -150,28 +149,24 @@ public class MakeTokenMovable {
         }
 
         ArrayList<Position> adjListFirstPos = position.getAdjList();
-        for (int i = 0; i < adjListFirstPos.size(); i++)
-        {
+        for (int i = 0; i < adjListFirstPos.size(); i++) {
+
             // check if the position next to the initial position is adjacent (make sure it's not vertical)
-             if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere())
-             {
-                 int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
+            if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere()) {
+
+                if (adjListFirstPos.get(i).getToken().getToken().getFill()!= color ){
+                    inARow = false;
+                    break ;
+                }
+                int adjacentToken = adjListFirstPos.get(i).getTokenNumber();
                 ArrayList<Position> adjListSecondPos = adjListFirstPos.get(i).getAdjList();
+
                 // go through adjList of the second position (3)
-                for (int j = 0; j < adjListSecondPos.size(); j++)
-                {
-                    if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere()))
-                    {
-                        if (adjListSecondPos.get(j).getToken().getToken().getFill()!=color){
-                            inARow = false;
-                        }
-                        else{
-                            System.out.println(adjListSecondPos.get(j).getToken().getToken().getFill());
-                            System.out.println(color);
-                            System.out.println(" samew colourrrrrrrrrrrrrrrrrrrrrrrrrrr");
-                            inARow = true;
-                        }
-                        break ;
+                for (int j = 0; j < adjListSecondPos.size(); j++) {
+
+                    if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere())) {
+                        inARow = true;
+                        break;
                     }
                 }
             }
