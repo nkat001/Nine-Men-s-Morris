@@ -22,7 +22,6 @@ public class MakeTokenMovable {
         makeTokenDraggable(circle);
         allowTokenReleased(circle);
     }
-    
     public void makeTokenDraggable(Node node){
         node.setOnMousePressed(e ->{
             this.initPos= token.getPosition();
@@ -32,11 +31,22 @@ public class MakeTokenMovable {
             starty = e.getSceneY() - node.getTranslateY();
 
             // when pressed , check if player has a mill and the token is removable
-            if((Rule.getHasAMill())&& (this.token.getIsTokenAllow()) &&(player.checkAction(this.token, initPos, null, true ))){
-                System.out.println("Token removed!");
-                ((Pane) node.getParent()).getChildren().remove(node);
-                player.removeToken(this.token);
-                initPos.removeToken();
+            if((Rule.getHasAMill())&& (this.token.getIsTokenAllow())){
+                if ( Rule.checkAllTokenMillPositions(player)){
+                    // all tokens has a mill or player check dy
+                    System.out.println("Token removed by position that has a mill ");
+                    ((Pane) node.getParent()).getChildren().remove(node);
+                    player.removeToken(this.token);
+                    initPos.removeToken();
+                }
+                else if ((player.checkAction(this.token, initPos, null, true ))){
+                    System.out.println("Token removed by valid position ");
+                    ((Pane) node.getParent()).getChildren().remove(node);
+                    player.removeToken(this.token);
+                    initPos.removeToken();
+                }
+
+
                 // check if is end game
                 if (Rule.endGame(player)){
                     // this player lose

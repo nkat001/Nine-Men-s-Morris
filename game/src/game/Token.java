@@ -46,7 +46,6 @@ public class Token {
         return tokenPosition;
     }
 
-
     public Circle getToken(){
         return this.token;
     }
