@@ -7,11 +7,11 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public class ResetPlayerTurn {
     private static Mode mode ;
     private static Player p1,p2;
-
-    private static Boolean hasAMill= false ;
 
     public static void setMode(Mode m){
         mode = m ;
@@ -34,7 +34,7 @@ public class ResetPlayerTurn {
     }
 
     public static void resetPlayerHasAMill(Player p){
-        setPlayerHasAMill(false);
+        Rule.setHasAMill(false);
         if (p== p1) {
             p1.isPlayerTurn();
             p2.notPlayerTurn();
@@ -48,13 +48,7 @@ public class ResetPlayerTurn {
         }
     }
 
-    public static void setPlayerHasAMill(Boolean b){
-        hasAMill=b;
-    }
 
-    public static Boolean getHasAMill(){
-        return hasAMill;
-    }
 
     public static void changeTokenColor(Player player){
         if (player == p1)
@@ -84,6 +78,7 @@ public class ResetPlayerTurn {
             translateTransition.play();
         }
     }
+
 
 }
 

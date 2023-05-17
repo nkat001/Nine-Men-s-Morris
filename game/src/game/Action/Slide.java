@@ -1,6 +1,7 @@
 package game.Action;
 
 import game.Position;
+import game.Rule;
 import game.Token;
 import java.util.ArrayList;
 
@@ -24,14 +25,16 @@ public class Slide implements Action{
         // check the initp adj list , if the two pos is the same
         for (int i = 0 ; i< initP.getAdjList().size(); i++){
             if(adjList.get(i)== newP) {
-                System.out.println("------------------------TRUE------------------TRUE--------------TRUE" );
+                System.out.println("------------------------TRUE------------------TRUE--------------SLIDE" );
                 b= true ;
+                if (Rule.checkPositionsHasAMIll(initP)){
+                    // this token initial has a mill
+                    Rule.removePositionsHasAMill(initP );
+                }
             }
         }
         if (!b){
-            System.out.println("------------------------FALE------------------FALSE--------------FALSE" );
-            System.out.println("------------------------FALSE------------------FALSE--------------FALSE" );
-
+            System.out.println("------------------------FALE------------------FALSE--------------SLIDE" );
         }
 
         return b;
