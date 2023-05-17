@@ -8,6 +8,9 @@ import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -34,6 +37,8 @@ public class DoublePlayer implements Mode {
     public DoublePlayer(String p1Name, String p2Name) {
         p1 = new Player(p1Name, Color.PINK);
         p2 = new Player(p2Name, Color.BLUE);
+        BackgroundFill backgroundFill = new BackgroundFill(Color.DARKCYAN, new CornerRadii(7), null);
+        Background background = new Background(backgroundFill);
 
         // set p1 label in the screen
         if (!p1.getName().equals("")) {
@@ -45,6 +50,7 @@ public class DoublePlayer implements Mode {
         }
 
         p1Label.setFont(playerFont);
+        p1Label.setBackground(background);
         StackPane.setMargin(p1Label, new Insets(200));
         StackPane.setAlignment(p1Label, Pos.TOP_LEFT);
 
@@ -63,6 +69,7 @@ public class DoublePlayer implements Mode {
             p2Label = new Label("Player 2");
         }
         p2Label.setFont(playerFont);
+        p2Label.setBackground(background);
         StackPane.setMargin(p2Label, new Insets(200));
         StackPane.setAlignment(p2Label, Pos.TOP_RIGHT);
     }
