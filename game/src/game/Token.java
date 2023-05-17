@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Token {
     private Position tokenPosition;
-    private final int TOKEN_RADIUS = 18;
+    private final int TOKEN_RADIUS = 22;
     private Circle token ;
     private Boolean isTokenAllow, hasPosition ;
 

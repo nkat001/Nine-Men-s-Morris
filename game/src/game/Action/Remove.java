@@ -24,7 +24,6 @@ public class Remove implements Action{
      * @return String
      */
     public Boolean execute(Token token, Position initP, Position newP){
-
         // check if the remove token is removable
         System.out.println("In REMOVE action--------------------------");
 
