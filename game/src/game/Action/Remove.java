@@ -31,14 +31,6 @@ public class Remove implements Action{
             System.out.println("cannot remove from player repos");
             b= false;
         }
-
-//        circle.setOnMouseClicked(event -> {
-//
-//            // if token.get ==
-//            System.out.println("Token removed!");
-//            ((Pane) circle.getParent()).getChildren().remove(circle);
-//
-//        });
         return b;
     }
 

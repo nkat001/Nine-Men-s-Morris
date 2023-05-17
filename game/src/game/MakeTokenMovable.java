@@ -35,7 +35,6 @@ public class MakeTokenMovable {
                     initPos.removeToken();
                     ResetPlayerTurn.resetPlayerHasAMill(player);
                 }
-
             }
         });
 
@@ -45,11 +44,10 @@ public class MakeTokenMovable {
             inity= node.getTranslateY();
             startx = e.getSceneX() - node.getTranslateX();
             starty = e.getSceneY() - node.getTranslateY();
-
         });
 
         node.setOnMouseDragged(e->{
-            if (this.token.getIsTokenAllow())
+            if (this.token.getIsTokenAllow() && (!ResetPlayerTurn.getHasAMill()) )
             {
                 node.setTranslateX(e.getSceneX()- startx );
                 node.setTranslateY(e.getSceneY()- starty);
@@ -61,7 +59,7 @@ public class MakeTokenMovable {
         ArrayList<Position> pos  = Board.getInstance().getPositions();
 
         node.setOnMouseReleased(e -> {
-            if (this.token.getIsTokenAllow())
+            if (this.token.getIsTokenAllow() && (!ResetPlayerTurn.getHasAMill()))
             {
                 double releaseX = e.getSceneX()-Board.getInstance().getGameBoard().getLayoutX();
                 double releaseY = e.getSceneY()-Board.getInstance().getGameBoard().getLayoutY();
@@ -86,6 +84,9 @@ public class MakeTokenMovable {
                             node.setTranslateY(e.getSceneY()- starty);
                             this.token.setTokenPosition(p);
                             isTrue = true;
+
+                            System.out.println("in a columnnnnnnnnnnnnnnnnnnnnn"+threeInAColumn(p));
+                            System.out.println("in a rowwwwwwwwwwwwwwwwwwwwwwwww"+threeInARow(p));
 
                             // check if the action executed is right
                             if (threeInAColumn(p) || threeInARow(p))
@@ -123,10 +124,11 @@ public class MakeTokenMovable {
     }
 
     private boolean threeInARow(Position position) {
-        boolean inARow = false;
+        Boolean inARow = false;
         int inARowCounter = 0; // checker
         Paint color = this.token.getToken().getFill();
-        System.out.println(color + " ------------------------------------------");
+        System.out.println(color);
+
 
         // check if placed in middle:
         for (int i = 0; i < position.getAdjList().size(); i++)
@@ -137,17 +139,15 @@ public class MakeTokenMovable {
                 // if the token is the same player token
                 if (position.getAdjList().get(i).getToken().getToken().getFill() == color )
                 {
-                    System.out.println(" --TRUEEEEEEEEEEE----------------------------------------");
                     inARowCounter += 1;
                 }
             }
-
             if (inARowCounter == 2)
             {
+                System.out.println("======================= 2 in a row" );
                 return true;
             }
         }
-
 
         ArrayList<Position> adjListFirstPos = position.getAdjList();
         for (int i = 0; i < adjListFirstPos.size(); i++)
@@ -163,13 +163,16 @@ public class MakeTokenMovable {
                 {
                     if (Math.abs(adjListSecondPos.get(j).getTokenNumber() - adjacentToken) == 1 && (adjListSecondPos.get(j).getIsTokenHere()))
                     {
-                        if (adjListSecondPos.get(j).getToken().getToken().getFill()== color){
-                            inARow = true;
-                        }
-                        else{
+                        if (adjListSecondPos.get(j).getToken().getToken().getFill()!=color){
                             inARow = false;
                         }
-                        break;
+                        else{
+                            System.out.println(adjListSecondPos.get(j).getToken().getToken().getFill());
+                            System.out.println(color);
+                            System.out.println(" samew colourrrrrrrrrrrrrrrrrrrrrrrrrrr");
+                            inARow = true;
+                        }
+                        break ;
                     }
                 }
             }
@@ -179,7 +182,6 @@ public class MakeTokenMovable {
     }
 
     private boolean threeInAColumn(Position position) {
-
         boolean inAColumn = false;
         int inAColumnCounter = 0; // checker
         Paint color = this.token.getToken().getFill();
@@ -189,7 +191,7 @@ public class MakeTokenMovable {
         for (int i = 0; i < position.getAdjList().size(); i++) {
             if (Math.abs(position.getAdjList().get(i).getTokenNumber() - position.getTokenNumber()) > 1 && position.getAdjList().get(i).getIsTokenHere())
             {
-                if ( position.getAdjList().get(i).getToken().getToken().getFill()== color ){
+                if (position.getAdjList().get(i).getToken().getToken().getFill()== color ){
                     inAColumnCounter += 1;
                 }
             }

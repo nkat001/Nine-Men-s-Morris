@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="updates to ui">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Place.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Remove.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Remove.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Slide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684246648647</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION">
+      <created>1684262175584</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684262175584</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,7 +357,8 @@
     <MESSAGE value="Remove print line" />
     <MESSAGE value="Remove test run class and implemented display class" />
     <MESSAGE value="added comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comments" />
+    <MESSAGE value="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
