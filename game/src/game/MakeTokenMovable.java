@@ -152,7 +152,6 @@ public class MakeTokenMovable {
         ArrayList<Position> adjListFirstPos = position.getAdjList();
         for (int i = 0; i < adjListFirstPos.size(); i++)
         {
-
             // check if the position next to the initial position is adjacent (make sure it's not vertical)
              if (Math.abs(adjListFirstPos.get(i).getTokenNumber() - position.getTokenNumber()) == 1 && adjListFirstPos.get(i).getIsTokenHere())
              {
