@@ -26,6 +26,7 @@ public class Position {
 
 
     public Position(Circle ip){
+        System.out.println(this);
         adjList= new ArrayList<>();
         this.ip = ip;
         this.isTokenHere= false;

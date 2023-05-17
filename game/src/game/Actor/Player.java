@@ -28,10 +28,6 @@ public class Player {
         }
     }
 
-    public void setAllowableAction(Action allowableAction) {
-        this.allowableAction = allowableAction;
-    }
-
     public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean removetoken) {
         if (removetoken){
             allowableAction= new Remove();
@@ -64,7 +60,6 @@ public class Player {
             }
 
         }
-
         System.out.println("Action to be performed: " + allowableAction);
         Boolean ret  = allowableAction.execute(selectedT,initP, finalPos );
 
@@ -87,6 +82,9 @@ public class Player {
 
     public Token getTokenAt(int i){
         return tokens.get(i);
+    }
+    public int getTokenSize(){
+        return this.tokens.size();
     }
 
     public void removeToken(Token token){

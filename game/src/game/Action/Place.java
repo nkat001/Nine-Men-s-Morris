@@ -2,28 +2,27 @@ package game.Action;
 
 import game.Position;
 import game.Token;
-
 /**
  * Place class that represent an action
- * <p>
- * Created by: Ethel
+ *
+ * Created by:
  *
  * @author Nethara
  */
 public class Place implements Action {
     /**
      * To execute the action on the token
-     *
-     * @param token is the token to execute on the board
-     * @return Boolean
+     * @param token
+     * @return String
      */
-    public Boolean execute(Token token, Position initP, Position newP) {
-        Boolean b = false;
+    public Boolean execute(Token token, Position initP, Position newP){
+        Boolean b = false ;
+        System.out.println("In place action--------------------------");
         // token initial no position can execute
-        if (!token.getHasPosition()) {
-            b = true;
+        if(!token.getHasPosition()){
+            b= true ;
         }
-        return b;
+        return b ;
     }
 
 }

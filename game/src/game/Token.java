@@ -9,10 +9,9 @@ import java.util.ArrayList;
 
 public class Token {
     private Position tokenPosition;
-    private final int TOKEN_RADIUS = 18;
+    private final int TOKEN_RADIUS = 22;
     private Circle token ;
     private Boolean isTokenAllow, hasPosition ;
-
 
     // when create a Token,  generate the token colour
     public Token (Color color){
@@ -42,7 +41,6 @@ public class Token {
     public Boolean getIsTokenAllow(){
         return this.isTokenAllow;
     }
-
 
     public Position getPosition() {
         return tokenPosition;
