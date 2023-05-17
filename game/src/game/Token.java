@@ -2,6 +2,7 @@ package game;
 
 import game.Action.Action;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -30,6 +31,7 @@ public class Token {
         this.hasPosition= true ;
         tokenPosition.addToken(this);
     }
+
     public void setIsTokenAllow(Boolean b ){
         this.isTokenAllow= b;
     }

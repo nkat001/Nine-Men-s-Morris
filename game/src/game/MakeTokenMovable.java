@@ -1,7 +1,9 @@
 package game;
 
+import game.Actor.DoublePlayer;
 import game.Actor.Player;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -14,6 +16,7 @@ public class MakeTokenMovable {
     private Token token ;
     private Position initPos, finalPos;
     private Player player;
+    private DoublePlayer doublePlayer;
 
     public MakeTokenMovable(Token token, Player player ){
         this.token= token ;
@@ -92,7 +95,8 @@ public class MakeTokenMovable {
                     this.token.setTokenPosition(finalPos);
                     // check the release token is what
                     if (Rule.checkPlayerHasAMill(finalPos,token)){
-                        System.out.println("detected HAS A MILLLLLLLL");
+                        millMessage();
+                        System.out.println("detected HAS A MILL");
                         Rule.addPositionHasAMill(Rule.getPosHasAMill());;
                         Rule.setHasAMill(true);
                     }
@@ -111,6 +115,15 @@ public class MakeTokenMovable {
                 node.setTranslateY(inity);
             }
         });
+    }
+
+    public void millMessage(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        String s1 = player.getName();
+        alert.setTitle("Mill Formed");
+        alert.setHeaderText(null);
+        alert.setContentText(player.getName() + " has a mill");
+        alert.showAndWait();
     }
 
 }
