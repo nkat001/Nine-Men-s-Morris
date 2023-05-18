@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="DOCUMENTATION">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Jump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Slide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Mode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Token.java" afterDir="false" />
-    </list>
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="DOCUMENTATION" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -377,7 +358,49 @@
       <option name="project" value="LOCAL" />
       <updated>1684439316541</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="DOCUMENTATION">
+      <created>1684439354718</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439354718</updated>
+    </task>
+    <task id="LOCAL-00031" summary="DOCUMENTATION">
+      <created>1684439466845</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439466845</updated>
+    </task>
+    <task id="LOCAL-00032" summary="DOCUMENTATION">
+      <created>1684439520941</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439520941</updated>
+    </task>
+    <task id="LOCAL-00033" summary="DOCUMENTATION">
+      <created>1684439566926</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439566926</updated>
+    </task>
+    <task id="LOCAL-00034" summary="DOCUMENTATION">
+      <created>1684439598097</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439598097</updated>
+    </task>
+    <task id="LOCAL-00035" summary="DOCUMENTATION">
+      <created>1684439608725</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439608726</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
