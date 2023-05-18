@@ -41,9 +41,13 @@ public class MakeTokenMovable {
                 player.removeToken(this.token);
                 initPos.removeToken();
                 // check if is end game
-                if (Rule.endGame(player)){
-                    // this player lose
-                    //
+                try {
+                    if (Rule.endGame(player)){
+                        // this player lose
+                        //
+                    }
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
                 }
                 ResetPlayerTurn.resetPlayerHasAMill(player);
             }

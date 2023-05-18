@@ -16,6 +16,7 @@ import java.util.Arrays;
  * @author Ethel Lim Jia Yee
  */
 public class Game {
+    private Rule rule;
 
     private final Board board = Board.getInstance();
 
@@ -24,6 +25,8 @@ public class Game {
     public Game(Mode m) {
         // double player mode or single player mode
         this.mode = m;
+        this.rule= new Rule(mode);
+
     }
 
     public void run() {

@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="message to show which player won added">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="error message added for player names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -355,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684340161028</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="error message added for player names">
+      <created>1684341787964</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684341787964</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -370,7 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added execute method in Action abstract class" />
     <MESSAGE value="Implemented IntersectionPoint class and added method in Board class" />
     <MESSAGE value="newest commit" />
     <MESSAGE value="minor changes on player class" />
@@ -395,7 +405,8 @@
     <MESSAGE value="UI updates" />
     <MESSAGE value="mill alert added" />
     <MESSAGE value="message to show which player won added" />
-    <option name="LAST_COMMIT_MESSAGE" value="message to show which player won added" />
+    <MESSAGE value="error message added for player names" />
+    <option name="LAST_COMMIT_MESSAGE" value="error message added for player names" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
