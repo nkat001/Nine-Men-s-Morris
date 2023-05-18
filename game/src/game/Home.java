@@ -24,6 +24,11 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * Initial page of the game
+ *
+ * @author Nethara
+ */
 public class Home extends Application {
     private String player1Name;
     private String player2Name;
@@ -32,6 +37,12 @@ public class Home extends Application {
     private static final Duration LETTER_APPEARANCE = Duration.millis(150);
     private int currentLetterIndex = 0;
     private Text headingText;
+
+    /**
+     * start method to start application
+     * @param stage is the platform to show the application
+     * @throws Exception for errors
+     */
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
@@ -108,6 +119,9 @@ public class Home extends Application {
         stage.show();
     }
 
+    /**
+     * show the letter transition of the home page for heading
+     */
     public void letterTransition() {
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(LETTER_APPEARANCE, event -> {
@@ -121,6 +135,10 @@ public class Home extends Application {
         timeline.play();
     }
 
+    /**
+     * Pop-up form to get the names of the players
+     * @param primaryStage is the platform to show the application
+     */
     public void playerForm(Stage primaryStage) {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
