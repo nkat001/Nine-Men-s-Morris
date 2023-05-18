@@ -20,15 +20,34 @@ public class ResetPlayerTurn {
     private static Mode mode ;
     private static Player p1,p2;
 
+    /**
+     * set the game mode
+     * @param m : mode
+     */
     public static void setMode(Mode m){
         mode = m ;
     }
+
+    /**
+     * set player 1
+     * @param p : player
+     */
     public static void setPlayer1(Player p){
         p1=p;
     }
+
+    /**
+     * set player 2
+     * @param p : player
+     */
     public static void setPlayer2(Player p){
         p2=p;
     }
+
+    /**
+     * reset player turn
+     * @param p : player
+     */
     public static void resetPlayersTurn(Player p){
         if (p== p1) {
             p2.isPlayerTurn();
@@ -39,6 +58,11 @@ public class ResetPlayerTurn {
             p2.notPlayerTurn();
         }
     }
+
+    /**
+     * reset player has a mill turn
+     * @param p : player
+     */
     public static void resetPlayerHasAMill(Player p){
         Rule.setHasAMill(false);
         if (p== p1) {
@@ -56,6 +80,7 @@ public class ResetPlayerTurn {
     /**
      *
      * changes colour of the tokens
+     * @param player : player
      */
     public static void changeTokenColor(Player player){
         if (player == p1)
@@ -85,6 +110,13 @@ public class ResetPlayerTurn {
             translateTransition.play();
         }
     }
+
+    /**
+     *
+     * end game
+\\
+     */
+
     public static void endPlayerGame(){
         p1.notPlayerTurn();
         p2.notPlayerTurn();

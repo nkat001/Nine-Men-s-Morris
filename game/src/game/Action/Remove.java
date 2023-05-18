@@ -11,25 +11,27 @@ import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
 /**
- * Remove class that represent an action
+ * Remove class that represent removing the token from the player
  *
  * Created by:
  *
- * @author Nethara
+ * @author Ethel
  */
 public class Remove implements Action{
     /**
-     * To execute the action on the token
-
+     * To check the action executed by the token
+     * @param token : Token
+     * @param initP : initial position
+     * @param newP : new position
      * @return String
      */
     public Boolean execute(Token token, Position initP, Position newP){
         // check if the remove token is removable
-        System.out.println("In REMOVE action--------------------------");
+        System.out.println("Checking Remove Action");
 
         Boolean b = true  ;
         if (initP== null){
-            System.out.println("cannot remove from player repos");
+            System.out.println("cannot remove token from player repository");
             b= false;
         }
         else if (Rule.checkPositionsHasAMIll(initP)){

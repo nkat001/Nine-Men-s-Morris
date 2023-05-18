@@ -11,8 +11,10 @@ import game.Token;
  */
 public interface Action {
     /**
-     * To execute the action on the token
-     * @param token
+     * To check the action executed by the token
+     * @param token : Token
+     * @param initP : initial position
+     * @param newP : new position
      * @return String
      */
     public Boolean execute(Token token,Position initP, Position newP);

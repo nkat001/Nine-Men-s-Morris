@@ -36,7 +36,6 @@ import javafx.util.Duration;
 public class Home extends Application {
     private String player1Name;
     private String player2Name;
-
     private static final String HEADING = "Nine Men's Morris";
     private static final Duration LETTER_APPEARANCE = Duration.millis(150);
     private int currentLetterIndex = 0;
@@ -189,7 +188,6 @@ public class Home extends Application {
             }
         });
         gridPane.addRow(2, submitButton);
-
         Scene scene = new Scene(gridPane, 400, 200);
         stage.setScene(scene);
         stage.showAndWait();

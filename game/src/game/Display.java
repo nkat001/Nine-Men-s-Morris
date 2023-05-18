@@ -54,10 +54,9 @@ public class Display extends Application {
         mainPane.getChildren().add(mode.getP1Label());
         mainPane.getChildren().add(mode.getP2Label());
 
-
+        // setting players
         Player p1 = mode.getP1();
         Player p2= mode.getP2();
-
         double spacing = 125;
 
         /**

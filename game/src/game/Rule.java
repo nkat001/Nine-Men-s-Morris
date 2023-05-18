@@ -1,11 +1,9 @@
 package game;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import game.Actor.Player;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -24,20 +22,27 @@ public class Rule {
     private static Boolean hasAMill = false;
     private static Stage stage = new Stage();
     private static Home homepage = new Home();
-    private  static Mode mode;
+    private static Mode mode;
 
-
-    public Rule(Mode mode) {
-        this.mode = mode;
-    }
+    /**
+     * set the milll positions of the game board
+     * @param pos : Position
+     * @param arr : ArrayList<ArrayList<Position>>
+     */
     public static void setMillPositions(Position pos, ArrayList<ArrayList<Position>> arr) {
         millPositions.put(pos, arr);
     }
 
     /**
-     *
+     * set the game mode
+     * @param m : mode
+     */
+    public static void setMode(Mode m){mode = m;}
+
+    /**
      * checks to see if a mill exists on the board
-     *
+     * @param token
+     * @param position
      */
     public static Boolean checkPlayerHasAMill(Position position, Token token){
         ArrayList<ArrayList<Position> > posList = millPositions.get(position);
@@ -75,12 +80,17 @@ public class Rule {
         }
         return isAMill;
     }
+
+    /**
+     * get the positions that formed a mill
+     * @return ArrayList<Position>
+     */
     public static ArrayList<Position> getPosHasAMill(){
         return posHasAMill;
     }
     /**
      * Detects if a position has a mill and adds it into the list
-     *
+     * @param list of positions
      */
     public static void addPositionHasAMill(ArrayList<Position> list ){
         ArrayList<Position> newList = new ArrayList<>(list);
@@ -90,7 +100,8 @@ public class Rule {
 
     /**
      *
-     *  checks tos ee if the position has a Mill
+     *  checks to see if the position has a Mill
+     * @param p : position
      */
     public static Boolean checkPositionsHasAMIll(Position p){
         if (p!=null && positionHasAMill.size()>0 ){
@@ -109,6 +120,7 @@ public class Rule {
     /**
      *
      * removes the position that has a mill
+     * @param p : position
      */
     public static void removePositionsHasAMill(Position p){
         Boolean isRemove = false ;
@@ -127,10 +139,18 @@ public class Rule {
         }
     }
 
+    /**
+     * set has a mill
+     * @param b Boolean
+     */
     public static void setHasAMill(Boolean b){
         hasAMill=b;
     }
 
+    /**
+     * get if the player has a mill
+     * @return Boolean
+     */
     public static Boolean getHasAMill(){
         return hasAMill;
     }
@@ -138,6 +158,7 @@ public class Rule {
     /**
      *
      * Checks to see if the game has ended
+     * @param player
      */
     public static Boolean endGame(Player player) throws Exception {
 
@@ -161,28 +182,38 @@ public class Rule {
     }
 
     /**
-     *
-     * checks to see if there are tokens on all positions
+     * checks is all tokens from the player has a mill
+     * @param player
      */
     public static Boolean checkAllTokenMillPositions(Player player){
         // if all tokens has positons in the has a mill list
-        System.out.println(" IN CHECKINGGGGG ALL TOKEN MILL POSITIONS  " );
         Boolean isAllMill = true ;
         ArrayList<Token> tokens = player.getTokens();
 
         for ( int i =0 ; i< tokens.size() ; i++){
             Position pos = tokens.get(i).getPosition();
             System.out.println(pos);
-
             if( pos!= null && !checkPositionsHasAMIll(pos))
             {
-                System.out.println(" NOT ALL POS HAS A MILLLLLLLLLLLLL " );
                 isAllMill = false ;
                 break ;
             }
 
         }
         return isAllMill;
+    }
+
+    /**
+     * display mill message on the UI
+     * @param player
+     */
+    public static void millMessage(Player player){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        String s1 = player.getName();
+        alert.setTitle("Mill Formed");
+        alert.setHeaderText(null);
+        alert.setContentText(player.getName() + " has a mill");
+        alert.showAndWait();
     }
 
 }
