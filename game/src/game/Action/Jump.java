@@ -1,6 +1,7 @@
 package game.Action;
 
 import game.Position;
+import game.Rule;
 import game.Token;
 
 /**
@@ -21,6 +22,12 @@ public class Jump implements Action{
         // token initial no position can execute
         if(!newP.getIsTokenHere()){
             b= true ;
+        }
+        if (b){
+            if (Rule.checkPositionsHasAMIll(initP)){
+                // this token initial has a mill so remove the positions that has a mill
+                Rule.removePositionsHasAMill(initP );
+            }
         }
         return b;
     }

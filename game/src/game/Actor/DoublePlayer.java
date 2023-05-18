@@ -25,6 +25,7 @@ import javafx.util.Duration;
  * <p>
  * modified by: Nethara
  */
+
 public class DoublePlayer implements Mode {
     private static final Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
     private Player p1, p2;
@@ -34,11 +35,9 @@ public class DoublePlayer implements Mode {
      * @param p1Name
      * @param p2Name
      */
-    public DoublePlayer(String p1Name, String p2Name) {
+    public DoublePlayer(String p1Name , String p2Name ){
         p1 = new Player(p1Name, Color.PINK);
-        p2 = new Player(p2Name, Color.BLUE);
-        BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);
-        Background background = new Background(backgroundFill);
+        p2 = new Player( p2Name, Color.BLUE);
 
         // set p1 label in the screen
         if (!p1.getName().equals("")) {
@@ -83,20 +82,17 @@ public class DoublePlayer implements Mode {
         p1.isPlayerTurn();
         p2.notPlayerTurn();
     }
-
     public Player getP1() {
         return p1;
     }
-
     public Player getP2() {
         return p2;
     }
-
     public Label getP1Label() {
         return p1Label;
     }
-
     public Label getP2Label() {
         return p2Label;
     }
+
 }

@@ -32,7 +32,7 @@ public class Remove implements Action{
             System.out.println("cannot remove from player repos");
             b= false;
         }
-        else if  (Rule.checkPositionsHasAMIll(initP)){
+        else if (Rule.checkPositionsHasAMIll(initP)){
             System.out.println("cannot remove token from position that has a mill ");
             b= false;
         }

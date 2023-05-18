@@ -28,8 +28,8 @@ public class Player {
         }
     }
 
-    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean removetoken) {
-        if (removetoken){
+    public Boolean checkAction (Token selectedT, Position initP, Position finalPos, Boolean removeToken) {
+        if (removeToken){
             allowableAction= new Remove();
         }
         else
@@ -85,6 +85,9 @@ public class Player {
     }
     public int getTokenSize(){
         return this.tokens.size();
+    }
+    public ArrayList<Token> getTokens(){
+        return this.tokens;
     }
 
     public void removeToken(Token token){

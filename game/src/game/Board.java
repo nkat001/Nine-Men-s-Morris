@@ -44,7 +44,9 @@ public class Board {
 
     }
 
-
+    /**
+     * sets positions that mills can be found on the board
+     */
     public void setMillPositions(){
         for ( int i =0 ; i< positions.size(); i+=8){
             Position p = positions.get(i);
@@ -59,7 +61,7 @@ public class Board {
 
             final_arr.add(arr1);
             final_arr.add(arr2);
-            System.out.println(i  +"psoition what ");
+            System.out.println(i  +"position what ");
             System.out.println(final_arr );
             Rule.setMillPositions(p , final_arr);
         }
@@ -184,6 +186,11 @@ public class Board {
         }
         return board;
     }
+
+    /**
+     *
+     * @return the game board
+     */
     public Group getGameBoard(){
         return this.gameBoard;
     }
@@ -254,6 +261,10 @@ public class Board {
         ip.get(23).setCenterY(b);
     }
 
+    /**
+     *
+     * creates lines for the game board
+     */
     public void createLine(int from , int end, ArrayList<Shape> shapes ){
         for (int i = from ; i <=end ; i++){
             Line line;
@@ -272,6 +283,10 @@ public class Board {
         shapes.add(line);
     }
 
+    /**
+     *
+     * sets position of the shapes for the game baord
+     */
     private Group generateBoard(){
         ArrayList<Shape> shapes = new ArrayList<>();
         setIPLocation();
@@ -292,6 +307,11 @@ public class Board {
         group.getChildren().addAll(shapes);
         return group ;
     }
+
+    /**
+     *
+     * sets positions that are adjacent to the positions
+     */
 
     private void setPositionAdjList(){
         for (int i =0; i<24 ; i++){
@@ -339,6 +359,10 @@ public class Board {
         }
     }
 
+    /**
+     *
+     * gets the positions of pieces on the board
+     */
     public ArrayList<Position> getPositions(){
         return this.positions;
     }

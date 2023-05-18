@@ -11,6 +11,14 @@ import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 
+/**
+ * MakeTokenMoveable class that contains logic  as how to the token is interacted with and placed on the board.
+ *
+ * Created by:
+ *
+ * @author Ethel Lim Jia Yee
+ * Modified by : Mahesh
+ */
 public class MakeTokenMovable {
     private double startx, starty, initx,inity;
     private Token token ;
@@ -25,7 +33,12 @@ public class MakeTokenMovable {
         makeTokenDraggable(circle);
         allowTokenReleased(circle);
     }
-    
+
+
+    /**
+     *
+     * logic for allowing tokens to become draggable
+     */
     public void makeTokenDraggable(Node node){
         node.setOnMousePressed(e ->{
             this.initPos= token.getPosition();
@@ -35,11 +48,22 @@ public class MakeTokenMovable {
             starty = e.getSceneY() - node.getTranslateY();
 
             // when pressed , check if player has a mill and the token is removable
-            if((Rule.getHasAMill())&& (this.token.getIsTokenAllow()) &&(player.checkAction(this.token, initPos, null, true ))){
-                System.out.println("Token removed!");
-                ((Pane) node.getParent()).getChildren().remove(node);
-                player.removeToken(this.token);
-                initPos.removeToken();
+            if((Rule.getHasAMill())&& (this.token.getIsTokenAllow())){
+                if ( Rule.checkAllTokenMillPositions(player)){
+                    // all tokens has a mill or player check dy
+                    System.out.println("Token removed by position that has a mill ");
+                    ((Pane) node.getParent()).getChildren().remove(node);
+                    player.removeToken(this.token);
+                    initPos.removeToken();
+                }
+                else if ((player.checkAction(this.token, initPos, null, true ))){
+                    System.out.println("Token removed by valid position ");
+                    ((Pane) node.getParent()).getChildren().remove(node);
+                    player.removeToken(this.token);
+                    initPos.removeToken();
+                }
+
+
                 // check if is end game
                 try {
                     if (Rule.endGame(player)){
@@ -61,6 +85,12 @@ public class MakeTokenMovable {
             }
         });
     }
+
+
+    /**
+     *
+     * allows token to be dropped onto the board
+     */
     public void allowTokenReleased(Node node){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
         node.setOnMouseReleased(e -> {

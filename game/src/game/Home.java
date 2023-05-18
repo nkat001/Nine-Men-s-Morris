@@ -25,6 +25,15 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
+ * Home class that contains UI elements to be displayed upon launch of the game
+ *
+ * Created by:
+ *
+ * @author Nethara
+ * Modified by : Ethel Lim Jia Yee
+ */
+
+/**
  * Initial page of the game
  *
  * @author Nethara
@@ -43,6 +52,7 @@ public class Home extends Application {
      * @param stage is the platform to show the application
      * @throws Exception for errors
      */
+
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();

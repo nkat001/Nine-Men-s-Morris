@@ -15,6 +15,14 @@ import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 
+/**
+ * Display class that creates the UI elements on the board upon selection of gamemode.
+ *
+ * Created by:
+ *
+ * @author Nethara
+ * Modified by : Ethel Lim Jia Yee
+ */
 public class Display extends Application {
     private Game game ;
 
@@ -33,7 +41,7 @@ public class Display extends Application {
         mainPane.getChildren().add(headingLabel);
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
-        // adding the board UI to the mainpane
+        // adding the board UI to the main pane
         Group gameBoard=game.getBoard().getGameBoard();
         mainPane.getChildren().add(gameBoard);
 
@@ -42,11 +50,16 @@ public class Display extends Application {
         mainPane.getChildren().add(mode.getP1Label());
         mainPane.getChildren().add(mode.getP2Label());
 
+
         Player p1 = mode.getP1();
         Player p2= mode.getP2();
 
         double spacing = 125;
 
+        /**
+         *
+         * setting tokens for both players
+         */
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
             Circle circle = p1.getTokenAt(i).getToken();
