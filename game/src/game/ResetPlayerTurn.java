@@ -53,6 +53,11 @@ public class ResetPlayerTurn {
 
         }
     }
+
+    /**
+     *
+     * changes colour of the tokens
+     */
     public static void changeTokenColor(Player player){
         if (player == p1)
         {

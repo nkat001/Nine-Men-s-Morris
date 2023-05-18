@@ -32,6 +32,10 @@ public class MakeTokenMovable {
     }
 
 
+    /**
+     *
+     * logic for allowing tokens to become draggable
+     */
     public void makeTokenDraggable(Node node){
         node.setOnMousePressed(e ->{
             this.initPos= token.getPosition();
@@ -75,6 +79,11 @@ public class MakeTokenMovable {
         });
     }
 
+
+    /**
+     *
+     * allows token to be dropped onto the board
+     */
     public void allowTokenReleased(Node node){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
         node.setOnMouseReleased(e -> {

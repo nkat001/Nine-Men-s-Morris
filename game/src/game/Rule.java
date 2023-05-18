@@ -24,6 +24,11 @@ public class Rule {
         millPositions.put(pos, arr );
     }
 
+    /**
+     *
+     * checks to see if a mill exists on the board
+     *
+     */
     public static Boolean checkPlayerHasAMill(Position position, Token token){
         ArrayList<ArrayList<Position> > posList = millPositions.get(position);
         Paint color = token.getToken().getFill();
@@ -62,11 +67,20 @@ public class Rule {
     public static ArrayList<Position> getPosHasAMill(){
         return posHasAMill;
     }
+    /**
+     * Detects if a position has a mill and adds it into the list
+     *
+     */
     public static void addPositionHasAMill(ArrayList<Position> list ){
         ArrayList<Position> newList = new ArrayList<>(list);
         positionHasAMill.add(newList);
         System.out.println("Position that has a mill : "+positionHasAMill);
     }
+
+    /**
+     *
+     *  checks tos ee if the position has a Mill
+     */
     public static Boolean checkPositionsHasAMIll(Position p){
         if (p!=null && positionHasAMill.size()>0 ){
             for (ArrayList<Position> posList : positionHasAMill){
@@ -80,6 +94,11 @@ public class Rule {
         }
         return false ;
     }
+
+    /**
+     *
+     * removes the position that has a mill
+     */
     public static void removePositionsHasAMill(Position p){
         Boolean isRemove = false ;
         for (ArrayList<Position> posList : positionHasAMill){
@@ -105,6 +124,10 @@ public class Rule {
         return hasAMill;
     }
 
+    /**
+     *
+     * Checks to see if the game has ended
+     */
     public static Boolean endGame(Player player){
         if (player.getTokenSize() ==2)
         {
@@ -115,6 +138,10 @@ public class Rule {
         return false ;
     }
 
+    /**
+     *
+     * checks to see if there are tokens on all positions
+     */
     public static Boolean checkAllTokenMillPositions(Player player){
         // if all tokens has positons in the has a mill list
         Boolean isAllMill = true ;

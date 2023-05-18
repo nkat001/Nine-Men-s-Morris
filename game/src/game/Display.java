@@ -30,6 +30,10 @@ public class Display extends Application {
         this.game = game ;
     }
 
+    /**
+     *
+     * Styling for UI elements on launch
+     */
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
@@ -42,7 +46,7 @@ public class Display extends Application {
         mainPane.getChildren().add(headingLabel);
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
 
-        // adding the board UI to the mainpane
+        // adding the board UI to the main pane
         Group gameBoard=game.getBoard().getGameBoard();
         mainPane.getChildren().add(gameBoard);
 
@@ -51,11 +55,15 @@ public class Display extends Application {
         mainPane.getChildren().add(mode.getP1Label());
         mainPane.getChildren().add(mode.getP2Label());
 
+
         Player p1 = mode.getP1();
         Player p2= mode.getP2();
 
         double spacing = 100;
-
+        /**
+         *
+         * setting tokens for both players
+         */
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
             Circle circle = p1.getTokenAt(i).getToken();
