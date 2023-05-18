@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="modified minor error">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="DOCUMENTATION">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Jump.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Place.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Remove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Action/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Slide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684416278682</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="DOCUMENTATION">
+      <created>1684439316541</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684439316541</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +392,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Token.java created setTokenPosition method &#10;Test try code in TestBoardGame.java&#10;Set Board to singleton instance" />
     <MESSAGE value="added execute method in Action abstract class" />
     <MESSAGE value="Implemented IntersectionPoint class and added method in Board class" />
     <MESSAGE value="newest commit" />
@@ -401,7 +416,8 @@
     <MESSAGE value="ADDED CHECKING END GAME" />
     <MESSAGE value="Remove additional main class" />
     <MESSAGE value="modified minor error" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified minor error" />
+    <MESSAGE value="DOCUMENTATION" />
+    <option name="LAST_COMMIT_MESSAGE" value="DOCUMENTATION" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
