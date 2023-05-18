@@ -17,25 +17,24 @@ public class Position {
      */
     private Boolean isTokenHere;
     private Token token ;
-    public ArrayList<Position> getAdjList() {
-        return adjList;
-    }
     private ArrayList<Position> adjList;
     private Circle ip;
-    private int tokenNumber;
 
 
     public Position(Circle ip){
+        System.out.println(this);
         adjList= new ArrayList<>();
         this.ip = ip;
         this.isTokenHere= false;
-        this.tokenNumber = 0;
     }
 
     public void addAdjList(Position p){
         this.adjList.add(p);
     }
 
+    public ArrayList<Position> getAdjList() {
+        return adjList;
+    }
 
     public Boolean getIsTokenHere(){
         return this.isTokenHere;
@@ -64,11 +63,4 @@ public class Position {
         return ip ;
     }
 
-    public int getTokenNumber() {
-        return tokenNumber;
-    }
-
-    public void setTokenNumber(int tokenNumber) {
-        this.tokenNumber = tokenNumber;
-    }
 }

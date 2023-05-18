@@ -17,6 +17,7 @@ public class Place implements Action {
      */
     public Boolean execute(Token token, Position initP, Position newP){
         Boolean b = false ;
+        System.out.println("In place action--------------------------");
         // token initial no position can execute
         if(!token.getHasPosition()){
             b= true ;

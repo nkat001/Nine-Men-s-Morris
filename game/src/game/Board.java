@@ -40,47 +40,139 @@ public class Board {
         // change board size here
         setPositionAdjList();
         gameBoard=generateBoard();
+        setMillPositions();
 
-        positions.get(0).setTokenNumber(0);
-        positions.get(1).setTokenNumber(1);
-        positions.get(2).setTokenNumber(2);
-
-        positions.get(8).setTokenNumber(3);
-        positions.get(9).setTokenNumber(4);
-        positions.get(10).setTokenNumber(5);
-
-        positions.get(16).setTokenNumber(6);
-        positions.get(17).setTokenNumber(7);
-        positions.get(18).setTokenNumber(8);
-
-        positions.get(7).setTokenNumber(9);
-        positions.get(15).setTokenNumber(10);
-        positions.get(23).setTokenNumber(11);
-
-        positions.get(19).setTokenNumber(12);
-        positions.get(11).setTokenNumber(13);
-        positions.get(3).setTokenNumber(14);
-
-        positions.get(22).setTokenNumber(15);
-        positions.get(21).setTokenNumber(16);
-        positions.get(20).setTokenNumber(17);
-
-        positions.get(14).setTokenNumber(18);
-        positions.get(13).setTokenNumber(19);
-        positions.get(12).setTokenNumber(20);
-
-        positions.get(6).setTokenNumber(21);
-        positions.get(5).setTokenNumber(22);
-        positions.get(4).setTokenNumber(23);
-
-
-
-//        gameBoard.setScaleX(1.5);
-//        gameBoard.setScaleY(1.5);
-//        gameBoard.setTranslateY(40);
     }
 
 
+    public void setMillPositions(){
+        for ( int i =0 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+7 ));
+            arr2.add(positions.get(i+7-1));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            System.out.println(i  +"psoition what ");
+            System.out.println(final_arr );
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =2 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+        for ( int i =4 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i+2));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+        for ( int i =6 ; i< positions.size(); i+=8){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            arr1.add(positions.get(i+1));
+            arr1.add(positions.get(i-6));
+
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-1 ));
+            arr2.add(positions.get(i-2));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+
+        for ( int i =1 ; i< 8; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 7 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+8 ));
+            arr2.add(positions.get(i+8+8));
+
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =9 ; i< 16; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 15 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i+8 ));
+            arr2.add(positions.get(i-8));
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+        for ( int i =17 ; i< 24; i+=2){
+            Position p = positions.get(i);
+            ArrayList<ArrayList<Position>> final_arr= new ArrayList<>();
+            ArrayList<Position> arr1= new ArrayList<>();
+            if (i == 23 ){
+                arr1.add(positions.get(i-7));
+                arr1.add(positions.get(i-1));
+            }
+            else{
+                arr1.add(positions.get(i+1));
+                arr1.add(positions.get(i-1));
+            }
+            ArrayList<Position> arr2= new ArrayList<>();
+            arr2.add(positions.get(i-8 ));
+            arr2.add(positions.get(i-8-8));
+            final_arr.add(arr1);
+            final_arr.add(arr2);
+            Rule.setMillPositions(p , final_arr);
+        }
+
+    }
 
 
     /**
@@ -97,29 +189,33 @@ public class Board {
     }
 
     public void setIPLocation(){
-        // outer square
-        ip.get(0).setCenterX(100);
-        ip.get(0).setCenterY(100);
-        ip.get(1).setCenterX(250);
-        ip.get(1).setCenterY(100);
-        ip.get(2).setCenterX(400);
-        ip.get(2).setCenterY(100);
-        ip.get(3).setCenterX(400);
-        ip.get(3).setCenterY(250);
-        ip.get(4).setCenterX(400);
-        ip.get(4).setCenterY(400);
-        ip.get(5).setCenterX(250);
-        ip.get(5).setCenterY(400);
-        ip.get(6).setCenterX(100);
-        ip.get(6).setCenterY(400);
-        ip.get(7).setCenterX(100);
-        ip.get(7).setCenterY(250);
-
         // inter square
         double a, b,c;
-        a = 150;
-        b = 250;
-        c = 350;
+        a = 100;
+        b = 370;
+        c = 640;
+        // outer square
+        ip.get(0).setCenterX(a);
+        ip.get(0).setCenterY(a);
+        ip.get(1).setCenterX(b);
+        ip.get(1).setCenterY(a);
+        ip.get(2).setCenterX(c);
+        ip.get(2).setCenterY(a);
+        ip.get(3).setCenterX(c);
+        ip.get(3).setCenterY(b);
+        ip.get(4).setCenterX(c);
+        ip.get(4).setCenterY(c);
+        ip.get(5).setCenterX(b);
+        ip.get(5).setCenterY(c);
+        ip.get(6).setCenterX(a);
+        ip.get(6).setCenterY(c);
+        ip.get(7).setCenterX(a);
+        ip.get(7).setCenterY(b);
+
+        // inter square
+        a = 190;
+        b = 370;
+        c = 550;
         ip.get(8).setCenterX(a);
         ip.get(8).setCenterY(a);
         ip.get(9).setCenterX(b);
@@ -137,9 +233,9 @@ public class Board {
         ip.get(15).setCenterX(a);
         ip.get(15).setCenterY(b);
 
-        a = 200;
-        b = 250;
-        c = 300;
+        a = 280;
+        b = 370;
+        c = 460;
         ip.get(16).setCenterX(a);
         ip.get(16).setCenterY(a);
         ip.get(17).setCenterX(b);
@@ -233,14 +329,12 @@ public class Board {
         for (int i = 1; i <=7;i+=2 ){
             Position p = positions.get(i);
             p.addAdjList(positions.get(i+8));
-            p.addAdjList(positions.get(i+8+8));
 
             Position p1 = positions.get(i+8);
             p1.addAdjList(positions.get(i));
             p1.addAdjList(positions.get(i+8+8));
 
             Position p2 = positions.get(i+8+8);
-            p2.addAdjList(positions.get(i));
             p2.addAdjList(positions.get(i+8));
         }
     }

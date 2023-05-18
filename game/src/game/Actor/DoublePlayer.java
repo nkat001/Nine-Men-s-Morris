@@ -21,9 +21,6 @@ public class DoublePlayer implements Mode {
     private Player p1, p2;
     private static Label p1Label, p2Label ;
 
-    public DoublePlayer(){
-        //p1Label = new Label(p1.getName());
-    }
     public DoublePlayer(String p1Name , String p2Name ){
         p1 = new Player(p1Name, Color.PINK);
         p2 = new Player( p2Name, Color.BLUE);
@@ -70,27 +67,17 @@ public class DoublePlayer implements Mode {
         p1.isPlayerTurn();
         p2.notPlayerTurn();
     }
-
     public Player getP1() {
         return p1;
     }
-
     public Player getP2() {
         return p2;
     }
-
     public Label getP1Label() {
         return p1Label;
     }
-
     public Label getP2Label() {
         return p2Label;
     }
 
-    public static Label player1Label() {
-        return p1Label;
-    }
-    public static Label player2Label() {
-        return p2Label;
-    }
 }
