@@ -22,5 +22,4 @@ public interface Mode {
 
     public Label getP2Label();
 
-
 }

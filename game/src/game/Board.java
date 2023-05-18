@@ -18,7 +18,7 @@ import java.util.*;
  * Modified by : Mahesh
  */
 public class Board {
-    private final int CIRCLE_RADIUS = 10;
+    private final int CIRCLE_RADIUS = 15;
     private Group gameBoard;
     private static Board board;
     private ArrayList<Circle> ip;
@@ -41,7 +41,6 @@ public class Board {
         setPositionAdjList();
         gameBoard=generateBoard();
         setMillPositions();
-
     }
 
     /**

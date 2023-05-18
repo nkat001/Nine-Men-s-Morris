@@ -5,6 +5,7 @@ import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -37,13 +38,14 @@ public class Home extends Application {
     private String player2Name;
 
     private static final String HEADING = "Nine Men's Morris";
-    private static final Duration LETTER_APPEARANCE = Duration.millis(250);
+    private static final Duration LETTER_APPEARANCE = Duration.millis(150);
     private int currentLetterIndex = 0;
     private Text headingText;
 
     /**
-     *
-     * loading in UI elements upon program loading
+     * start method to start application
+     * @param stage is the platform to show the application
+     * @throws Exception for errors
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -121,10 +123,6 @@ public class Home extends Application {
         stage.show();
     }
 
-    /**
-     *
-     * letter animation on display
-     */
     public void letterTransition() {
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(LETTER_APPEARANCE, event -> {
@@ -139,8 +137,8 @@ public class Home extends Application {
     }
 
     /**
-     *
-     * designing for UI elements sign in
+     * Pop-up form to get the names of the players
+     * @param primaryStage is the platform to show the application
      */
     public void playerForm(Stage primaryStage) {
         Stage stage = new Stage();
@@ -174,12 +172,21 @@ public class Home extends Application {
                 + "-fx-border-radius: 50px; -fx-text-fill: white;");
 
         submitButton.setOnAction(event -> {
-            player1Name = player1TextField.getText();
-            player2Name = player2TextField.getText();
-            Game game = new Game(new DoublePlayer(player1Name,player2Name));
-            Display display= new Display(game);
-            display.start(primaryStage);
-            stage.close();
+            if (player1TextField.getText().isEmpty() | player2TextField.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid player names");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter valid player names");
+                alert.showAndWait();
+            }
+            else {
+                player1Name = player1TextField.getText();
+                player2Name = player2TextField.getText();
+                Game game = new Game(new DoublePlayer(player1Name,player2Name));
+                Display display= new Display(game);
+                display.start(primaryStage);
+                stage.close();
+            }
         });
         gridPane.addRow(2, submitButton);
 

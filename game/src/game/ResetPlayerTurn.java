@@ -44,13 +44,12 @@ public class ResetPlayerTurn {
         if (p== p1) {
             p1.isPlayerTurn();
             p2.notPlayerTurn();
-            changeTokenColor( p2);
+            changeTokenColor(p2);
         }
         else{
             p2.isPlayerTurn();
             p1.notPlayerTurn();
-            changeTokenColor( p1);
-
+            changeTokenColor(p1);
         }
     }
 
@@ -61,8 +60,8 @@ public class ResetPlayerTurn {
     public static void changeTokenColor(Player player){
         if (player == p1)
         {
-            mode.getP1Label().setTextFill(Color.BLACK);
-            mode.getP2Label().setTextFill(Color.RED);
+            mode.getP1Label().setTextFill(Color.LIGHTGREEN);
+            mode.getP2Label().setTextFill(Color.WHITE);
 
             TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), mode.getP2Label());
             translateTransition.setFromY(0);
@@ -74,8 +73,8 @@ public class ResetPlayerTurn {
         }
         else
         {
-            mode.getP1Label().setTextFill(Color.RED);
-            mode.getP2Label().setTextFill(Color.BLACK);
+            mode.getP1Label().setTextFill(Color.WHITE);
+            mode.getP2Label().setTextFill(Color.LIGHTGREEN);
 
             TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.30), mode.getP1Label());
             translateTransition.setFromY(0);
