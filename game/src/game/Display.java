@@ -18,18 +18,24 @@ import javafx.geometry.Pos;
 /**
  * Display class that creates the UI elements on the board upon selection of gamemode.
  *
- * Created by:
- *
  * @author Nethara
  * Modified by : Ethel Lim Jia Yee
  */
 public class Display extends Application {
     private Game game ;
 
+    /**
+     * Constructor of display
+     * @param game parameter to display game on stage
+     */
     public Display(Game game) {
         this.game = game ;
     }
 
+    /**
+     *
+     * @param primaryStage is the stage the game will be displayed
+     */
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
@@ -56,10 +62,6 @@ public class Display extends Application {
 
         double spacing = 125;
 
-        /**
-         *
-         * setting tokens for both players
-         */
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
             Circle circle = p1.getTokenAt(i).getToken();

@@ -1,14 +1,10 @@
 package game;
 
-import game.Actor.DoublePlayer;
 import game.Actor.Player;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-
 import java.util.ArrayList;
 
 /**
@@ -24,7 +20,7 @@ public class MakeTokenMovable {
     private Token token ;
     private Position initPos, finalPos;
     private Player player;
-    private DoublePlayer doublePlayer;
+    private Boolean isRemoveToken= false ;
 
     public MakeTokenMovable(Token token, Player player ){
         this.token= token ;
@@ -41,6 +37,7 @@ public class MakeTokenMovable {
      */
     public void makeTokenDraggable(Node node){
         node.setOnMousePressed(e ->{
+            System.out.println(token);
             this.initPos= token.getPosition();
             initx= node.getTranslateX();
             inity= node.getTranslateY();
@@ -50,35 +47,39 @@ public class MakeTokenMovable {
             // when pressed , check if player has a mill and the token is removable
             if((Rule.getHasAMill())&& (this.token.getIsTokenAllow())){
                 if ( Rule.checkAllTokenMillPositions(player)){
-                    // all tokens has a mill or player check dy
-                    System.out.println("Token removed by position that has a mill ");
-                    ((Pane) node.getParent()).getChildren().remove(node);
-                    player.removeToken(this.token);
-                    initPos.removeToken();
+                    // all tokens has a mill
+                    if (initPos!= null){
+                        System.out.println("Token removed by position that has a mill ");
+                        ((Pane) node.getParent()).getChildren().remove(node);
+                        player.removeToken(this.token);
+                        initPos.removeToken();
+                        ResetPlayerTurn.resetPlayerHasAMill(player);
+                        this.isRemoveToken= true ;
+                    }
+
                 }
                 else if ((player.checkAction(this.token, initPos, null, true ))){
                     System.out.println("Token removed by valid position ");
                     ((Pane) node.getParent()).getChildren().remove(node);
                     player.removeToken(this.token);
                     initPos.removeToken();
-                }
+                    ResetPlayerTurn.resetPlayerHasAMill(player);
+                    this.isRemoveToken= true ;
 
+                }
 
                 // check if is end game
                 try {
-                    if (Rule.endGame(player)){
-                        // this player lose
-                        //
-                    }
+                    Rule.endGame(player);
+                    // this player lose
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
-                ResetPlayerTurn.resetPlayerHasAMill(player);
             }
 
         });
         node.setOnMouseDragged(e->{
-            if (this.token.getIsTokenAllow() && (!Rule.getHasAMill()) )
+            if (this.token.getIsTokenAllow() && (!Rule.getHasAMill()) && (!this.isRemoveToken) )
             {
                 node.setTranslateX(e.getSceneX()- startx );
                 node.setTranslateY(e.getSceneY()- starty);
@@ -94,7 +95,7 @@ public class MakeTokenMovable {
     public void allowTokenReleased(Node node){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
         node.setOnMouseReleased(e -> {
-            if (this.token.getIsTokenAllow() && (!Rule.getHasAMill()))
+            if (this.token.getIsTokenAllow() && (!Rule.getHasAMill()) && (!this.isRemoveToken))
             {
                 double releaseX = e.getSceneX()-Board.getInstance().getGameBoard().getLayoutX();
                 double releaseY = e.getSceneY()-Board.getInstance().getGameBoard().getLayoutY();
@@ -111,6 +112,8 @@ public class MakeTokenMovable {
                             // allow move the token to the new position
                             node.setTranslateX(e.getSceneX()- startx );
                             node.setTranslateY(e.getSceneY()- starty);
+
+                            System.out.println("Player valid action move token to : "+this.token.getPosition());
                             isTrue = true;
                         }
                         break ;
@@ -139,7 +142,6 @@ public class MakeTokenMovable {
                         ResetPlayerTurn.changeTokenColor(player);
                     }
                     ResetPlayerTurn.resetPlayersTurn(player);
-
                 }
             }
             else

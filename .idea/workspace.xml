@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="display winner message and UI updates" />
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="comments for home">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Jump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Rule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Token.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +75,7 @@
       <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Home">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -102,6 +119,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestBoardGame2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.TestBoardGame2" />
       <module name="project" />
@@ -115,22 +139,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.TestRun" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.TestRun" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Home" />
       <item itemvalue="Application.Display" />
       <item itemvalue="Application.Game" />
@@ -138,11 +148,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Home" />
         <item itemvalue="Application.TestBoardGame2" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.Display" />
-        <item itemvalue="Application.TestRun" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684393680685</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="comments for home">
+      <created>1684394208571</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684394208571</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -387,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="newest commit" />
     <MESSAGE value="minor changes on player class" />
     <MESSAGE value="Remove test class" />
     <MESSAGE value="Created the GUI in the Display class" />
@@ -412,7 +428,8 @@
     <MESSAGE value="message to show which player won added" />
     <MESSAGE value="error message added for player names" />
     <MESSAGE value="display winner message and UI updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="display winner message and UI updates" />
+    <MESSAGE value="comments for home" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments for home" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

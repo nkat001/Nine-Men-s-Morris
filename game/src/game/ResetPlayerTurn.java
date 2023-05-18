@@ -44,13 +44,12 @@ public class ResetPlayerTurn {
         if (p== p1) {
             p1.isPlayerTurn();
             p2.notPlayerTurn();
-            changeTokenColor( p2);
+            changeTokenColor(p2);
         }
         else{
             p2.isPlayerTurn();
             p1.notPlayerTurn();
-            changeTokenColor( p1);
-
+            changeTokenColor(p1);
         }
     }
 

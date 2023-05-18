@@ -18,27 +18,26 @@ import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
 
 
-// singleton , only one double player can be created and kept updated
-
 /**
  * @author Ethel
  * <p>
  * modified by: Nethara
  */
-
 public class DoublePlayer implements Mode {
     private static final Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
     private Player p1, p2;
     private static Label p1Label, p2Label;
 
+
     /**
      * @param p1Name
      * @param p2Name
      */
-    public DoublePlayer(String p1Name , String p2Name ){
+    public DoublePlayer(String p1Name, String p2Name) {
         p1 = new Player(p1Name, Color.PINK);
-        p2 = new Player( p2Name, Color.BLUE);
-
+        p2 = new Player(p2Name, Color.BLUE);
+        BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);
+        Background background = new Background(backgroundFill);
         // set p1 label in the screen
         if (!p1.getName().equals("")) {
             p1Label = new Label(p1.getName());
@@ -85,12 +84,15 @@ public class DoublePlayer implements Mode {
     public Player getP1() {
         return p1;
     }
+
     public Player getP2() {
         return p2;
     }
+
     public Label getP1Label() {
         return p1Label;
     }
+
     public Label getP2Label() {
         return p2Label;
     }
