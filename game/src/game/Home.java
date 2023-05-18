@@ -23,6 +23,15 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * Home class that contains UI elements to be displayed upon launch of the game
+ *
+ * Created by:
+ *
+ * @author Nethara
+ * Modified by : Ethel Lim Jia Yee
+ */
+
 public class Home extends Application {
     private String player1Name;
     private String player2Name;

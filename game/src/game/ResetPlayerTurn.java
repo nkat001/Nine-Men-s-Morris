@@ -9,6 +9,13 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
+/**
+ * Rule class used to organise player turns
+ *
+ * Created by:
+ *
+ * @author Ethel Lim
+ */
 public class ResetPlayerTurn {
     private static Mode mode ;
     private static Player p1,p2;

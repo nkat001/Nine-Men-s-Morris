@@ -6,6 +6,14 @@ import javafx.scene.paint.Paint;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Rule class that contains methods to determine if a Mill is found
+ *
+ * Created by:
+ *
+ * @author Ethel Lim Jia Yee
+ * Modified by : Mahesh
+ */
 public class Rule {
     private static HashMap <Position , ArrayList<ArrayList<Position> > > millPositions  = new HashMap<>();
     private static ArrayList<ArrayList<Position> > positionHasAMill= new ArrayList<>();
@@ -15,6 +23,7 @@ public class Rule {
     public static void setMillPositions(Position pos, ArrayList<ArrayList<Position>> arr ){
         millPositions.put(pos, arr );
     }
+
     public static Boolean checkPlayerHasAMill(Position position, Token token){
         ArrayList<ArrayList<Position> > posList = millPositions.get(position);
         Paint color = token.getToken().getFill();

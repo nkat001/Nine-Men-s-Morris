@@ -9,6 +9,14 @@ import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 
+/**
+ * MakeTokenMoveable class that contains logic  as how to the token is interacted with and placed on the board.
+ *
+ * Created by:
+ *
+ * @author Ethel Lim Jia Yee
+ * Modified by : Mahesh
+ */
 public class MakeTokenMovable {
     private double startx, starty, initx,inity;
     private Token token ;
@@ -22,6 +30,8 @@ public class MakeTokenMovable {
         makeTokenDraggable(circle);
         allowTokenReleased(circle);
     }
+
+
     public void makeTokenDraggable(Node node){
         node.setOnMousePressed(e ->{
             this.initPos= token.getPosition();
@@ -64,6 +74,7 @@ public class MakeTokenMovable {
             }
         });
     }
+
     public void allowTokenReleased(Node node){
         ArrayList<Position> pos  = Board.getInstance().getPositions();
         node.setOnMouseReleased(e -> {

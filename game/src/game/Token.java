@@ -7,6 +7,15 @@ import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 
+
+/**
+ * A Token class that contains the attributes of player tokens.
+ *
+ * Created by:
+ *
+ * @author Ethel Lim
+ * Modified by : Mahesh
+ */
 public class Token {
     private Position tokenPosition;
     private final int TOKEN_RADIUS = 22;

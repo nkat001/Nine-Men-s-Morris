@@ -15,6 +15,14 @@ import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 
+/**
+ * Display class that creates the UI elements on the board upon selection of gamemode.
+ *
+ * Created by:
+ *
+ * @author Nethara
+ * Modified by : Ethel Lim Jia Yee
+ */
 public class Display extends Application {
     private Game game ;
 

@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 
 // singleton , only one double player can be created and kept updated
+
 public class DoublePlayer implements Mode {
     private static Font playerFont = Font.font("Arial", FontWeight.BOLD, 30);
     private Player p1, p2;
