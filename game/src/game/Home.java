@@ -192,4 +192,8 @@ public class Home extends Application {
         stage.setScene(scene);
         stage.showAndWait();
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
