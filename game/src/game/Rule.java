@@ -60,14 +60,12 @@ public class Rule {
                 if(!pos.getIsTokenHere() )
                 {
                     // break the list , check other list
-                    System.out.println("NOOO ADDEDD");
                     isAMill= false;
                     break ;
                 }
                 // if there is token , check color
                 else if (pos.getToken().getToken().getFill() == color)
                 {
-                    System.out.println("same color so added");
                     posHasAMill.add(pos);
                     counter+=1;
                 }
@@ -95,7 +93,6 @@ public class Rule {
     public static void addPositionHasAMill(ArrayList<Position> list ){
         ArrayList<Position> newList = new ArrayList<>(list);
         positionHasAMill.add(newList);
-        System.out.println("Position that has a mill : "+positionHasAMill);
     }
 
     /**
@@ -108,7 +105,6 @@ public class Rule {
             for (ArrayList<Position> posList : positionHasAMill){
                 for ( Position pos  : posList){
                     if ( pos == p ){
-                        System.out.println("yess possssssssss has a millllllll");
                         return true ;
                     }
                 }
@@ -127,10 +123,9 @@ public class Rule {
         for (ArrayList<Position> posList : positionHasAMill){
             for ( Position pos  : posList){
                 if ( pos == p ){
-                    System.out.println("remove the position sthat has a millllllll");
                     positionHasAMill.remove(posList);
                     isRemove= true ;
-                    break ;
+                    break;
                 }
             }
             if (isRemove){
