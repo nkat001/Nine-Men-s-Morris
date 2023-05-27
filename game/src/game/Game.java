@@ -1,22 +1,13 @@
 package game;
 
-import game.Action.Place;
-import game.Action.Slide;
-import game.Actor.Player;
-import javafx.scene.layout.StackPane;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Game class represent the main game logic
- * <p>
+ *
  * Created by:
  *
  * @author Ethel Lim Jia Yee
  */
 public class Game {
-    private Rule rule;
 
     private final Board board = Board.getInstance();
 
@@ -25,18 +16,29 @@ public class Game {
     public Game(Mode m) {
         // double player mode or single player mode
         this.mode = m;
-        this.rule= new Rule(mode);
-
+        Rule.setMode(mode);
     }
 
+    /**
+     * run method
+     * to run all the game logic
+     */
     public void run() {
         this.mode.run();
     }
 
+    /**
+     * get board method
+     * @return Board
+     */
     public Board getBoard() {
         return board;
     }
 
+    /**
+     * get mode method
+     * @return Mode
+     */
     public Mode getMode() {
         return this.mode;
     }

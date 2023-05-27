@@ -20,7 +20,10 @@ public class Position {
     private ArrayList<Position> adjList;
     private Circle ip;
 
-
+    /**
+     * constructor
+     * @param ip : intersection point on the board
+     */
     public Position(Circle ip){
         System.out.println(this);
         adjList= new ArrayList<>();
@@ -28,20 +31,33 @@ public class Position {
         this.isTokenHere= false;
     }
 
+    /**
+     * add adjacent positions to the list
+     * @param p : position
+     */
     public void addAdjList(Position p){
         this.adjList.add(p);
     }
 
+    /**
+     * get adjacent positions list
+     * @return ArrayList<Position>
+     */
     public ArrayList<Position> getAdjList() {
         return adjList;
     }
 
+    /**
+     * get is token here
+     * @return Boolean
+     */
     public Boolean getIsTokenHere(){
         return this.isTokenHere;
     }
 
     /**
      * add token instance to the position
+     * @param t : token
      */
     public void addToken(Token t){
         isTokenHere= true ;
@@ -55,10 +71,18 @@ public class Position {
         isTokenHere= false;
     }
 
+    /**
+     * get token
+     * @return Token
+     */
     public Token getToken() {
         return token;
     }
 
+    /**
+     * get Intersection Point
+     * @return Circle
+     */
     public Circle getIP(){
         return ip ;
     }

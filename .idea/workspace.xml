@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="comments for home">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="Remove test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Action/Jump.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Action/Jump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/DoublePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/MakeTokenMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/ResetPlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Action/Jump.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/DoublePlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/ResetPlayerTurn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Rule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Token.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Nethara" />
+        <entry key="$PROJECT_DIR$" value="Ethel_Lim" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,44 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Nethara&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/FIT3077/project&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3816092&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ethel/OneDrive - Monash University/yr 2/FIT 2099/Assignment1",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="game" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\FIT3077\project\game\src\game" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20 (2)" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="game.Display" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.game.Home">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game" />
       <module name="project" />
@@ -105,22 +71,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.Home" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="TestBoardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.TestBoardGame" />
       <module name="project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,20 +91,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UI.Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.Home" />
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="game.Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Home" />
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Home" />
-      <item itemvalue="Application.Display" />
+      <item itemvalue="Application.TestBoardGame" />
+      <item itemvalue="Application.UI.Home" />
+      <item itemvalue="Application.game.Home" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.TestBoardGame2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Home" />
-        <item itemvalue="Application.TestBoardGame2" />
+        <item itemvalue="Application.game.Home" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.Display" />
+        <item itemvalue="Application.TestBoardGame2" />
+        <item itemvalue="Application.UI.Home" />
+        <item itemvalue="Application.TestBoardGame" />
       </list>
     </recent_temporary>
   </component>
@@ -221,175 +199,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682582787582</updated>
     </task>
-    <task id="LOCAL-00009" summary="Created the GUI in the Display class">
-      <created>1683209958533</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1683209958533</updated>
-    </task>
-    <task id="LOCAL-00010" summary="New size of GUI">
-      <created>1683721208884</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1683721208885</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Center the board">
-      <created>1683724144564</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1683724144564</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Labels added">
-      <created>1683725905962</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1683725905962</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Tokens created">
-      <created>1683727360547</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1683727360547</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Updated tokens and ui">
-      <created>1683728779336</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1683728779336</updated>
-    </task>
-    <task id="LOCAL-00015" summary="some changes to position">
-      <created>1683728951963</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1683728951963</updated>
-    </task>
-    <task id="LOCAL-00016" summary="updates">
-      <created>1683787364005</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1683787364005</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Home page of ui created">
-      <created>1683812826929</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1683812826929</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Custom buttons added to home ui">
-      <created>1683813723481</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1683813723481</updated>
-    </task>
-    <task id="LOCAL-00019" summary="- Action.java use to check if the action executed ic right&#10;- Player.java - added checkAction method &#10;- DoublePlayer.java - use to create two player instance&#10;-MakeTokenMovable.java - add action on the token &#10;- Token.java - added some boolean to check if the token can move">
-      <created>1683970299055</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1683970299055</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Remove print line">
-      <created>1683991170776</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1683991170776</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Remove test run class and implemented display class">
-      <created>1684121370309</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1684121370309</updated>
-    </task>
-    <task id="LOCAL-00022" summary="added comments">
-      <created>1684246648647</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1684246648647</updated>
-    </task>
-    <task id="LOCAL-00023" summary="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION">
-      <created>1684262175584</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1684262175584</updated>
-    </task>
-    <task id="LOCAL-00024" summary="UI updated">
-      <created>1684338199899</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1684338199899</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Alert created to send message for mill">
-      <created>1684338231313</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1684338231313</updated>
-    </task>
-    <task id="LOCAL-00026" summary="UI updates">
-      <created>1684340089111</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1684340089111</updated>
-    </task>
-    <task id="LOCAL-00027" summary="mill alert added">
-      <created>1684340124370</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1684340124370</updated>
-    </task>
-    <task id="LOCAL-00028" summary="message to show which player won added">
-      <created>1684340161028</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1684340161028</updated>
-    </task>
-    <task id="LOCAL-00029" summary="error message added for player names">
-      <created>1684341787964</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1684341787964</updated>
-    </task>
-    <task id="LOCAL-00030" summary="display winner message and UI updates">
-      <created>1684393555186</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1684393555186</updated>
-    </task>
-    <task id="LOCAL-00031" summary="display winner message and UI updates">
-      <created>1684393680685</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1684393680685</updated>
-    </task>
-    <task id="LOCAL-00032" summary="comments for home">
-      <created>1684394208571</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1684394208571</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,35 +214,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="reset" />
+    <MESSAGE value="Board.java implemented methods to initialise the Board in terminal&#10;Position.java setup Position class attributes" />
+    <MESSAGE value="Token.java created setTokenPosition method &#10;Test try code in TestBoardGame.java&#10;Set Board to singleton instance" />
+    <MESSAGE value="added execute method in Action abstract class" />
+    <MESSAGE value="Implemented IntersectionPoint class and added method in Board class" />
+    <MESSAGE value="newest commit" />
     <MESSAGE value="minor changes on player class" />
     <MESSAGE value="Remove test class" />
-    <MESSAGE value="Created the GUI in the Display class" />
-    <MESSAGE value="New size of GUI" />
-    <MESSAGE value="Center the board" />
-    <MESSAGE value="Labels added" />
-    <MESSAGE value="Tokens created" />
-    <MESSAGE value="Updated tokens and ui" />
-    <MESSAGE value="some changes to position" />
-    <MESSAGE value="updates" />
-    <MESSAGE value="Home page of ui created" />
-    <MESSAGE value="Custom buttons added to home ui" />
-    <MESSAGE value="- Action.java use to check if the action executed ic right&#10;- Player.java - added checkAction method &#10;- DoublePlayer.java - use to create two player instance&#10;-MakeTokenMovable.java - add action on the token &#10;- Token.java - added some boolean to check if the token can move" />
-    <MESSAGE value="Remove print line" />
-    <MESSAGE value="Remove test run class and implemented display class" />
-    <MESSAGE value="added comments" />
-    <MESSAGE value="FIX CHECKING IF THE TOKEN IS THE SAME COLOUR &#10;FIX CHECKING IF THE REMOVE ACTION" />
-    <MESSAGE value="UI updated" />
-    <MESSAGE value="Alert created to send message for mill" />
-    <MESSAGE value="UI updates" />
-    <MESSAGE value="mill alert added" />
-    <MESSAGE value="message to show which player won added" />
-    <MESSAGE value="error message added for player names" />
-    <MESSAGE value="display winner message and UI updates" />
-    <MESSAGE value="comments for home" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments for home" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove test class" />
   </component>
 </project>

@@ -1,13 +1,7 @@
 package game;
 
-import game.Action.Action;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
-import java.util.ArrayList;
-
 
 /**
  * A Token class that contains the attributes of player tokens.
@@ -23,40 +17,66 @@ public class Token {
     private Circle token ;
     private Boolean isTokenAllow, hasPosition ;
 
-    // when create a Token,  generate the token colour
+
+    /**
+     * constructor
+     * @param color
+     */
     public Token (Color color){
         this.token = new Circle(TOKEN_RADIUS, color);
         this.token.setStroke(Color.BLACK);
         this.token.setStrokeWidth(2);
         this.hasPosition= false;
-        // for checking if is this token chosen to move and check if is allow
+        // for checking if is allow to move
         this.isTokenAllow= false;
-
     }
 
-    // set token to a new position using the draggable
+    /**
+     * set Token Position
+     * @param p Position
+     */
     public void setTokenPosition(Position p ){
         this.tokenPosition= p;
         this.hasPosition= true ;
         tokenPosition.addToken(this);
     }
 
+    /**
+     * set isTokenAllow
+     * @param b  Boolean
+     */
     public void setIsTokenAllow(Boolean b ){
         this.isTokenAllow= b;
     }
 
+    /**
+     * get has position
+     * @return Boolean
+     */
     public Boolean getHasPosition(){
         return this.hasPosition;
     }
 
+    /**
+     * get isTokenAllow
+     * @return Boolean
+     */
     public Boolean getIsTokenAllow(){
         return this.isTokenAllow;
     }
 
+    /**
+     * get position
+     * @return position
+     */
     public Position getPosition() {
         return tokenPosition;
     }
 
+    /**
+     * get token
+     * @return circle
+     */
     public Circle getToken(){
         return this.token;
     }

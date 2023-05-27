@@ -33,15 +33,9 @@ import javafx.util.Duration;
  * Modified by : Ethel Lim Jia Yee
  */
 
-/**
- * Initial page of the game
- *
- * @author Nethara
- */
 public class Home extends Application {
     private String player1Name;
     private String player2Name;
-
     private static final String HEADING = "Nine Men's Morris";
     private static final Duration LETTER_APPEARANCE = Duration.millis(150);
     private int currentLetterIndex = 0;
@@ -52,7 +46,6 @@ public class Home extends Application {
      * @param stage is the platform to show the application
      * @throws Exception for errors
      */
-
     @Override
     public void start(Stage stage) throws Exception {
         StackPane pane = new StackPane();
@@ -129,9 +122,6 @@ public class Home extends Application {
         stage.show();
     }
 
-    /**
-     * show the letter transition of the home page for heading
-     */
     public void letterTransition() {
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(new KeyFrame(LETTER_APPEARANCE, event -> {
@@ -198,9 +188,12 @@ public class Home extends Application {
             }
         });
         gridPane.addRow(2, submitButton);
-
         Scene scene = new Scene(gridPane, 400, 200);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

@@ -1,6 +1,5 @@
 package game;
 
-import game.Actor.Player;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -41,7 +40,6 @@ public class Board {
         setPositionAdjList();
         gameBoard=generateBoard();
         setMillPositions();
-
     }
 
     /**
