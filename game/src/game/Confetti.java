@@ -1,6 +1,7 @@
 package game;
 
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -47,6 +48,11 @@ public class Confetti {
     }
 
     public void moveParticles(){
-
+        for (Node node : particles.getChildren()) {
+            double[] velocity = (double[]) node.getUserData();
+            node.setTranslateX(node.getTranslateX() + velocity[0]);
+            node.setTranslateY(node.getTranslateY() + velocity[1]);
+            velocity[1] += 0.05;
+        }
     }
 }
