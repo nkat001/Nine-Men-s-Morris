@@ -45,4 +45,8 @@ public class Confetti {
         int blue = random.nextInt(230);
         return Color.rgb(red, green, blue);
     }
+
+    public void moveParticles(){
+
+    }
 }
