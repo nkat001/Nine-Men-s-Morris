@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="from sprint 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/game/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Confetti.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Confetti.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Nethara&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ethel/OneDrive - Monash University/yr 2/FIT 2099/Assignment1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/FIT3077/project/game&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
