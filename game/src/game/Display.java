@@ -50,7 +50,7 @@ public class Display extends Application {
         // adding players label in the main pane
         Mode mode = game.getMode();
         mainPane.getChildren().add(mode.getP1Label());
-        mainPane.getChildren().add(mode.getP2Label());
+        //mainPane.getChildren().add(mode.getP2Label());
 
         // setting players
         Player p1 = mode.getP1();

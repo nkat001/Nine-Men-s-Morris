@@ -1,6 +1,7 @@
 package game;
 
 import game.Actor.DoublePlayer;
+import game.Actor.SinglePlayer;
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -43,6 +44,7 @@ public class Home extends Application {
 
     /**
      * start method to start application
+     *
      * @param stage is the platform to show the application
      * @throws Exception for errors
      */
@@ -114,6 +116,9 @@ public class Home extends Application {
         computerButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #159895; -fx-background-radius: 50px; "
                 + "-fx-border-radius: 50px; -fx-text-fill: white;");
         pane.getChildren().add(computerButton);
+        computerButton.setOnAction(event -> {
+            computerForm(stage);
+        });
         StackPane.setAlignment(computerButton, Pos.CENTER_RIGHT);
 
         Scene scene = new Scene(pane, screenWidth, screenHeight);
@@ -137,6 +142,7 @@ public class Home extends Application {
 
     /**
      * Pop-up form to get the names of the players
+     *
      * @param primaryStage is the platform to show the application
      */
     public void playerForm(Stage primaryStage) {
@@ -171,18 +177,61 @@ public class Home extends Application {
                 + "-fx-border-radius: 50px; -fx-text-fill: white;");
 
         submitButton.setOnAction(event -> {
-            if (player1TextField.getText().isEmpty() | player2TextField.getText().isEmpty()){
+            if (player1TextField.getText().isEmpty() | player2TextField.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Invalid player names");
                 alert.setHeaderText(null);
                 alert.setContentText("Please enter valid player names");
                 alert.showAndWait();
-            }
-            else {
+            } else {
                 player1Name = player1TextField.getText();
                 player2Name = player2TextField.getText();
-                Game game = new Game(new DoublePlayer(player1Name,player2Name));
-                Display display= new Display(game);
+                Game game = new Game(new DoublePlayer(player1Name, player2Name));
+                Display display = new Display(game);
+                display.start(primaryStage);
+                stage.close();
+            }
+        });
+        gridPane.addRow(2, submitButton);
+        Scene scene = new Scene(gridPane, 400, 200);
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+    public void computerForm(Stage primaryStage) {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Player Name");
+        stage.initOwner(primaryStage);
+
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setVgap(25);
+        gridPane.setHgap(10);
+
+        Label player1Label = new Label("Player name: ");
+        TextField player1TextField = new TextField();
+        player1TextField.setPrefColumnCount(20);
+        Font playerFont = Font.font("Arial", FontWeight.BOLD, 15);
+        player1Label.setFont(playerFont);
+        gridPane.addRow(0, player1Label, player1TextField);
+        Button submitButton = new Button("Start Game");
+        submitButton.setScaleX(1.4);
+        submitButton.setScaleY(1.4);
+        submitButton.setTranslateX(275);
+        submitButton.setStyle("-fx-border-color: #B8E7E1; -fx-background-color: #609966; -fx-background-radius: 25px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+
+        submitButton.setOnAction(event -> {
+            if (player1TextField.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid player names");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter valid player names");
+                alert.showAndWait();
+            } else {
+                player1Name = player1TextField.getText();
+                Game game = new Game(new SinglePlayer(player1Name));
+                Display display = new Display(game);
                 display.start(primaryStage);
                 stage.close();
             }

@@ -1,11 +1,19 @@
 package game;
 
 import game.Actor.Player;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.Group;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Paint;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Rule class that contains methods to determine if a Mill is found
@@ -23,6 +31,8 @@ public class Rule {
     private static Stage stage = new Stage();
     private static Home homepage = new Home();
     private static Mode mode;
+    private static List<Confetti> confettiList;
+    private static final int NUM_CONFETTI = 10;
 
     /**
      * set the milll positions of the game board
@@ -158,6 +168,8 @@ public class Rule {
     public static Boolean endGame(Player player) throws Exception {
 
         if (player.getTokenSize() == 2) {
+            confetti(stage);
+            System.out.println("CONFETIIIIIIII");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Winner");
             alert.setHeaderText(null);
@@ -204,11 +216,38 @@ public class Rule {
      */
     public static void millMessage(Player player){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        String s1 = player.getName();
         alert.setTitle("Mill Formed");
         alert.setHeaderText(null);
         alert.setContentText(player.getName() + " has a mill");
         alert.showAndWait();
     }
 
+    public static void confetti(Stage stage) {
+        Group group = new Group();
+        confettiList = new ArrayList<>();
+        // creating a screen
+        Screen screen = Screen.getPrimary();
+        javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
+        double screenWidth = bounds.getWidth();
+        double screenHeight = bounds.getHeight();
+
+        for (int i = 0; i < NUM_CONFETTI; i++) {
+            double x = Math.random() * screenWidth;
+            double y = Math.random() * screenHeight;
+            Confetti confetti = new Confetti(x, y);
+            confettiList.add(confetti);
+            group.getChildren().addAll(confetti.getParticles());
+        }
+        startConfetti();
+    }
+
+    public static void startConfetti() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(30), event -> {
+            for (Confetti confetti : confettiList) {
+                confetti.moveParticles();
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
 }
