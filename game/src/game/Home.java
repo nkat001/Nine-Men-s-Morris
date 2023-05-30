@@ -205,7 +205,7 @@ public class Home extends Application {
 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
-        gridPane.setVgap(25);
+        gridPane.setVgap(20);
         gridPane.setHgap(10);
 
         Label player1Label = new Label("Player name: ");
@@ -230,14 +230,14 @@ public class Home extends Application {
                 alert.showAndWait();
             } else {
                 player1Name = player1TextField.getText();
-                Game game = new Game(new SinglePlayer(player1Name));
+                Game game = new Game(new SinglePlayer(player1Name, "Computer"));
                 Display display = new Display(game);
                 display.start(primaryStage);
                 stage.close();
             }
         });
         gridPane.addRow(2, submitButton);
-        Scene scene = new Scene(gridPane, 400, 200);
+        Scene scene = new Scene(gridPane, 400, 150);
         stage.setScene(scene);
         stage.showAndWait();
     }
