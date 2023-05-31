@@ -18,6 +18,7 @@ public class Player {
     private ArrayList<Token> tokens;
     private Action allowableAction;
     private Boolean allTokensPlaced;
+    private Boolean isPlayerControlled;
 
     /**
      * Constructor
@@ -28,6 +29,15 @@ public class Player {
         this.name= name ;
         this.allTokensPlaced= false;
         this.tokens = new ArrayList<>();
+        this.isPlayerControlled = true;
+        setUpTokens(color);
+    }
+
+    public Player(String name, Color color, Boolean isPlayerControlled){
+        this.name= name ;
+        this.allTokensPlaced= false;
+        this.tokens = new ArrayList<>();
+        this.isPlayerControlled = isPlayerControlled;
         setUpTokens(color);
     }
 
@@ -143,6 +153,14 @@ public class Player {
      */
     public void removeToken(Token token){
         this.tokens.remove(token);
+    }
+
+    public Boolean getPlayerControlled() {
+        return isPlayerControlled;
+    }
+
+    public void setPlayerControlled(Boolean playerControlled) {
+        isPlayerControlled = playerControlled;
     }
 }
 

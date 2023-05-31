@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 
+import java.util.ArrayList;
+
 /**
  * Display class that creates the UI elements on the board upon selection of gamemode.
  *
@@ -24,7 +26,10 @@ import javafx.geometry.Pos;
  * Modified by : Ethel Lim Jia Yee
  */
 public class Display extends Application {
-    private Game game ;
+    private Game game;
+
+    //private ArrayList<Circle> circlesList;
+
 
     public Display(Game game) {
         this.game = game ;
@@ -63,6 +68,8 @@ public class Display extends Application {
          *
          * setting tokens for both players
          */
+
+
         // tokens for player 1
         for (int i = 0; i < 5; i++) {
             Circle circle = p1.getTokenAt(i).getToken();
@@ -81,10 +88,14 @@ public class Display extends Application {
         // tokens for player 2
         for (int i = 0; i < 4; i++) {
             Circle circle = p2.getTokenAt(i+ 5).getToken();
+            //circlesList.add(circle);
             mainPane.getChildren().add(circle);
             StackPane.setMargin(circle, new Insets(spacing * i, 270, 170, 250)); // Adjust the vertical margin for each circle
             StackPane.setAlignment(circle, Pos.CENTER_RIGHT);
+            System.out.println("circle added");
         }
+
+        //circlesList.get(1).fireEvent(new MouseEvent(MouseEvent.MOUSE_PRESSED, 0, 0, 0, 0, null, 0, false, false, false, false, true, false, false, false, false, false, null));
 
         for (int i = 0; i < 5; i++) {
             Circle circle = p2.getTokenAt(i).getToken();

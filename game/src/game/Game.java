@@ -18,7 +18,6 @@ public class Game {
         this.mode = m;
         Rule.setMode(mode);
     }
-
     /**
      * run method
      * to run all the game logic

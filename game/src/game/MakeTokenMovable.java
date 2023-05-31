@@ -7,6 +7,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
+import javafx.scene.input.MouseEvent;
+import java.util.Random;
+
 /**
  * MakeTokenMoveable class that contains logic as how to the token is interacted with and placed on the board.
  *
@@ -33,8 +36,17 @@ public class MakeTokenMovable {
         this.token= token ;
         this.player= player ;
         Circle circle= token.getToken();
-        makeTokenDraggable(circle);
-        allowTokenReleased(circle);
+
+        if (player.getPlayerControlled()) {
+
+            makeTokenDraggable(circle);
+            allowTokenReleased(circle);
+
+        } else {
+            System.out.println("the player isn't a human for sure");
+            dragRandomShapes();
+        }
+
     }
 
 
@@ -93,6 +105,30 @@ public class MakeTokenMovable {
                 node.setTranslateY(e.getSceneY()- starty);
             }
         });
+    }
+
+
+
+    /**
+     *
+     * logic for allowing tokens to become computer selected
+     * @param node
+     */
+    public void makeTokenComputerDraggable(Node node) {
+
+    }
+
+    public void dragRandomShapes() {
+
+//        // List of random positions (on board that can be moved too)
+//
+//        // Alternate through those positions
+//
+//
+//
+//        // Trigger the mouse press and drag events on shape1 programmatically
+//        shape.fireEvent(new MouseEvent(MouseEvent.MOUSE_PRESSED, initialX, initialY, initialX, initialY, null, 0, false, false, false, false, true, false, false, false, false, false, null));
+
     }
 
 

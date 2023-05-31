@@ -36,7 +36,7 @@ public class SinglePlayer implements Mode {
     public SinglePlayer(String p1Name, String p2Name) {
         // create player instances
         p1 = new Player(p1Name, Color.PINK);
-        p2 = new Player(p2Name, Color.BLUE);
+        p2 = new Player(p2Name, Color.BLUE, false);
 
         // setting the UI for double player
         BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);

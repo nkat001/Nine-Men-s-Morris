@@ -193,7 +193,7 @@ public class Rule {
      * @param player
      */
     public static Boolean checkAllTokenMillPositions(Player player){
-        // if all tokens has positons in the has a mill list
+        // if all tokens has positions in the has a mill list
         Boolean isAllMill = true ;
         ArrayList<Token> tokens = player.getTokens();
 
@@ -205,7 +205,6 @@ public class Rule {
                 isAllMill = false ;
                 break ;
             }
-
         }
         return isAllMill;
     }
