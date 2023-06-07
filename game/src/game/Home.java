@@ -231,6 +231,7 @@ public class Home extends Application {
             } else {
                 player1Name = player1TextField.getText();
                 Game game = new Game(new SinglePlayer(player1Name, "Computer"));
+                Rule.setSpMode(true);
                 Display display = new Display(game);
                 display.start(primaryStage);
                 stage.close();

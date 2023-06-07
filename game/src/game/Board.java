@@ -364,4 +364,6 @@ public class Board {
     public ArrayList<Position> getPositions(){
         return this.positions;
     }
+
+
 }

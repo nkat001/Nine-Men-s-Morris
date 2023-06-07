@@ -31,8 +31,30 @@ public class Rule {
     private static Stage stage = new Stage();
     private static Home homepage = new Home();
     private static Mode mode;
+    private static Boolean spMode= false ;
     private static List<Confetti> confettiList;
     private static final int NUM_CONFETTI = 10;
+
+    private static ArrayList<Token> compTokens;
+    private static Player compPlayer;
+
+
+    public static void setCompPlayer(Player p){
+        compPlayer= p ;
+    }
+    public static Player getCompPlayer(){
+        return compPlayer;
+    }
+
+    public static void setCompTokens(ArrayList<Token> cpt){
+        compTokens= cpt;
+    }
+
+
+    public static ArrayList<Token> getCompTokens(){
+        return compTokens ;
+    }
+
 
     /**
      * set the milll positions of the game board
@@ -48,6 +70,8 @@ public class Rule {
      * @param m : mode
      */
     public static void setMode(Mode m){mode = m;}
+    public static void setSpMode(Boolean m){spMode = m;}
+
 
     /**
      * checks to see if a mill exists on the board

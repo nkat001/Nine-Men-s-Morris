@@ -2,6 +2,7 @@ package game.Actor;
 
 import game.Mode;
 import game.ResetPlayerTurn;
+import game.Rule;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
@@ -38,6 +39,7 @@ public class DoublePlayer implements Mode {
         p1 = new Player(p1Name, Color.PINK);
         p2 = new Player(p2Name, Color.BLUE);
 
+        Rule.setCompTokens(p2.getTokens());
         // setting the UI for double player
         BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);
         Background background = new Background(backgroundFill);
