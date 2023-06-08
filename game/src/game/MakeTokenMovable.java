@@ -28,9 +28,6 @@ public class MakeTokenMovable {
     private Player player;
     private Boolean isRemoveToken= false ;
 
-    public void setIsRemoveToken(Boolean set){
-        this.isRemoveToken= set ;
-    }
     /**
      * Constructor
      * @param  token token to move
