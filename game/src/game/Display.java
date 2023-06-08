@@ -85,8 +85,8 @@ public class Display extends Application {
         Player p2= mode.getP2();
         double spacing = 125;
 
+
         /**
-         *
          * setting tokens for both players
          */
         // tokens for player 1
@@ -136,6 +136,10 @@ public class Display extends Application {
         Platform.runLater(() -> game.run());
     }
 
+    /**
+     *
+     * @return boolean if user wants to exit the game
+     */
     public boolean exitConfirmation() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit Confirmation");
