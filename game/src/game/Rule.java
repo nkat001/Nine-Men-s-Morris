@@ -6,6 +6,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -31,14 +32,17 @@ public class Rule {
     private static Stage stage = new Stage();
     private static Home homepage = new Home();
     private static Mode mode;
-    private static Boolean spMode= false ;
+    public static Boolean spMode= false ;
     private static List<Confetti> confettiList;
     private static final int NUM_CONFETTI = 10;
 
     private static ArrayList<Token> compTokens;
     private static Player compPlayer;
+    public static StackPane stackPane;
 
-
+    public static void setPane(StackPane sp){
+        stackPane= sp;
+    }
     public static void setCompPlayer(Player p){
         compPlayer= p ;
     }
@@ -71,7 +75,6 @@ public class Rule {
      */
     public static void setMode(Mode m){mode = m;}
     public static void setSpMode(Boolean m){spMode = m;}
-
 
     /**
      * checks to see if a mill exists on the board
@@ -193,7 +196,6 @@ public class Rule {
 
         if (player.getTokenSize() == 2) {
             confetti(stage);
-            System.out.println("CONFETIIIIIIII");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Winner");
             alert.setHeaderText(null);
@@ -245,6 +247,7 @@ public class Rule {
         alert.setContentText(player.getName() + " has a mill");
         alert.showAndWait();
     }
+
 
     public static void confetti(Stage stage) {
         Group group = new Group();

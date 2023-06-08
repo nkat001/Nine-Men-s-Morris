@@ -26,6 +26,7 @@ import javafx.geometry.Pos;
 public class Display extends Application {
     private Game game ;
 
+
     public Display(Game game) {
         this.game = game ;
     }
@@ -37,6 +38,7 @@ public class Display extends Application {
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
+        Rule.setPane(mainPane);
         Label headingLabel = new Label("Nine Men's Morris");
         Font font = Font.font("Impact", FontWeight.BOLD, 50);
         headingLabel.setFont(font);

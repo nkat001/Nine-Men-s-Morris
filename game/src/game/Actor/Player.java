@@ -18,16 +18,18 @@ public class Player {
     private ArrayList<Token> tokens;
     private Action allowableAction;
     private Boolean allTokensPlaced;
+    private Boolean isCompPlayer ;
 
     /**
      * Constructor
      * @param name player name
      * @param color color representing for the player tokens
      */
-    public Player(String name, Color color){
+    public Player(String name, Color color, Boolean isCompPlayer){
         this.name= name ;
         this.allTokensPlaced= false;
         this.tokens = new ArrayList<>();
+        this.isCompPlayer= isCompPlayer ;
         setUpTokens(color);
     }
 
@@ -40,6 +42,7 @@ public class Player {
             Token t = new Token(c);
             // applying actions on each token
             new MakeTokenMovable(t, this);
+
             this.tokens.add(t);
         }
     }

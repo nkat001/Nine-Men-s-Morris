@@ -36,10 +36,9 @@ public class DoublePlayer implements Mode {
      */
     public DoublePlayer(String p1Name, String p2Name) {
         // create player instances
-        p1 = new Player(p1Name, Color.PINK);
-        p2 = new Player(p2Name, Color.BLUE);
+        p1 = new Player(p1Name, Color.PINK, false);
+        p2 = new Player(p2Name, Color.BLUE, false);
 
-        Rule.setCompTokens(p2.getTokens());
         // setting the UI for double player
         BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);
         Background background = new Background(backgroundFill);
