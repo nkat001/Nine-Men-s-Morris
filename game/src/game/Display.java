@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -38,12 +39,30 @@ public class Display extends Application {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
         Label headingLabel = new Label("Nine Men's Morris");
+        Home home = new Home();
         Font font = Font.font("Impact", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
         headingLabel.setStyle("-fx-text-fill: #0A4D68; -fx-effect: dropshadow(gaussian, white, 1, 2, 1, 2);");
         StackPane.setAlignment(headingLabel, Pos.TOP_CENTER);
         mainPane.getChildren().add(headingLabel);
         mainPane.setStyle("-fx-background-color: #B9EDDD;"); // Use any valid CSS color value
+
+        Button backButton = new Button("Back");
+        mainPane.getChildren().add(backButton);
+        backButton.setStyle("-fx-border-color: #7E1717; -fx-background-color: #B31312; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+        backButton.setScaleX(1.5);
+        backButton.setScaleY(1.5);
+        backButton.setTranslateX(25);
+        backButton.setTranslateY(25);
+        StackPane.setAlignment(backButton, Pos.TOP_LEFT);
+        backButton.setOnAction(event ->  {
+            try {
+                home.start(primaryStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
 
         // adding the board UI to the main pane
         Group gameBoard=game.getBoard().getGameBoard();
