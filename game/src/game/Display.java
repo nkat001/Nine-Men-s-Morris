@@ -6,7 +6,9 @@ import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -15,6 +17,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.geometry.Pos;
+
+import java.time.Year;
 
 /**
  * Display class that creates the UI elements on the board upon selection of gamemode.
@@ -58,7 +62,10 @@ public class Display extends Application {
         StackPane.setAlignment(backButton, Pos.TOP_LEFT);
         backButton.setOnAction(event ->  {
             try {
-                home.start(primaryStage);
+                boolean exitConfirm = exitConfirmation();
+                if (exitConfirm) {
+                    home.start(primaryStage);
+                }
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -129,4 +136,22 @@ public class Display extends Application {
         Platform.runLater(() -> game.run());
     }
 
+    public boolean exitConfirmation() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Confirmation");
+        alert.setContentText("Are you sure you want to go back? Your current game progress will be lost.");
+
+        Button yesButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        yesButton.setStyle("-fx-border-color: #379237; -fx-background-color: #54B435; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+        yesButton.setText("Yes");
+
+        Button noButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+        noButton.setStyle("-fx-border-color: #7E1717; -fx-background-color: #B70404; -fx-background-radius: 50px; "
+                + "-fx-border-radius: 50px; -fx-text-fill: white;");
+        noButton.setText("No");
+
+        alert.showAndWait();
+        return alert.getResult() == ButtonType.OK;
+    }
 }
