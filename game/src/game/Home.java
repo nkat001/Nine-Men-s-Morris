@@ -50,6 +50,8 @@ public class Home extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
+        Rule.setSpMode(false);
+        Rule.setTryStage( stage );
         StackPane pane = new StackPane();
         pane.setAlignment(Pos.CENTER);
 

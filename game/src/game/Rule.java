@@ -1,11 +1,13 @@
 package game;
 
 import game.Actor.Player;
+import game.Actor.SinglePlayer;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -28,14 +30,32 @@ public class Rule {
     private static ArrayList<ArrayList<Position>> positionHasAMill = new ArrayList<>();
     private static ArrayList<Position> posHasAMill = new ArrayList<>();
     private static Boolean hasAMill = false;
-    private static Stage stage = new Stage();
-    private static Home homepage = new Home();
     private static Mode mode;
+    public static Boolean spMode= false ;
     private static List<Confetti> confettiList;
     private static final int NUM_CONFETTI = 10;
+    private static Stage tryStage ;
+    private static SinglePlayer sp ;
+
+    public static void setTryStage(Stage t){
+        tryStage = t ;
+    }
+    /**
+     * initiate computer move on the board if is a single player mode
+     */
+    public static void initiateCompMove(){
+        sp.initiateComputerMove();
+    }
 
     /**
-     * set the milll positions of the game board
+     * setting the single player mode
+     */
+    public static void setSp(SinglePlayer mode){
+        sp = mode;
+    }
+
+    /**
+     * set the mill positions of the game board
      * @param pos : Position
      * @param arr : ArrayList<ArrayList<Position>>
      */
@@ -48,6 +68,7 @@ public class Rule {
      * @param m : mode
      */
     public static void setMode(Mode m){mode = m;}
+    public static void setSpMode(Boolean m){spMode = m;}
 
     /**
      * checks to see if a mill exists on the board
@@ -166,10 +187,8 @@ public class Rule {
      * @param player
      */
     public static Boolean endGame(Player player) throws Exception {
-
         if (player.getTokenSize() == 2) {
-            confetti(stage);
-            System.out.println("CONFETIIIIIIII");
+            confetti(tryStage);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Winner");
             alert.setHeaderText(null);
@@ -181,7 +200,8 @@ public class Rule {
                 alert.setContentText(mode.getP1().getName() + " won the game!");
             }
             alert.showAndWait();
-            homepage.start(stage);
+            Home home = new Home();
+            home.start(tryStage);
             ResetPlayerTurn.endPlayerGame();
             return true;
         }
@@ -249,5 +269,9 @@ public class Rule {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+    }
+    public static void reset(){
+        positionHasAMill.clear();
+        posHasAMill.clear();
     }
 }

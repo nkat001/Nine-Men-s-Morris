@@ -40,6 +40,7 @@ public class Player {
             Token t = new Token(c);
             // applying actions on each token
             new MakeTokenMovable(t, this);
+
             this.tokens.add(t);
         }
     }

@@ -1,14 +1,16 @@
 package game;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import game.Actor.Player;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
+
+
 /**
- * MakeTokenMoveable class that contains logic as how to the token is interacted with and placed on the board.
+ * MakeTokenMovable class that contains logic as how to the token is interacted with and placed on the board.
  *
  * Created by:
  *
@@ -55,9 +57,11 @@ public class MakeTokenMovable {
 
             // Check if player has a mill and the token is removable
             if((Rule.getHasAMill())&& (this.token.getIsTokenAllow())){
+                Boolean checkRemove = false ;
                 // check if is all tokens from the player has a mill
                 if ( Rule.checkAllTokenMillPositions(player)){
                     if (initPos!= null){
+                        checkRemove= true ;
                         // remove any tokens selected from the player
                         ((Pane) node.getParent()).getChildren().remove(node);
                         player.removeToken(this.token);
@@ -74,11 +78,15 @@ public class MakeTokenMovable {
                     initPos.removeToken();
                     ResetPlayerTurn.resetPlayerHasAMill(player);
                     this.isRemoveToken= true ;
+                    checkRemove= true ;
                 }
 
                 // Check if is end game
                 try {
                     Rule.endGame(player);
+                    if (checkRemove && Rule.spMode){
+                        Rule.initiateCompMove();
+                    }
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -115,9 +123,11 @@ public class MakeTokenMovable {
                 // check if the release token within the range of positions
                 for (Position p : pos ) {
                     Circle ip = p.getIP();
+
                     // check is token at the positions
                     if((ip.contains(releaseX, releaseY)) && (!p.getIsTokenHere()))
                     {
+
                         finalPos= p;
                         if(player.checkAction(this.token, initPos,finalPos, false ))
                         {
@@ -149,13 +159,21 @@ public class MakeTokenMovable {
                         Rule.millMessage(player);
                         Rule.addPositionHasAMill(Rule.getPosHasAMill());;
                         Rule.setHasAMill(true);
+                        ResetPlayerTurn.resetPlayersTurn(player);
                     }
                     // no mill then reset players turn
                     else
                     {
                         ResetPlayerTurn.changeTokenColor(player);
+                        ResetPlayerTurn.resetPlayersTurn(player);
+
+                        // check if is a single player mode
+                        if (Rule.spMode)
+                        {
+                            // if is a single player mode , run a computer move
+                            Rule.initiateCompMove();
+                        }
                     }
-                    ResetPlayerTurn.resetPlayersTurn(player);
                 }
             }
             else
@@ -166,6 +184,5 @@ public class MakeTokenMovable {
             }
         });
     }
-
 
 }

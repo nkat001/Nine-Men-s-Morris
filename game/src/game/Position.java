@@ -54,6 +54,9 @@ public class Position {
     public Boolean getIsTokenHere(){
         return this.isTokenHere;
     }
+    public void resetToken(){
+        this.isTokenHere = false ;
+    }
 
     /**
      * add token instance to the position

@@ -31,6 +31,7 @@ import java.time.Year;
 public class Display extends Application {
     private Game game ;
 
+
     public Display(Game game) {
         this.game = game ;
     }

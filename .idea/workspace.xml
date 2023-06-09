@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="from sprint 3">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="documentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/game/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Actor/SinglePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Actor/SinglePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/MakeTokenMovable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/game/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/game/Rule.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Ethel_Lim" />
+        <entry key="$PROJECT_DIR$" value="Nethara" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +60,7 @@
       <recent name="game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FireworksApp">
+  <component name="RunManager" selected="Application.Home">
     <configuration name="ConfettiApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.ConfettiApp" />
       <module name="project" />
@@ -102,7 +105,7 @@
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Home" />
       <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX19$&quot; --add-modules javafx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -135,11 +138,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FireworksApp" />
         <item itemvalue="Application.Home" />
-        <item itemvalue="Application.ConfettiApp" />
-        <item itemvalue="Application.Game" />
         <item itemvalue="Application.TestBoardGame2" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.ConfettiApp" />
+        <item itemvalue="Application.FireworksApp" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +218,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685182476299</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="initiate computer player move">
+      <created>1686140690862</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686140690862</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- Created computer game logic &#10;- Added extra method to handle computer logic &#10;- Rule class added methods">
+      <created>1686241274446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686241274446</updated>
+    </task>
+    <task id="LOCAL-00012" summary="remove redundant methods">
+      <created>1686303322837</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686303322837</updated>
+    </task>
+    <task id="LOCAL-00013" summary="documentation">
+      <created>1686307387355</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686307387355</updated>
+    </task>
+    <task id="LOCAL-00014" summary="documentation">
+      <created>1686314069085</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686314069085</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,7 +277,11 @@
     <MESSAGE value="minor changes on player class" />
     <MESSAGE value="Remove test class" />
     <MESSAGE value="from sprint 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="from sprint 3" />
+    <MESSAGE value="initiate computer player move" />
+    <MESSAGE value="- Created computer game logic &#10;- Added extra method to handle computer logic &#10;- Rule class added methods" />
+    <MESSAGE value="remove redundant methods" />
+    <MESSAGE value="documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
