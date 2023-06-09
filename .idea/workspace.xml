@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="project:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="add pause transition">
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="build artifacts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/game/Actor/SinglePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/project_jar/project.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Action/Action.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Action/Jump.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Action/Place.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Action/Remove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Action/Slide.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Actor/ComputerPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Actor/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/DoublePlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Mode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Rule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/SinglePlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/UI/Display.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/UI/Home$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/UI/Home.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/game/UI/Line.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/game/Action/Action.class" beforeDir="false" />
@@ -91,7 +77,7 @@
     "last_opened_file_path": "C:/JavaFX project/java fx/javafx-sdk-20.0.1/bin/api-ms-win-crt-environment-l1-1-0.dll",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.3816092"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -99,23 +85,9 @@
       <recent name="game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Home">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ConfettiApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.ConfettiApp" />
-      <module name="project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FireworksApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.FireworksApp" />
       <module name="project" />
       <option name="VM_PARAMETERS" value="--module-path &quot;$JavaFX20$&quot; --add-modules javafx.controls" />
       <extension name="coverage">
@@ -155,6 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestBoardGame2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.TestBoardGame2" />
       <module name="project" />
@@ -169,7 +148,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FireworksApp" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.ConfettiApp" />
       <item itemvalue="Application.Home" />
       <item itemvalue="Application.Game" />
@@ -177,11 +156,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Home" />
         <item itemvalue="Application.TestBoardGame2" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.ConfettiApp" />
-        <item itemvalue="Application.FireworksApp" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686327641236</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="build artifacts">
+      <created>1686328099658</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686328099658</updated>
+    </task>
+    <task id="LOCAL-00017" summary="build artifacts">
+      <created>1686328116293</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686328116293</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,6 +321,7 @@
     <MESSAGE value="remove redundant methods" />
     <MESSAGE value="documentation" />
     <MESSAGE value="add pause transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pause transition" />
+    <MESSAGE value="build artifacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="build artifacts" />
   </component>
 </project>

@@ -95,6 +95,7 @@ public class SinglePlayer implements Mode {
      * a method to trigger the computer to move a random token to a random place
      */
     public void initiateComputerMove(){
+        p2.notPlayerTurn();
         // start x and start y value
         double startx , starty;
         // get the list of positions
@@ -273,7 +274,7 @@ public class SinglePlayer implements Mode {
      */
     public void  fadeOutTransition(Token tokenRemove){
         Position initPos = tokenRemove.getPosition();
-        FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(1), tokenRemove.getToken());
+        FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(2.1), tokenRemove.getToken());
         fadeOutTransition.setFromValue(1.0);
         fadeOutTransition.setToValue(0.0);
         fadeOutTransition.setOnFinished(event -> {
