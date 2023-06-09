@@ -17,6 +17,8 @@ public class Game {
         // double player mode or single player mode
         this.mode = m;
         Rule.setMode(mode);
+        // reset the game board and all positions stuff
+        reset();
     }
 
     /**
@@ -43,5 +45,17 @@ public class Game {
         return this.mode;
     }
 
+    /**
+     * reset all the positions and game logic
+     * @return void
+     */
+    public void reset(){
+        // reset the position
+        for (Position p : board.getPositions()){
+            p.resetToken();
+        }
+        // reset the rule
+        Rule.reset();
+    }
 
 }

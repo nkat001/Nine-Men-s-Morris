@@ -48,8 +48,6 @@ public class Display extends Application {
 
         // adding the board UI to the main pane
         Group gameBoard=game.getBoard().getGameBoard();
-        // reset the gameboard
-        game.getBoard().reset();
         mainPane.getChildren().add(gameBoard);
 
         // adding players label in the main pane

@@ -1,21 +1,20 @@
 package game.Actor;
 
-import game.Mode;
-import game.ResetPlayerTurn;
-import game.Rule;
+import game.*;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
+import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
+
+import java.util.ArrayList;
 
 
 /**
@@ -39,9 +38,8 @@ public class SinglePlayer implements Mode {
         p1 = new Player(p1Name, Color.PINK);
         p2 = new Player(p2Name, Color.BLUE );
         // set the computer player
-        Rule.setCompPlayer(p2);
-        Rule.setCompTokens(p2.getTokens());
         Rule.setSpMode(true);
+        Rule.setSp(this);
         // setting the UI for double player
         BackgroundFill backgroundFill = new BackgroundFill(Color.DARKBLUE, new CornerRadii(7), null);
         Background background = new Background(backgroundFill);
@@ -88,6 +86,171 @@ public class SinglePlayer implements Mode {
         p1.isPlayerTurn();
         p2.notPlayerTurn();
     }
+
+
+
+    public void initiateComputerMove(){
+        double startx , starty;
+        ArrayList<Position> positions = Board.getInstance().getPositions();
+        int index = (int) Math.floor(Math.random() * 24);
+        // get a valid random position
+        while (positions.get(index).getIsTokenHere()){
+            index = (int) Math.floor(Math.random() * 24);
+        }
+        // place the token to the new position
+        ArrayList<Token> tokens = p2.getTokens();
+
+        // final position and token chosen
+        Position finalPos = positions.get(index);
+        Token selectedToken = tokens.get(0);
+        Boolean isMoved = false  ;
+
+        for (int i = 0 ; i< tokens.size(); i++){
+            if (!tokens.get(i).getHasPosition()) {
+                // retrieve attributes
+                Circle ip = finalPos.getIP();
+                Token tk = tokens.get(i);
+                selectedToken= tk ;
+
+                // set the token position
+                // local to scene the board circle
+                Point2D sceneValue = ip.localToScene(ip.getCenterX(), ip.getCenterY());
+                Point2D sceneStart = tk.getToken().localToScene(tk.getToken().getTranslateX(), tk.getToken().getTranslateY());
+
+                startx = sceneStart.getX() - tk.getToken().getTranslateX();
+                starty = sceneStart.getY() - tk.getToken().getTranslateY();
+
+                showTransition(selectedToken, tk.getToken().getTranslateX(),tk.getToken().getTranslateY(),
+                        sceneValue.getX()- startx, sceneValue.getY()- starty);
+
+                tk.getToken().setTranslateX(sceneValue.getX()- startx);
+                tk.getToken().setTranslateY(sceneValue.getY()- starty);
+
+                // update correctly
+                tk.setTokenPosition(finalPos);
+                isMoved= true;
+                break ;
+            }
+        }
+
+        // make it move
+        if (!isMoved){
+            if (tokens.size()==3)
+            {
+                int tokenInd = (int) Math.floor(Math.random() * 3);
+                selectedToken = tokens.get(tokenInd);
+            }
+            else
+            {
+                while (!isMoved)
+                {
+                    // select random token
+                    int tokenInd = (int) Math.floor(Math.random() * tokens.size());
+                    // check where the token can slide to
+                    Token tk = tokens.get(tokenInd);
+                    // init position
+                    Position initP = tk.getPosition();
+
+                    for (int i = 0 ; i < initP.getAdjList().size(); i++)
+                    {
+                        Position slideP = initP.getAdjList().get(i);
+                        if (!slideP.getIsTokenHere())
+                        {
+                            finalPos = slideP;
+                            selectedToken= tk;
+                            isMoved= true ;
+                            break;}
+                    }
+                }
+            }
+            Circle ip = finalPos.getIP();
+            Circle initIP = selectedToken.getPosition().getIP();
+
+            if (Rule.checkPositionsHasAMIll(selectedToken.getPosition())){
+                Rule.removePositionsHasAMill(selectedToken.getPosition() );
+            }
+
+            // local to scene for the circle board
+            Point2D sceneValue = ip.localToScene(ip.getCenterX(), ip.getCenterY());
+            // local to scene for the token position
+            Point2D sceneStart = initIP.localToScene(initIP.getCenterX(), initIP.getCenterY());
+            // set the start x and y value
+            startx = sceneStart.getX() - selectedToken.getToken().getTranslateX();
+            starty = sceneStart.getY() - selectedToken.getToken().getTranslateY();
+
+            showTransition(selectedToken, selectedToken.getToken().getTranslateX(),selectedToken.getToken().getTranslateY(),
+                    sceneValue.getX()- startx, sceneValue.getY()- starty);
+
+            // remove init position
+            selectedToken.getPosition().removeToken();
+            // set token position
+            selectedToken.getToken().setTranslateX(sceneValue.getX()- startx);
+            selectedToken.getToken().setTranslateY(sceneValue.getY()- starty);
+            selectedToken.setTokenPosition(finalPos);
+
+        }
+
+        // check if this move has a mill
+        if ( Rule.checkPlayerHasAMill(finalPos, selectedToken))
+        {
+            Rule.millMessage(p2);
+            ArrayList<Token> playerTokens  = p1.getTokens();
+            Rule.addPositionHasAMill(Rule.getPosHasAMill());
+            Token tokenRemove = null ;
+            if (Rule.checkAllTokenMillPositions(p1))
+            {
+                // all player token has a mill , select any one
+                for ( int i = 0 ; i < playerTokens.size(); i ++)
+                {
+                    if (playerTokens.get(i).getHasPosition())
+                    {
+                        tokenRemove= playerTokens.get(i);
+                        break ;
+                    }
+                }
+            }
+            else {
+                // select one opponent token
+                for ( int i = 0 ; i < playerTokens.size(); i ++)
+                {
+                    if (playerTokens.get(i).getHasPosition() && !Rule.checkPositionsHasAMIll(playerTokens.get(i).getPosition()))
+                    {
+                        tokenRemove= playerTokens.get(i);
+                    }
+                }
+            }
+            Position initPos = tokenRemove.getPosition();
+            // remove any tokens selected from the player
+            ((Pane) tokenRemove.getToken().getParent()).getChildren().remove(tokenRemove.getToken());
+            p1.removeToken(tokenRemove);
+            initPos.removeToken();
+        }
+
+        // remove player token
+        ResetPlayerTurn.resetPlayersTurn(p2);
+        ResetPlayerTurn.changeTokenColor(p1);
+        // reset the computer to player turn
+    }
+
+    public void showTransition(Token selectedToken,double startX, double startY, double endX, double endY ){
+        // Create a TranslateTransition for the token
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), selectedToken.getToken());
+
+        // Set the starting and ending positions for the animation
+        transition.setFromX(startX);
+        transition.setFromY(startY);
+        transition.setToX(endX);
+        transition.setToY(endY);
+
+        // Set any additional animation properties
+        transition.setCycleCount(1); // Play the animation once
+        transition.setAutoReverse(false); // Do not reverse the animation
+
+        // Play the animation
+        transition.play();
+    }
+
+
 
     /**
      * get player 1

@@ -1,6 +1,7 @@
 package game;
 
 import game.Actor.Player;
+import game.Actor.SinglePlayer;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -29,38 +30,32 @@ public class Rule {
     private static ArrayList<ArrayList<Position>> positionHasAMill = new ArrayList<>();
     private static ArrayList<Position> posHasAMill = new ArrayList<>();
     private static Boolean hasAMill = false;
-//    private static Stage stage = new Stage();
-    private static Home homepage = new Home();
     private static Mode mode;
     public static Boolean spMode= false ;
     private static List<Confetti> confettiList;
     private static final int NUM_CONFETTI = 10;
     private static Stage tryStage ;
+    private static SinglePlayer sp ;
 
     public static void setTryStage(Stage t){
         tryStage = t ;
     }
-
-    private static ArrayList<Token> compTokens;
-    private static Player compPlayer;
-
-    public static void setCompPlayer(Player p){
-        compPlayer= p ;
-    }
-    public static Player getCompPlayer(){
-        return compPlayer;
-    }
-
-    public static void setCompTokens(ArrayList<Token> cpt){
-        compTokens= cpt;
-    }
-
-    public static ArrayList<Token> getCompTokens(){
-        return compTokens ;
+    /**
+     * initiate computer move on the board if is a single player mode
+     */
+    public static void initiateCompMove(){
+        sp.initiateComputerMove();
     }
 
     /**
-     * set the milll positions of the game board
+     * setting the single player mode
+     */
+    public static void setSp(SinglePlayer mode){
+        sp = mode;
+    }
+
+    /**
+     * set the mill positions of the game board
      * @param pos : Position
      * @param arr : ArrayList<ArrayList<Position>>
      */
@@ -205,7 +200,8 @@ public class Rule {
                 alert.setContentText(mode.getP1().getName() + " won the game!");
             }
             alert.showAndWait();
-            homepage.start(tryStage);
+            Home home = new Home();
+            home.start(tryStage);
             ResetPlayerTurn.endPlayerGame();
             return true;
         }
@@ -246,7 +242,6 @@ public class Rule {
         alert.showAndWait();
     }
 
-
     public static void confetti(Stage stage) {
         Group group = new Group();
         confettiList = new ArrayList<>();
@@ -274,5 +269,9 @@ public class Rule {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+    }
+    public static void reset(){
+        positionHasAMill.clear();
+        posHasAMill.clear();
     }
 }
