@@ -239,7 +239,7 @@ public class Rule {
         alert.setTitle("Mill Formed");
         alert.setHeaderText(null);
         alert.setContentText(player.getName() + " has a mill");
-        alert.showAndWait();
+        alert.show();
     }
 
     public static void confetti(Stage stage) {

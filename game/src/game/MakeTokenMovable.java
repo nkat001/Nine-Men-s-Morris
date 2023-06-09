@@ -2,9 +2,12 @@ package game;
 
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import game.Actor.Player;
+import javafx.animation.PauseTransition;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 
 
@@ -85,7 +88,12 @@ public class MakeTokenMovable {
                 try {
                     Rule.endGame(player);
                     if (checkRemove && Rule.spMode){
-                        Rule.initiateCompMove();
+                        // if is a single player mode , run a computer move
+                        PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                        pause.setOnFinished(event -> {
+                            Rule.initiateCompMove();
+                        });
+                        pause.play();
                     }
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
@@ -171,7 +179,11 @@ public class MakeTokenMovable {
                         if (Rule.spMode)
                         {
                             // if is a single player mode , run a computer move
-                            Rule.initiateCompMove();
+                            PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                            pause.setOnFinished(event -> {
+                                Rule.initiateCompMove();
+                            });
+                            pause.play();
                         }
                     }
                 }

@@ -3,10 +3,12 @@ package game.Actor;
 import game.*;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -133,10 +135,6 @@ public class SinglePlayer implements Mode {
                 showTransition(selectedToken, tk.getToken().getTranslateX(),tk.getToken().getTranslateY(),
                         sceneValue.getX()- startx, sceneValue.getY()- starty);
 
-                // get token and set their translate x and y values
-                tk.getToken().setTranslateX(sceneValue.getX()- startx);
-                tk.getToken().setTranslateY(sceneValue.getY()- starty);
-
                 // update the token position correctly
                 tk.setTokenPosition(finalPos);
                 isMoved= true;
@@ -193,11 +191,10 @@ public class SinglePlayer implements Mode {
             showTransition(selectedToken, selectedToken.getToken().getTranslateX(),selectedToken.getToken().getTranslateY(),
                     sceneValue.getX()- startx, sceneValue.getY()- starty);
 
+
             // remove the initial position
             selectedToken.getPosition().removeToken();
             // set token position and value
-            selectedToken.getToken().setTranslateX(sceneValue.getX()- startx);
-            selectedToken.getToken().setTranslateY(sceneValue.getY()- starty);
             selectedToken.setTokenPosition(finalPos);
         }
 
@@ -235,9 +232,13 @@ public class SinglePlayer implements Mode {
             fadeOutTransition(tokenRemove);
         }
 
-        // reset player turn
-        ResetPlayerTurn.resetPlayersTurn(p2);
-        ResetPlayerTurn.changeTokenColor(p1);
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        pause.setOnFinished(event -> {
+            ResetPlayerTurn.resetPlayersTurn(p2);
+            ResetPlayerTurn.changeTokenColor(p2);
+        });
+        pause.play();
+
     }
 
     /**
@@ -257,16 +258,20 @@ public class SinglePlayer implements Mode {
         // Set any additional animation properties
         transition.setCycleCount(1); // Play the animation once
         transition.setAutoReverse(false); // Do not reverse the animation
-
+        transition.setOnFinished( event -> {
+            selectedToken.getToken().setTranslateX(endX);
+            selectedToken.getToken().setTranslateY(endY);
+        });
         // Play the animation
         transition.play();
     }
+
 
     /**
      * fade transition of the computer move
      * a method to show transition of the computer move
      */
-    public void fadeOutTransition(Token tokenRemove){
+    public void  fadeOutTransition(Token tokenRemove){
         Position initPos = tokenRemove.getPosition();
         FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(1), tokenRemove.getToken());
         fadeOutTransition.setFromValue(1.0);
