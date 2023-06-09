@@ -365,5 +365,10 @@ public class Board {
         return this.positions;
     }
 
+    public void reset(){
+        for (Position p : positions ){
+            p.resetToken();
+        }
+    }
 
 }

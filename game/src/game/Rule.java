@@ -29,20 +29,21 @@ public class Rule {
     private static ArrayList<ArrayList<Position>> positionHasAMill = new ArrayList<>();
     private static ArrayList<Position> posHasAMill = new ArrayList<>();
     private static Boolean hasAMill = false;
-    private static Stage stage = new Stage();
+//    private static Stage stage = new Stage();
     private static Home homepage = new Home();
     private static Mode mode;
     public static Boolean spMode= false ;
     private static List<Confetti> confettiList;
     private static final int NUM_CONFETTI = 10;
+    private static Stage tryStage ;
+
+    public static void setTryStage(Stage t){
+        tryStage = t ;
+    }
 
     private static ArrayList<Token> compTokens;
     private static Player compPlayer;
-    public static StackPane stackPane;
 
-    public static void setPane(StackPane sp){
-        stackPane= sp;
-    }
     public static void setCompPlayer(Player p){
         compPlayer= p ;
     }
@@ -54,11 +55,9 @@ public class Rule {
         compTokens= cpt;
     }
 
-
     public static ArrayList<Token> getCompTokens(){
         return compTokens ;
     }
-
 
     /**
      * set the milll positions of the game board
@@ -193,9 +192,8 @@ public class Rule {
      * @param player
      */
     public static Boolean endGame(Player player) throws Exception {
-
         if (player.getTokenSize() == 2) {
-            confetti(stage);
+            confetti(tryStage);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Winner");
             alert.setHeaderText(null);
@@ -207,7 +205,7 @@ public class Rule {
                 alert.setContentText(mode.getP1().getName() + " won the game!");
             }
             alert.showAndWait();
-            homepage.start(stage);
+            homepage.start(tryStage);
             ResetPlayerTurn.endPlayerGame();
             return true;
         }

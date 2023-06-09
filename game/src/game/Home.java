@@ -50,6 +50,8 @@ public class Home extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
+        Rule.setSpMode(false);
+        Rule.setTryStage( stage );
         StackPane pane = new StackPane();
         pane.setAlignment(Pos.CENTER);
 
@@ -231,7 +233,6 @@ public class Home extends Application {
             } else {
                 player1Name = player1TextField.getText();
                 Game game = new Game(new SinglePlayer(player1Name, "Computer"));
-                Rule.setSpMode(true);
                 Display display = new Display(game);
                 display.start(primaryStage);
                 stage.close();

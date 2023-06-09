@@ -171,13 +171,12 @@ public class MakeTokenMovable {
                         ResetPlayerTurn.resetPlayersTurn(player);
 
                         // rule is single player mode
-                        if (Rule.spMode){
+                        if (Rule.spMode)
+                        {
                             initiateComputerMove();
                         }
                     }
-
                 }
-
             }
             else
             {
@@ -337,10 +336,7 @@ public class MakeTokenMovable {
         ResetPlayerTurn.resetPlayersTurn(Rule.getCompPlayer());
         ResetPlayerTurn.changeTokenColor(player);
         // reset the computer to player turn
-
-
     }
-
 
 
     public void showTransition(Token selectedToken,double startX, double startY, double endX, double endY ){

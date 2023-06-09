@@ -38,7 +38,6 @@ public class Display extends Application {
     public void start(Stage primaryStage) {
         // Create a Pane to hold the circle and line groups
         StackPane mainPane = new StackPane();
-        Rule.setPane(mainPane);
         Label headingLabel = new Label("Nine Men's Morris");
         Font font = Font.font("Impact", FontWeight.BOLD, 50);
         headingLabel.setFont(font);
@@ -49,6 +48,8 @@ public class Display extends Application {
 
         // adding the board UI to the main pane
         Group gameBoard=game.getBoard().getGameBoard();
+        // reset the gameboard
+        game.getBoard().reset();
         mainPane.getChildren().add(gameBoard);
 
         // adding players label in the main pane
