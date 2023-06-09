@@ -88,23 +88,32 @@ public class SinglePlayer implements Mode {
     }
 
 
-
+    /**
+     * initiate computer move method
+     * a method to trigger the computer to move a random token to a random place
+     */
     public void initiateComputerMove(){
+        // start x and start y value
         double startx , starty;
+        // get the list of positions
         ArrayList<Position> positions = Board.getInstance().getPositions();
+        // select a random index for position
         int index = (int) Math.floor(Math.random() * 24);
-        // get a valid random position
         while (positions.get(index).getIsTokenHere()){
             index = (int) Math.floor(Math.random() * 24);
         }
-        // place the token to the new position
+
+        // get the list of tokens from computer player
         ArrayList<Token> tokens = p2.getTokens();
 
-        // final position and token chosen
+        // store the final position and the selected token
         Position finalPos = positions.get(index);
         Token selectedToken = tokens.get(0);
+
+        // check if is moved
         Boolean isMoved = false  ;
 
+        // do place actions first
         for (int i = 0 ; i< tokens.size(); i++){
             if (!tokens.get(i).getHasPosition()) {
                 // retrieve attributes
@@ -112,28 +121,30 @@ public class SinglePlayer implements Mode {
                 Token tk = tokens.get(i);
                 selectedToken= tk ;
 
-                // set the token position
-                // local to scene the board circle
+                // local the position and token scene
                 Point2D sceneValue = ip.localToScene(ip.getCenterX(), ip.getCenterY());
                 Point2D sceneStart = tk.getToken().localToScene(tk.getToken().getTranslateX(), tk.getToken().getTranslateY());
 
+                // store the start x and y values
                 startx = sceneStart.getX() - tk.getToken().getTranslateX();
                 starty = sceneStart.getY() - tk.getToken().getTranslateY();
 
+                // make transition
                 showTransition(selectedToken, tk.getToken().getTranslateX(),tk.getToken().getTranslateY(),
                         sceneValue.getX()- startx, sceneValue.getY()- starty);
 
+                // get token and set their translate x and y values
                 tk.getToken().setTranslateX(sceneValue.getX()- startx);
                 tk.getToken().setTranslateY(sceneValue.getY()- starty);
 
-                // update correctly
+                // update the token position correctly
                 tk.setTokenPosition(finalPos);
                 isMoved= true;
                 break ;
             }
         }
 
-        // make it move
+        // if not placed action , do slide action or jump action
         if (!isMoved){
             if (tokens.size()==3)
             {
@@ -163,13 +174,14 @@ public class SinglePlayer implements Mode {
                     }
                 }
             }
+
+            // get the ihe circle
             Circle ip = finalPos.getIP();
             Circle initIP = selectedToken.getPosition().getIP();
-
+            // check if this position has a mill
             if (Rule.checkPositionsHasAMIll(selectedToken.getPosition())){
                 Rule.removePositionsHasAMill(selectedToken.getPosition() );
             }
-
             // local to scene for the circle board
             Point2D sceneValue = ip.localToScene(ip.getCenterX(), ip.getCenterY());
             // local to scene for the token position
@@ -177,22 +189,22 @@ public class SinglePlayer implements Mode {
             // set the start x and y value
             startx = sceneStart.getX() - selectedToken.getToken().getTranslateX();
             starty = sceneStart.getY() - selectedToken.getToken().getTranslateY();
-
+            // do transition
             showTransition(selectedToken, selectedToken.getToken().getTranslateX(),selectedToken.getToken().getTranslateY(),
                     sceneValue.getX()- startx, sceneValue.getY()- starty);
 
-            // remove init position
+            // remove the initial position
             selectedToken.getPosition().removeToken();
-            // set token position
+            // set token position and value
             selectedToken.getToken().setTranslateX(sceneValue.getX()- startx);
             selectedToken.getToken().setTranslateY(sceneValue.getY()- starty);
             selectedToken.setTokenPosition(finalPos);
-
         }
 
         // check if this move has a mill
         if ( Rule.checkPlayerHasAMill(finalPos, selectedToken))
         {
+            // output mill message
             Rule.millMessage(p2);
             ArrayList<Token> playerTokens  = p1.getTokens();
             Rule.addPositionHasAMill(Rule.getPosHasAMill());
@@ -219,19 +231,22 @@ public class SinglePlayer implements Mode {
                     }
                 }
             }
-            Position initPos = tokenRemove.getPosition();
             // remove any tokens selected from the player
+            Position initPos = tokenRemove.getPosition();
             ((Pane) tokenRemove.getToken().getParent()).getChildren().remove(tokenRemove.getToken());
             p1.removeToken(tokenRemove);
             initPos.removeToken();
         }
 
-        // remove player token
+        // reset player turn
         ResetPlayerTurn.resetPlayersTurn(p2);
         ResetPlayerTurn.changeTokenColor(p1);
-        // reset the computer to player turn
     }
 
+    /**
+     * show transition of the computer move
+     * a method to show transition of the computer move
+     */
     public void showTransition(Token selectedToken,double startX, double startY, double endX, double endY ){
         // Create a TranslateTransition for the token
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), selectedToken.getToken());
@@ -249,7 +264,6 @@ public class SinglePlayer implements Mode {
         // Play the animation
         transition.play();
     }
-
 
 
     /**

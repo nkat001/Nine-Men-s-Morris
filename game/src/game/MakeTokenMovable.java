@@ -167,9 +167,10 @@ public class MakeTokenMovable {
                         ResetPlayerTurn.changeTokenColor(player);
                         ResetPlayerTurn.resetPlayersTurn(player);
 
-                        // rule is single player mode
+                        // check if is a single player mode
                         if (Rule.spMode)
                         {
+                            // if is a single player mode , run a computer move
                             Rule.initiateCompMove();
                         }
                     }
