@@ -1,6 +1,7 @@
 package game.Actor;
 
 import game.*;
+import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
@@ -86,7 +87,6 @@ public class SinglePlayer implements Mode {
         p1.isPlayerTurn();
         p2.notPlayerTurn();
     }
-
 
     /**
      * initiate computer move method
@@ -232,10 +232,7 @@ public class SinglePlayer implements Mode {
                 }
             }
             // remove any tokens selected from the player
-            Position initPos = tokenRemove.getPosition();
-            ((Pane) tokenRemove.getToken().getParent()).getChildren().remove(tokenRemove.getToken());
-            p1.removeToken(tokenRemove);
-            initPos.removeToken();
+            fadeOutTransition(tokenRemove);
         }
 
         // reset player turn
@@ -265,7 +262,23 @@ public class SinglePlayer implements Mode {
         transition.play();
     }
 
-
+    /**
+     * fade transition of the computer move
+     * a method to show transition of the computer move
+     */
+    public void fadeOutTransition(Token tokenRemove){
+        Position initPos = tokenRemove.getPosition();
+        FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(1), tokenRemove.getToken());
+        fadeOutTransition.setFromValue(1.0);
+        fadeOutTransition.setToValue(0.0);
+        fadeOutTransition.setOnFinished(event -> {
+            // Remove the token from its parent node after the animation completes
+            ((Pane) tokenRemove.getToken().getParent()).getChildren().remove(tokenRemove.getToken());
+            p1.removeToken(tokenRemove);
+            initPos.removeToken();
+        });
+        fadeOutTransition.play();
+    }
     /**
      * get player 1
      */
