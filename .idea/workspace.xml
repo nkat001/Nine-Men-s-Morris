@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="unused code removed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a7e63dda-55a1-435b-ae40-3b1aa5179d7d" name="Changes" comment="SPRINT 4 DOCS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +57,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="game" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\FIT3077\project\Sprint 4 docs" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -275,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686366725081</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="SPRINT 4 DOCS">
+      <created>1686382554403</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686382554403</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,6 +314,7 @@
     <MESSAGE value="add pause transition" />
     <MESSAGE value="build artifacts" />
     <MESSAGE value="unused code removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="unused code removed" />
+    <MESSAGE value="SPRINT 4 DOCS" />
+    <option name="LAST_COMMIT_MESSAGE" value="SPRINT 4 DOCS" />
   </component>
 </project>
