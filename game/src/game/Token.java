@@ -5,7 +5,6 @@ import javafx.scene.shape.Circle;
 
 /**
  * A Token class that contains the attributes of player tokens.
- *
  * Created by:
  *
  * @author Ethel Lim

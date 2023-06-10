@@ -5,7 +5,6 @@ import javafx.scene.control.Label;
 
 /**
  * Mode class represent the mode that player choose
- *
  * Created by:
  *
  * @author Ethel Lim Jia Yee

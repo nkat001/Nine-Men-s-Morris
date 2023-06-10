@@ -2,7 +2,6 @@ package game.Actor;
 
 import game.Mode;
 import game.ResetPlayerTurn;
-import game.Rule;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;

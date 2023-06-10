@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 
-import java.time.Year;
-
 /**
  * Display class that creates the UI elements on the board upon selection of gamemode.
  *

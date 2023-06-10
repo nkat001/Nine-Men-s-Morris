@@ -2,7 +2,6 @@ package game;
 
 /**
  * Game class represent the main game logic
- *
  * Created by:
  *
  * @author Ethel Lim Jia Yee

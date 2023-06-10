@@ -2,24 +2,14 @@ package game;
 
 import game.Actor.Player;
 import game.Actor.SinglePlayer;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.scene.Group;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Rule class that contains methods to determine if a Mill is found
- *
  * Created by:
  *
  * @author Ethel Lim Jia Yee
@@ -32,8 +22,6 @@ public class Rule {
     private static Boolean hasAMill = false;
     private static Mode mode;
     public static Boolean spMode= false ;
-    private static List<Confetti> confettiList;
-    private static final int NUM_CONFETTI = 10;
     private static Stage tryStage ;
     private static SinglePlayer sp ;
 
@@ -188,7 +176,6 @@ public class Rule {
      */
     public static Boolean endGame(Player player) throws Exception {
         if (player.getTokenSize() == 2) {
-            confetti(tryStage);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Winner");
             alert.setHeaderText(null);
@@ -242,34 +229,6 @@ public class Rule {
         alert.show();
     }
 
-    public static void confetti(Stage stage) {
-        Group group = new Group();
-        confettiList = new ArrayList<>();
-        // creating a screen
-        Screen screen = Screen.getPrimary();
-        javafx.geometry.Rectangle2D bounds = screen.getVisualBounds();
-        double screenWidth = bounds.getWidth();
-        double screenHeight = bounds.getHeight();
-
-        for (int i = 0; i < NUM_CONFETTI; i++) {
-            double x = Math.random() * screenWidth;
-            double y = Math.random() * screenHeight;
-            Confetti confetti = new Confetti(x, y);
-            confettiList.add(confetti);
-            group.getChildren().addAll(confetti.getParticles());
-        }
-        startConfetti();
-    }
-
-    public static void startConfetti() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(30), event -> {
-            for (Confetti confetti : confettiList) {
-                confetti.moveParticles();
-            }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-    }
     public static void reset(){
         positionHasAMill.clear();
         posHasAMill.clear();

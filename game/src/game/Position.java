@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 /**
  * Position class that represent each position in the game board
- *
  * Created by:
  *
  * @author Ethel Lim

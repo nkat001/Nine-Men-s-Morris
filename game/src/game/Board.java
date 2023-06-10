@@ -10,7 +10,6 @@ import java.util.*;
 
 /**
  * A Singleton Board class that create the game board
- *
  * Created by:
  *
  * @author Ethel Lim

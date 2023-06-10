@@ -1,18 +1,11 @@
 package game.Action;
 
 import game.Position;
-import game.ResetPlayerTurn;
 import game.Rule;
 import game.Token;
-import javafx.scene.Parent;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
-
-import java.util.ArrayList;
 
 /**
  * Remove class that represent removing the token from the player
- *
  * Created by:
  *
  * @author Ethel

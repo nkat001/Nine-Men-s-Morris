@@ -1,20 +1,15 @@
 package game;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import game.Actor.Player;
 import javafx.animation.PauseTransition;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-
 import java.util.ArrayList;
-
-
 
 /**
  * MakeTokenMovable class that contains logic as how to the token is interacted with and placed on the board.
- *
  * Created by:
  *
  * @author Ethel Lim Jia Yee

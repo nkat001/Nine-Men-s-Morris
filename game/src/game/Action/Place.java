@@ -4,7 +4,6 @@ import game.Position;
 import game.Token;
 /**
  * Place class that represent placing a token on the board
- *
  * Created by:
  *
  * @author Ethel

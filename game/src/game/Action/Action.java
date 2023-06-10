@@ -4,7 +4,6 @@ import game.Position;
 import game.Token;
 /**
  * Action interface class to create abstract methods and allow different actions to implement
- *
  * Created by:
  *
  * @author Nethara

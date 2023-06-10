@@ -1,17 +1,13 @@
 package game;
 
-import game.Actor.DoublePlayer;
 import game.Actor.Player;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-
 /**
  * Rule class used to organise player turns
- *
  * Created by:
  *
  * @author Ethel Lim
